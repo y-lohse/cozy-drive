@@ -4,17 +4,10 @@ import { connect } from 'react-redux'
 import { translate } from 'cozy-ui/react/I18n'
 
 import styles from '../../styles/onboarding'
-import { getPlatformId, isIos } from '../../lib/device'
 
 export class Welcome extends Component {
-  constructor (props) {
-    super(props)
-
-    this.platform = getPlatformId() !== undefined ? getPlatformId() : 'browser'
-  }
-
   render () {
-    const { nextStep, t } = this.props
+    const { t, selectServer, register } = this.props
 
     return (
       <div className={classNames(styles['wizard'], styles['welcome'])}>
@@ -32,13 +25,13 @@ export class Welcome extends Component {
         <footer className={styles['wizard-footer']}>
           <button role='button'
             className='coz-btn coz-btn--regular'
-            onClick={nextStep}
+            onClick={selectServer}
           >
             {t('mobile.onboarding.welcome.button')}
           </button>
-          {!isIos() && <a href={`https://cozy.io/fr/try-it?from=io.cozy.drive.mobile&os=${this.platform}`} className={styles['link']}>
-            {t('mobile.onboarding.welcome.no_account_link')}
-          </a>}
+          <a className={styles['link']} onClick={register}>
+            {t('mobile.onboarding.welcome.sign_up')}
+          </a>
         </footer>
       </div>
     )
