@@ -12,7 +12,7 @@ export const Waiting = ({ t }) =>
     <h1>
       <em>bidule.cozy.cloud</em>
       <div>
-        {t('mobile.onboarding.waiting.text')}
+        {t('mobile.onboarding.waiting.description')}
       </div>
     </h1>
   </div>
