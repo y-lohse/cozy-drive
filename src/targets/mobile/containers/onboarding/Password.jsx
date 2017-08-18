@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import classNames from 'classnames'
 
 import { translate } from 'cozy-ui/react/I18n'
+import getPasswordStrength from '../../lib/passwordHelper'
 
 import styles from '../../styles/onboarding'
 
@@ -13,6 +14,7 @@ export class Password extends Component {
 
     this.state = {
       value: '',
+      strength: getPasswordStrength(''),
       error: null
     }
   }
@@ -22,7 +24,7 @@ export class Password extends Component {
   }
 
   validateValue (e) {
-    this.setState({ value: e.target.value, error: null })
+    this.setState({ value: e.target.value, strength: getPasswordStrength(e.target.value) })
   }
 
   onSubmit (e) {
@@ -39,7 +41,7 @@ export class Password extends Component {
 
   render () {
     const { t, previousStep, validateValue } = this.props
-    const { value, error } = this.state
+    const { value, strength, error } = this.state
 
     return (
       <form className={classNames(styles['wizard'], styles['set-password'])} onSubmit={this.onSubmit.bind(this)}>
@@ -64,11 +66,12 @@ export class Password extends Component {
           />
           <meter
             step='1' min='0' max='100'
-            value='50'
+            value={strength.percentage}
+            className={styles[`pw-${strength.label}`]}
           />
           {!error &&
             <p className={styles['description']}>
-              {t('mobile.onboarding.instance.description')}
+              {t('mobile.onboarding.password.description')}
             </p>
           }
           {error &&

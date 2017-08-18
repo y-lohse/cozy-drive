@@ -1,5 +1,5 @@
 // Return given password srength as an object {percentage, label}
-export default const getStrength = (password) => {
+export const getStrength = (password) => {
   if (!password && password !== '') {
     throw new Error('password parameter is missing')
   }
@@ -51,3 +51,5 @@ export default const getStrength = (password) => {
 
   return {percentage: strengthPercentage, label: strengthLabel}
 }
+
+export default getStrength

@@ -153,6 +153,21 @@
         "wrong_address_v2": "You have just entered the address of old Cozy version. This application is only compatible with the latest version. [Please refer to our site for more information.](https://blog.cozycloud.cc/post/2016/11/21/On-the-road-to-Cozy-version-3?lang=en)",
         "wrong_address": "This address doesn’t seem to be a cozy. Please check the address you provide."
       },
+      "password": {
+        "placeholder": "Password",
+        "description": "You need to choose a strong password. Use numbers, uppercase latters, special characters…"
+      },
+      "email": {
+        "cozy_email_placeholder": "tony.stark@cozy.cc",
+        "description": "We will send you an email to confirm the creation of your Cozy."
+      },
+      "instance": {
+        "placeholder": "tonystark",
+        "description": "This is the web address you use to sign it to your Cozy.  It might be a good idea to write it down."
+      },
+      "waiting": {
+        "description": "is being prepared…"
+      },
       "files": {
         "title": "Access your drive",
         "description": "In order to save your Cozy Drive on your device, the application must access your files."

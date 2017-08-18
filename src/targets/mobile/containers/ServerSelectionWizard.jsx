@@ -19,7 +19,7 @@ export default class ServerSelectionWizard extends Component {
     super(props)
 
     this.state = {
-      currentStep: STEP_PASSWORD
+      currentStep: STEP_WAITING
     }
 
     this.steps = []
