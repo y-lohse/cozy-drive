@@ -7,7 +7,7 @@ import { translate } from 'cozy-ui/react/I18n'
 
 import styles from '../../styles/onboarding'
 
-export class InstanceName extends Component {
+export class Password extends Component {
   constructor (props) {
     super(props)
 
@@ -42,13 +42,7 @@ export class InstanceName extends Component {
     const { value, error } = this.state
 
     return (
-      <form className={classNames(styles['wizard'], styles['enter-instance'])} onSubmit={this.onSubmit.bind(this)}>
-        <header className={styles['wizard-header']}>
-          <a
-            className={styles['close-button']}
-            onClick={previousStep}
-          />
-        </header>
+      <form className={classNames(styles['wizard'], styles['set-password'])} onSubmit={this.onSubmit.bind(this)}>
         <div className={styles['wizard-main']}>
           <div
             className={error
@@ -57,20 +51,21 @@ export class InstanceName extends Component {
           >
             <div className={styles['link-white']} />
           </div>
-          <div className={styles['instance-name-input']}>
-            <input
-              type='email'
-              className={error
-                ? classNames(styles['input'], styles['error'])
-                : styles['input']}
-              placeholder={t('mobile.onboarding.instance.placeholder')}
-              ref={(input) => { this.input = input }}
-              value={value}
-              onChange={this.validateValue.bind(this)}
-              required
-            />
-            .mycozy.cloud
-          </div>
+          <input
+            type='password'
+            className={error
+              ? classNames(styles['input'], styles['error'])
+              : styles['input']}
+            ref={(input) => { this.input = input }}
+            placeholder={t('mobile.onboarding.password.placeholder')}
+            value={value}
+            onChange={this.validateValue.bind(this)}
+            required
+          />
+          <meter
+            step='1' min='0' max='100'
+            value='50'
+          />
           {!error &&
             <p className={styles['description']}>
               {t('mobile.onboarding.instance.description')}
@@ -97,4 +92,4 @@ export class InstanceName extends Component {
   }
 }
 
-export default translate()(InstanceName)
+export default translate()(Password)

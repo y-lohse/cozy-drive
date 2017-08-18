@@ -4,18 +4,22 @@ import Welcome from './onboarding/Welcome'
 import SelectServer from './onboarding/SelectServer'
 import Email from './onboarding/Email'
 import InstanceName from './onboarding/InstanceName'
+import Waiting from './onboarding/Waiting'
+import Password from './onboarding/Password'
 
 const STEP_WELCOME = 'STEP_WELCOME'
 const STEP_EXISTING_SERVER = 'STEP_EXISTING_SERVER'
 const STEP_EMAIL = 'STEP_EMAIL'
 const STEP_INSTANCE = 'STEP_INSTANCE'
+const STEP_WAITING = 'STEP_WAITING'
+const STEP_PASSWORD = 'STEP_PASSWORD'
 
 export default class ServerSelectionWizard extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      currentStep: STEP_EMAIL
+      currentStep: STEP_PASSWORD
     }
 
     this.steps = []
@@ -42,6 +46,10 @@ export default class ServerSelectionWizard extends Component {
 
   afterInstance (instance) {
     console.log('instance name saved')
+  }
+
+  afterPassword () {
+    console.log('password set')
     this.props.onComplete()
   }
 
@@ -57,6 +65,10 @@ export default class ServerSelectionWizard extends Component {
         return <Email nextStep={this.afterEmail.bind(this)} previousStep={() => this.onAbort()}  />
       case STEP_INSTANCE:
         return <InstanceName nextStep={this.afterInstance.bind(this)} previousStep={() => this.onAbort()}  />
+      case STEP_WAITING:
+        return <Waiting />
+      case STEP_PASSWORD:
+        return <Password nextStep={this.afterPassword.bind(this)}  />
       default:
         return null
     }
