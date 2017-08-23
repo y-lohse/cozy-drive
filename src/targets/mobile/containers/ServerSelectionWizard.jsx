@@ -19,33 +19,46 @@ export default class ServerSelectionWizard extends Component {
     super(props)
 
     this.state = {
-      currentStep: STEP_WAITING
+      currentStepIndex: 0
     }
 
-    this.steps = []
+    this.steps = [STEP_WELCOME]
   }
 
   afterWelcome (needsInstanceCreation) {
     if (needsInstanceCreation) {
-      this.steps = [STEP_EMAIL]
+      this.steps = [STEP_WELCOME, STEP_EMAIL, STEP_INSTANCE, STEP_WAITING, STEP_PASSWORD]
     }
     else {
-      this.steps = [STEP_EXISTING_SERVER]
+      this.steps = [STEP_WELCOME, STEP_EXISTING_SERVER]
     }
 
-    this.setState({ currentStep: this.steps[0] })
+    this.nextStep()
   }
 
   onAbort () {
-    this.setState({ currentStep: STEP_WELCOME })
+    this.setState({ currentStepIndex: 0 })
+  }
+
+  nextStep () {
+    this.setState((prevState) => ({
+      currentStepIndex: ++prevState.currentStepIndex
+    }))
   }
 
   afterEmail (email) {
     console.log('email saved')
+    this.nextStep()
   }
 
   afterInstance (instance) {
     console.log('instance name saved')
+    this.nextStep()
+
+    //@TODO: register instance
+    setTimeout(() => {
+      this.nextStep()
+    }, 1000)
   }
 
   afterPassword () {
@@ -54,7 +67,8 @@ export default class ServerSelectionWizard extends Component {
   }
 
   render () {
-    const { currentStep } = this.state
+    const { currentStepIndex } = this.state
+    const currentStep = this.steps[currentStepIndex]
 
     switch (currentStep) {
       case STEP_WELCOME:

@@ -182,7 +182,7 @@
         "title1": "Welcome to Cozy",
         "title2": "Your own personal cloud",
         "button": "Sign in to your Cozy",
-        "no_account_link": "Don’t have an account? Request one here."
+        "sign_up": "Sign up"
       },
       "server_selection": {
         "description": "This is the web address you use to access your Cozy.",

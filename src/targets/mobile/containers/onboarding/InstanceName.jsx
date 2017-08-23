@@ -27,7 +27,7 @@ export class InstanceName extends Component {
 
   onSubmit (e) {
     e.preventDefault()
-    if (!this.emailInput.checkValidity()){
+    if (!this.input.checkValidity()){
       this.setState({ error: 'mobile.onboarding.instance.invalid' })
     }
     else {
@@ -59,7 +59,7 @@ export class InstanceName extends Component {
           </div>
           <div className={styles['instance-name-input']}>
             <input
-              type='email'
+              type='text'
               className={error
                 ? classNames(styles['input'], styles['error'])
                 : styles['input']}
