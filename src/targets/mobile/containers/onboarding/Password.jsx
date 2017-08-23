@@ -29,7 +29,7 @@ export class Password extends Component {
 
   onSubmit (e) {
     e.preventDefault()
-    if (!this.emailInput.checkValidity()){
+    if (!this.input.checkValidity()){
       this.setState({ error: 'mobile.onboarding.instance.invalid' })
     }
     else {
@@ -85,7 +85,7 @@ export class Password extends Component {
             role='button'
             type='submit'
             className={'coz-btn coz-btn--regular'}
-            disabled={error || !value}
+            disabled={error || !value || strength.percentage < 40}
           >
             {t('mobile.onboarding.server_selection.button')}
           </button>
