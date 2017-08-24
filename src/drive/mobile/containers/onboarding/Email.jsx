@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import classNames from 'classnames'
 
 import { translate } from 'cozy-ui/react/I18n'
+import { createAccount } from '../../lib/instance'
 
 import styles from '../../styles/onboarding'
 
@@ -25,15 +26,25 @@ export class Email extends Component {
     this.setState({ email: e.target.value, error: null })
   }
 
-  onSubmit (e) {
+  async onSubmit (e) {
     e.preventDefault()
     if (!this.emailInput.checkValidity()){
       this.setState({ error: 'mobile.onboarding.email.invalid' })
     }
     else {
-      //#TODO: check the API if the email is ok
       const { email } = this.state
-      this.props.nextStep(email)
+
+      try {
+        const response = await createAccount(email)
+        if (response.status === 200) {
+          const data = await response.json()
+          this.props.nextStep(email, data.token)
+        }
+        else this.setState({ error: 'mobile.onboarding.email.taken' })
+      }
+      catch (e) {
+        this.setState({ error: 'mobile.onboarding.email.taken' })
+      }
     }
   }
 
@@ -45,7 +56,7 @@ export class Email extends Component {
       <form className={classNames(styles['wizard'], styles['enter-email'])} onSubmit={this.onSubmit.bind(this)}>
         <header className={styles['wizard-header']}>
           <a
-            className={styles['close-button']}
+            className={classNames(styles['button-previous'], styles['--cross'])}
             onClick={previousStep}
           />
         </header>

@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import classNames from 'classnames'
 
 import { translate } from 'cozy-ui/react/I18n'
-import getPasswordStrength from '../../lib/passwordHelper'
+import getPasswordStrength from '../../lib/password'
 
 import styles from '../../styles/onboarding'
 
@@ -30,10 +30,9 @@ export class Password extends Component {
   onSubmit (e) {
     e.preventDefault()
     if (!this.input.checkValidity()){
-      this.setState({ error: 'mobile.onboarding.instance.invalid' })
+      this.setState({ error: 'mobile.onboarding.password.invalid' })
     }
     else {
-      //#TODO: check the API if the email is ok
       const { value } = this.state
       this.props.nextStep(value)
     }
@@ -51,7 +50,7 @@ export class Password extends Component {
               ? classNames(styles['logo-wrapper'], styles['error'])
               : styles['logo-wrapper']}
           >
-            <div className={styles['link-white']} />
+            <div className={styles['key-white']} />
           </div>
           <input
             type='password'

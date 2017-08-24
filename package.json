@@ -114,6 +114,7 @@
     "webpack-merge": "^1.0.2"
   },
   "dependencies": {
+    "base-64": "^0.1.0",
     "classnames": "^2.2.0",
     "cozy-bar": "^3.0.1",
     "cozy-client-js": "0.3.14",

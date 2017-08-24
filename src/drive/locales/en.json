@@ -182,7 +182,7 @@
         "title1": "Welcome to Cozy",
         "title2": "Your own personal cloud",
         "button": "Sign in to your Cozy",
-        "sign_up": "Sign up"
+        "sign_up": "Sign up now!"
       },
       "server_selection": {
         "description": "This is the web address you use to access your Cozy.",
@@ -198,14 +198,19 @@
       },
       "email": {
         "cozy_email_placeholder": "tony.stark@cozy.cc",
-        "description": "We will send you an email to confirm the creation of your Cozy."
+        "description": "We will send you an email to confirm the creation of your Cozy.",
+        "invalid": "This doesn't seem to be a valid email address.",
+        "taken": "There's already a Cozy bound to this email address."
       },
       "instance": {
         "placeholder": "tonystark",
-        "description": "This is the web address you use to sign it to your Cozy.  It might be a good idea to write it down."
+        "description": "This is the web address you use to sign it to your Cozy.  It might be a good idea to write it down.",
+        "existing": "This internet address is already used. Try adding extra characters.",
+        "blacklisted": "This internet address is not available.",
+        "invalid": "This internet address is not valid."
       },
       "waiting": {
-        "description": "is being prepared…"
+        "description": "Preparing *%{domain}*…"
       },
       "files": {
         "title": "Access your drive",

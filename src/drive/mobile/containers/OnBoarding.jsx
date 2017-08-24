@@ -14,7 +14,7 @@ export default class OnBoarding extends Component {
     super(props)
 
     this.state = {
-      hasSelectedServer: false
+      isConnected: false
     }
 
     this.onboardingSteps = [
@@ -26,7 +26,7 @@ export default class OnBoarding extends Component {
   }
 
   afterServerSelection () {
-    this.setState({ hasSelectedServer: true })
+    this.setState({ isConnected: true })
   }
 
   afterWizard () {
@@ -38,9 +38,9 @@ export default class OnBoarding extends Component {
   }
 
   render () {
-    const { hasSelectedServer } = this.state
+    const { isConnected } = this.state
 
-    return hasSelectedServer === false
+    return isConnected === false
       ? <ServerSelectionWizard onComplete={() => this.afterServerSelection()} />
       : <Wizard steps={this.onboardingSteps} onComplete={() => this.afterWizard()} />
   }
