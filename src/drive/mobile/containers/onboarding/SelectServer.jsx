@@ -26,7 +26,7 @@ export class SelectServer extends Component {
       <div className={classNames(styles['wizard'], styles['select-server'])}>
         <header className={styles['wizard-header']}>
           <a
-            className={styles['close-button']}
+            className={classNames(styles['button-previous'], styles['--cross'])}
             onClick={goBack}
           />
         </header>

@@ -7,7 +7,7 @@ export const clientRevokedMsg = 'Client has been revoked'
 const getStorage = () => new Storage()
 const getClientName = device => `${SOFTWARE_NAME} (${device})`
 
-const getClientParams = (device) => ({
+export const getClientParams = (device) => ({
   redirectURI: 'http://localhost',
   softwareID: SOFTWARE_ID,
   clientName: getClientName(device),
@@ -16,7 +16,7 @@ const getClientParams = (device) => ({
   clientURI: 'https://github.com/cozy/cozy-drive/',
   logoURI: 'https://raw.githubusercontent.com/cozy/cozy-drive/master/vendor/assets/apple-touch-icon-120x120.png',
   policyURI: 'https://files.cozycloud.cc/cgu.pdf',
-  scopes: ['io.cozy.files', 'io.cozy.contacts', 'io.cozy.jobs:POST:sendmail:worker']
+  scopes: ['io.cozy.files', 'io.cozy.contacts', 'io.cozy.jobs:POST:sendmail:worker', 'io.cozy.settings']//:PUT:passphrase']
 })
 
 const getAuth = (onRegister, device) => ({

@@ -7,6 +7,10 @@ import InstanceName from './onboarding/InstanceName'
 import Waiting from './onboarding/Waiting'
 import Password from './onboarding/Password'
 
+import { getClientParams } from '../lib/cozy-helper'
+import { getDeviceName } from '../lib/device'
+import { createInstance, waitForInstance, getOAuth, INSTANCE_DOMAIN } from '../lib/instance'
+
 const STEP_WELCOME = 'STEP_WELCOME'
 const STEP_EXISTING_SERVER = 'STEP_EXISTING_SERVER'
 const STEP_EMAIL = 'STEP_EMAIL'
@@ -23,6 +27,19 @@ export default class ServerSelectionWizard extends Component {
     }
 
     this.steps = [STEP_WELCOME]
+    this.email = ''
+    this.token = ''
+    this.fqdn = ''
+  }
+
+  nextStep () {
+    this.setState((prevState) => ({
+      currentStepIndex: ++prevState.currentStepIndex
+    }))
+  }
+
+  onAbort () {
+    this.setState({ currentStepIndex: 0 })
   }
 
   afterWelcome (needsInstanceCreation) {
@@ -36,33 +53,27 @@ export default class ServerSelectionWizard extends Component {
     this.nextStep()
   }
 
-  onAbort () {
-    this.setState({ currentStepIndex: 0 })
-  }
-
-  nextStep () {
-    this.setState((prevState) => ({
-      currentStepIndex: ++prevState.currentStepIndex
-    }))
-  }
-
-  afterEmail (email) {
-    console.log('email saved')
+  afterEmail (email, token) {
+    this.email = email
+    this.token = token
     this.nextStep()
   }
 
-  afterInstance (instance) {
-    console.log('instance name saved')
+  async afterInstance (slug) {//    const index = 12
+    const clientParams = getClientParams(getDeviceName())
+
+    await createInstance(slug, this.email, false, false, clientParams.clientName, clientParams.redirectURI, clientParams.softwareID, clientParams.scopes)
+
     this.nextStep()
 
-    //@TODO: register instance
-    setTimeout(() => {
-      this.nextStep()
-    }, 1000)
+    await waitForInstance(slug, this.email, this.token)
+    this.fqdn = slug + '.' + INSTANCE_DOMAIN
+
+//    getOAuth(slug, email, data.token)
+    this.nextStep()
   }
 
   afterPassword () {
-    console.log('password set')
     this.props.onComplete()
   }
 
@@ -80,7 +91,7 @@ export default class ServerSelectionWizard extends Component {
       case STEP_INSTANCE:
         return <InstanceName nextStep={this.afterInstance.bind(this)} previousStep={() => this.onAbort()}  />
       case STEP_WAITING:
-        return <Waiting />
+        return <Waiting fqdn={this.fqdn} />
       case STEP_PASSWORD:
         return <Password nextStep={this.afterPassword.bind(this)}  />
       default:

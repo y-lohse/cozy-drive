@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import classNames from 'classnames'
 
 import { translate } from 'cozy-ui/react/I18n'
+import { getInstance, INSTANCE_DOMAIN } from '../../lib/instance'
 
 import styles from '../../styles/onboarding'
 
@@ -25,15 +26,19 @@ export class InstanceName extends Component {
     this.setState({ value: e.target.value, error: null })
   }
 
-  onSubmit (e) {
+  async onSubmit (e) {
     e.preventDefault()
     if (!this.input.checkValidity()){
       this.setState({ error: 'mobile.onboarding.instance.invalid' })
     }
     else {
-      //#TODO: check the API if the email is ok
       const { value } = this.state
-      this.props.nextStep(value)
+      const response = await getInstance(value)
+
+      if (response.status === 404) this.props.nextStep(value)
+      else if (response.status === 200) this.setState({ error: 'mobile.onboarding.instance.existing' })
+      else if (response.status === 400) this.setState({ error: 'mobile.onboarding.instance.blacklisted' })
+      else this.setState({ error: 'mobile.onboarding.instance.invalid' })
     }
   }
 
@@ -45,7 +50,7 @@ export class InstanceName extends Component {
       <form className={classNames(styles['wizard'], styles['enter-instance'])} onSubmit={this.onSubmit.bind(this)}>
         <header className={styles['wizard-header']}>
           <a
-            className={styles['close-button']}
+            className={classNames(styles['button-previous'], styles['--arrow'])}
             onClick={previousStep}
           />
         </header>
@@ -69,7 +74,9 @@ export class InstanceName extends Component {
               onChange={this.validateValue.bind(this)}
               required
             />
-            .mycozy.cloud
+            <span className={styles['domain']}>
+              {'.' + INSTANCE_DOMAIN.toLowerCase()}
+            </span>
           </div>
           {!error &&
             <p className={styles['description']}>

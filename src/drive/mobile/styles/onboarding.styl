@@ -24,24 +24,19 @@
             color           #95999d
             margin-left     auto
 
-        .close-button
+        .button-previous
             width      2em
             height     2em
             cursor     pointer
+            background-size contain
+            background-position center
+            background-repeat no-repeat
 
-            &::after, &::before
-                content          ''
-                position         absolute
-                border-radius    3px
-                width            2px
-                height           2em
-                background-color #95999d
+            &.--cross
+                background-image embedurl("../assets/icons/icon-cross-grey.svg")
 
-            &::after
-                transform rotate(-45deg);
-
-            &::before
-                transform rotate(45deg);
+            &.--arrow
+                background-image embedurl("../assets/icons/icon-arrow-grey.svg")
 
     .logo-wrapper
         max-width     3.5em
@@ -80,16 +75,17 @@
     .input
         width            100%
         border           none
-        padding-left     0
+        padding .5em .2em
         font-size        em(22px)
         background-color white
 
+
         &::placeholder
-            color   #32363f
+            color   charcoal-grey
             opacity .5
 
         &.error
-            color #f52d2d
+            color pomegranate
 
     .wizard-footer
         display flex
@@ -97,10 +93,11 @@
         margin-bottom 1.5em
 
         > .link
-            margin          1.5em .5em 0em .5em
-            text-align      left
+            margin          1.5em .5em 0
+            text-align      center
             text-decoration none
-            color           #297ef2
+            color           dodger-blue
+            text-transform uppercase
 
 meter
     width 100%
@@ -121,7 +118,10 @@ meter
     flex-direction row
     justify-content flex-start
     align-items center
-    font-size em(22px)
+
+    .domain
+        font-size em(22px)
+        margin-left .1em
 
 .select-server
     .description
@@ -154,6 +154,11 @@ meter
 .link-white
     height  3.5em
     background embedurl("../assets/icons/icon-link.svg") center no-repeat
+    background-size contain
+
+.key-white
+    height  3.5em
+    background embedurl("../assets/icons/icon-key.svg") center no-repeat
     background-size contain
 
 .illustration-photos
