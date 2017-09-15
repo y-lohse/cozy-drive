@@ -69,7 +69,21 @@ export default class ServerSelectionWizard extends Component {
     await waitForInstance(slug, this.email, this.token)
     this.fqdn = slug + '.' + INSTANCE_DOMAIN
 
-//    getOAuth(slug, email, data.token)
+    const {cozy_client_id, cozy_client_token} = await getOAuth(slug, this.email, this.token)
+    console.log(cozy_client_id)
+    console.log(cozy_client_token)
+
+    cozy.client.init({
+      cozyURL: 'https://' + this.fqdn
+    })
+
+    this.client = await cozy.client.auth.getClient({
+      clientID: cozy_client_id,
+      registrationAccessToken: cozy_client_token
+    })
+    console.log(client)
+    console.log(cozy.client)
+
     this.nextStep()
   }
 

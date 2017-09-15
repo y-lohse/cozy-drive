@@ -45,7 +45,10 @@ export const createInstance = (slug, email, subscribed, useTracker, clientName, 
 
 export const getInstance = (name) => get(`${URI}/instances/get/${name}.${INSTANCE_DOMAIN}`)
 
-export const getOAuth = (name, email, token) => authedGet(`${URI}/oauth/get/${name}.${INSTANCE_DOMAIN}`, email, token)
+export const getOAuth = async (name, email, token) => {
+  const response = await authedGet(`${URI}/instances/oauth/get/${name}.${INSTANCE_DOMAIN}`, email, token)
+  return response.json()
+}
 
 const API_STATUS_DONE = 'DONE'
 const API_STATUS_MOBILEDONE = 'MOBILEDONE'
