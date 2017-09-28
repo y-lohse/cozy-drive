@@ -57,7 +57,7 @@ export const waitForInstance = (slug, email, token) => {
   return new Promise(async (resolve) => {
     const response = await authedGet(`${URI}/instances/get/${slug}.${INSTANCE_DOMAIN}`, email, token)
     const data = await response.json()
-    if (data.state && (data.state === API_STATUS_MOBILEDONE || data.state === API_STATUS_DONE)) resolve()
+    if (data.state && (data.state === API_STATUS_MOBILEDONE || data.state === API_STATUS_DONE)) resolve(data)
     else setTimeout(() => waitForInstance(slug, email, token).then(resolve), 5000)
   })
 }
