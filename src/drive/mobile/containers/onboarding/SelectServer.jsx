@@ -5,12 +5,12 @@ import classNames from 'classnames'
 
 import { translate } from 'cozy-ui/react/I18n'
 
-import { registerDevice, setUrl } from '../../actions/settings'
 import styles from '../../styles/onboarding'
 
 const ERR_WRONG_ADDRESS = 'mobile.onboarding.server_selection.wrong_address'
 const ERR_EMAIL = 'mobile.onboarding.server_selection.wrong_address'
 const ERR_V2 = 'mobile.onboarding.server_selection.wrong_address_v2'
+const ERR_COSY = 'mobile.onboarding.server_selection.wrong_address_cosy'
 
 export class SelectServer extends Component {
   constructor (props) {
@@ -51,6 +51,11 @@ export class SelectServer extends Component {
       if (parsedURL.protocol === 'http:' && !__ALLOW_HTTP__) {
         this.setState({ error: ERR_WRONG_ADDRESS })
         console.warn('Only https protocol is allowed')
+        return
+      }
+
+      if (/\..*cosy.*\..+$/.test(parsedURL.host)) { // if the hostname contains "cosy" in the part before the TLD
+        this.setState({ error: ERR_COSY })
         return
       }
     }
