@@ -35,9 +35,9 @@ export const onRegistered = (client, url) => {
       const inAppBrowser = window.cordova.InAppBrowser.open(url, target, options)
       return openRegistrationWith(inAppBrowser)
       .then(
-        url => {
+        token => {
           inAppBrowser.close()
-          resolve(url)
+          resolve(token)
         },
         err => {
           inAppBrowser.close()

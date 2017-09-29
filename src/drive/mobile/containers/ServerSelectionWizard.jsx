@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import Welcome from './onboarding/Welcome'
 import SelectServer from './onboarding/SelectServer'
@@ -9,7 +10,8 @@ import Password from './onboarding/Password'
 
 import { getClientParams } from '../lib/cozy-helper'
 import { getDeviceName } from '../lib/device'
-import { createInstance, waitForInstance, getOAuth, INSTANCE_DOMAIN } from '../lib/instance'
+import { getInstance, createInstance, waitForInstance, getOAuth, INSTANCE_DOMAIN } from '../lib/instance'
+import { registerDevice, setUrl } from '../actions/settings'
 
 const STEP_WELCOME = 'STEP_WELCOME'
 const STEP_EXISTING_SERVER = 'STEP_EXISTING_SERVER'
@@ -18,7 +20,7 @@ const STEP_INSTANCE = 'STEP_INSTANCE'
 const STEP_WAITING = 'STEP_WAITING'
 const STEP_PASSWORD = 'STEP_PASSWORD'
 
-export default class ServerSelectionWizard extends Component {
+class ServerSelectionWizard extends Component {
   constructor (props) {
     super(props)
 
@@ -30,6 +32,7 @@ export default class ServerSelectionWizard extends Component {
     this.email = ''
     this.token = ''
     this.fqdn = ''
+    this.registerToken = ''
   }
 
   nextStep () {
@@ -59,7 +62,7 @@ export default class ServerSelectionWizard extends Component {
     this.nextStep()
   }
 
-  async afterInstance (slug) {//    const index = 12
+  async afterInstance (slug) {
     const clientParams = getClientParams(getDeviceName())
 
     await createInstance(slug, this.email, false, false, clientParams.clientName, clientParams.redirectURI, clientParams.softwareID, clientParams.scopes)
@@ -87,7 +90,18 @@ export default class ServerSelectionWizard extends Component {
       passphrase
     })
 
+    this.props.updateServerUrl('https://' + this.fqdn)
+
     this.props.onComplete()
+  }
+
+  async afterServerSelect (url) {
+    try {
+      this.props.updateServerUrl(url)
+      await this.props.registerDevice(url)
+      this.props.onComplete()
+    }
+    catch (_) {}
   }
 
   render () {
@@ -98,7 +112,7 @@ export default class ServerSelectionWizard extends Component {
       case STEP_WELCOME:
         return <Welcome selectServer={() => this.afterWelcome(false)} register={() => this.afterWelcome(true)} />
       case STEP_EXISTING_SERVER:
-        return <SelectServer nextStep={this.props.onComplete} previousStep={() => this.onAbort()} />
+        return <SelectServer nextStep={this.afterServerSelect.bind(this)} previousStep={() => this.onAbort()} />
       case STEP_EMAIL:
         return <Email nextStep={this.afterEmail.bind(this)} previousStep={() => this.onAbort()}  />
       case STEP_INSTANCE:
@@ -113,3 +127,9 @@ export default class ServerSelectionWizard extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  registerDevice: (url) => dispatch(registerDevice(url)),
+  updateServerUrl: (url) => dispatch(setUrl(url))
+})
+
+export default connect(null, mapDispatchToProps)(ServerSelectionWizard)
