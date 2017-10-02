@@ -7,21 +7,22 @@ import 'drive/mobile/styles/main'
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { Router, hashHistory } from 'react-router'
+import { hashHistory } from 'react-router'
 
 import { I18n } from 'cozy-ui/react/I18n'
 
-import MobileAppRoute from 'drive/mobile/components/MobileAppRoute'
+import MobileRouter from 'authentication/MobileRouter'
+import AppRoute from 'drive/components/AppRoute'
 
 import configureStore from 'drive/mobile/store/configureStore'
 import { loadState } from 'drive/mobile/store/persistedState'
 import { initServices, getLang } from 'drive/mobile/lib/init'
 import { startBackgroundService } from 'drive/mobile/lib/background'
 import { startTracker, useHistoryForTracker, startHeartBeat, stopHeartBeat } from 'drive/mobile/lib/tracker'
-import { resetClient } from 'drive/mobile/lib/cozy-helper'
 import { pingOnceADay } from 'drive/mobile/actions/timestamp'
 import { backupImages } from 'drive/mobile/actions/mediaBackup'
 import { backupContacts } from 'drive/mobile/actions/contactsBackup'
+import { setUrl, saveCredentials } from 'drive/mobile/actions/settings'
 
 if (__DEVELOPMENT__) {
   // Enables React dev tools for Preact
@@ -37,15 +38,18 @@ const renderAppWithPersistedState = persistedState => {
 
   initServices(store)
 
-  function isRedirectedToOnboaring (nextState, replace) {
-    const isNotAuthorized = !store.getState().mobile.settings.authorized
-    if (isNotAuthorized) {
-      resetClient()
-      replace({
-        pathname: '/onboarding',
-        state: { nextPathname: nextState.location.pathname }
-      })
-    }
+  function isAuthorized () {
+    return !store.getState().mobile.settings.authorized
+  }
+
+  function isRevoked () {
+    return store.getState().mobile.authorization.revoked
+  }
+
+  function saveCredentials (url, client, token, router) {
+    store.dispatch(setUrl(url))
+    store.dispatch(setUrl(client, token))
+    router.replace('/')
   }
 
   function pingOnceADayWithState () {
@@ -81,7 +85,14 @@ const renderAppWithPersistedState = persistedState => {
   render((
     <I18n lang={getLang()} dictRequire={(lang) => require(`drive/locales/${lang}`)}>
       <Provider store={store}>
-        <Router history={hashHistory} routes={MobileAppRoute(isRedirectedToOnboaring)} />
+        <MobileRouter
+          history={hashHistory}
+          appRoutes={AppRoute}
+          isAuthenticated={isAuthorized}
+          isRevoked={isRevoked}
+          allowRegistration={false}
+          onAuthenticated={saveCredentials}
+        />
       </Provider>
     </I18n>
   ), root)
