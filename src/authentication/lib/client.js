@@ -63,13 +63,3 @@ export const registerDevice = (serverUrl) => {
   initClient(serverUrl, registrationCallback, getDeviceName())
   return cozy.client.authorize(true)
 }
-
-export const initBar = () => {
-  cozy.bar.init({
-    appName: 'Drive',
-    appEditor: 'Cozy',
-    iconPath: require('../../../targets/drive/vendor/assets/app-icon.svg'),
-    lang: getLang(),
-    replaceTitleOnMobile: true
-  })
-}

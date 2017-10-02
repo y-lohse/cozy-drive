@@ -96,11 +96,13 @@ class ServerSelectionWizard extends Component {
     this.props.saveClient(client, token)
 
     this.props.onComplete()
+    console.log('calling oncomplete')
   }
 
   async connectToServer (url) {
       const { client, token } = await registerDevice(url)
-      this.props.onComplete({ url, client, token })
+      console.log('calling oncomplete')
+      this.props.onComplete({ url, client, token }, this.props.router)
   }
 
   render () {
@@ -128,11 +130,3 @@ class ServerSelectionWizard extends Component {
 }
 
 export default ServerSelectionWizard
-
-//const mapDispatchToProps = (dispatch, ownProps) => ({
-//  registerDevice: (url) => dispatch(registerDevice(url)),
-//  updateServerUrl: (url) => dispatch(setUrl(url)),
-//  saveClient: (client, token) => dispatch(saveClient(client, token))
-//})
-//
-//export default connect(null, mapDispatchToProps)(ServerSelectionWizard)

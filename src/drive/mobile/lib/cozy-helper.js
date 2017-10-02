@@ -26,6 +26,7 @@ const getAuth = (onRegister, device) => ({
 })
 
 export const initClient = (url, onRegister = null, device = 'Device') => {
+  console.log('init called', url)
   if (url) {
     console.log(`Cozy Client initializes a connection with ${url}`)
     cozy.client.init({

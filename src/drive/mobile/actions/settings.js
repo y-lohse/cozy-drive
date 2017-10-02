@@ -69,7 +69,8 @@ export const registerDevice = (serverUrl) => async (dispatch, getState) => {
   })
 }
 
-export const saveCredentials = (client, token) => async (dispatch, getState) => {
+export const saveCredentials = (client, token) => (dispatch, getState) => {
+  consle.log('in saver')
   dispatch(setClient(client))
   dispatch(setTokenScope(token.scope))
   startReplication(dispatch, getState)

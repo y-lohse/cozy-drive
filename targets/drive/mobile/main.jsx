@@ -46,9 +46,11 @@ const renderAppWithPersistedState = persistedState => {
     return store.getState().mobile.authorization.revoked
   }
 
-  function saveCredentials (url, client, token, router) {
+  function saveCredentials ({ url, client, token }, router) {
+    console.log('save creds', url, client, token, router)
+    if (!url) throw 'fuck'
+    store.dispatch(saveCredentials(client, token))
     store.dispatch(setUrl(url))
-    store.dispatch(setUrl(client, token))
     router.replace('/')
   }
 
