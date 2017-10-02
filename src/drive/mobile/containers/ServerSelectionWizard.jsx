@@ -11,7 +11,7 @@ import Password from './onboarding/Password'
 import { getClientParams } from '../lib/cozy-helper'
 import { getDeviceName } from '../lib/device'
 import { getInstance, createInstance, waitForInstance, getOAuth, INSTANCE_DOMAIN } from '../lib/instance'
-import { registerDevice, setUrl } from '../actions/settings'
+import { registerDevice, setUrl, saveClient } from '../actions/settings'
 
 const STEP_WELCOME = 'STEP_WELCOME'
 const STEP_EXISTING_SERVER = 'STEP_EXISTING_SERVER'
@@ -45,7 +45,7 @@ class ServerSelectionWizard extends Component {
     this.setState({ currentStepIndex: 0 })
   }
 
-  afterWelcome (needsInstanceCreation) {
+  setupSteps (needsInstanceCreation) {
     if (needsInstanceCreation) {
       this.steps = [STEP_WELCOME, STEP_EMAIL, STEP_INSTANCE, STEP_WAITING, STEP_PASSWORD]
     }
@@ -56,22 +56,24 @@ class ServerSelectionWizard extends Component {
     this.nextStep()
   }
 
-  afterEmail (email, token) {
+  storeEmailAndToken (email, token) {
     this.email = email
     this.token = token
     this.nextStep()
   }
 
-  async afterInstance (slug) {
+  async createInstance (slug) {
     const clientParams = getClientParams(getDeviceName())
 
     await createInstance(slug, this.email, false, false, clientParams.clientName, clientParams.redirectURI, clientParams.softwareID, clientParams.scopes)
 
-    this.nextStep()
-
-    const { register_token } = await waitForInstance(slug, this.email, this.token)
     this.fqdn = slug + '.' + INSTANCE_DOMAIN
 
+    this.nextStep()
+
+    const data = await waitForInstance(slug, this.email, this.token)
+    console.log(data)
+    const { register_token } = data
     const { registration_access_token  } = await getOAuth(slug, this.email, this.token)
 
     cozy.client.init({
@@ -79,12 +81,13 @@ class ServerSelectionWizard extends Component {
       token: registration_access_token
     })
 
+    console.log('register_token', register_token)
     this.registerToken = register_token
 
     this.nextStep()
   }
 
-  async afterPassword (passphrase) {
+  async setPassword (passphrase) {
     const result = await cozy.client.fetchJSON('POST', '/settings/passphrase', {
       register_token: this.registerToken,
       passphrase
@@ -92,10 +95,13 @@ class ServerSelectionWizard extends Component {
 
     this.props.updateServerUrl('https://' + this.fqdn)
 
+    const { client, token } = await cozy.client.authorize()
+    this.props.saveClient(client, token)
+
     this.props.onComplete()
   }
 
-  async afterServerSelect (url) {
+  async connectToServer (url) {
     try {
       this.props.updateServerUrl(url)
       await this.props.registerDevice(url)
@@ -110,17 +116,17 @@ class ServerSelectionWizard extends Component {
 
     switch (currentStep) {
       case STEP_WELCOME:
-        return <Welcome selectServer={() => this.afterWelcome(false)} register={() => this.afterWelcome(true)} />
+        return <Welcome selectServer={() => this.setupSteps(false)} register={() => this.setupSteps(true)} />
       case STEP_EXISTING_SERVER:
-        return <SelectServer nextStep={this.afterServerSelect.bind(this)} previousStep={() => this.onAbort()} />
+        return <SelectServer nextStep={this.connectToServer.bind(this)} previousStep={() => this.onAbort()} />
       case STEP_EMAIL:
-        return <Email nextStep={this.afterEmail.bind(this)} previousStep={() => this.onAbort()}  />
+        return <Email nextStep={this.storeEmailAndToken.bind(this)} previousStep={() => this.onAbort()}  />
       case STEP_INSTANCE:
-        return <InstanceName nextStep={this.afterInstance.bind(this)} previousStep={() => this.onAbort()}  />
+        return <InstanceName nextStep={this.createInstance.bind(this)} previousStep={() => this.onAbort()}  />
       case STEP_WAITING:
         return <Waiting fqdn={this.fqdn} />
       case STEP_PASSWORD:
-        return <Password nextStep={this.afterPassword.bind(this)}  />
+        return <Password nextStep={this.setPassword.bind(this)}  />
       default:
         return null
     }
@@ -129,7 +135,8 @@ class ServerSelectionWizard extends Component {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   registerDevice: (url) => dispatch(registerDevice(url)),
-  updateServerUrl: (url) => dispatch(setUrl(url))
+  updateServerUrl: (url) => dispatch(setUrl(url)),
+  saveClient: (client, token) => dispatch(saveClient(client, token))
 })
 
 export default connect(null, mapDispatchToProps)(ServerSelectionWizard)

@@ -58,9 +58,7 @@ export const registerDevice = (serverUrl) => async (dispatch, getState) => {
   initClient(serverUrl, registrationCallback, getDeviceName())
 
   return await cozy.client.authorize(true).then(({ client, token }) => {
-    dispatch(setClient(client))
-    dispatch(setTokenScope(token.scope))
-    startReplication(dispatch, getState)
+    saveClient(client, token)
   }).catch(err => {
     if (err.message === REGISTRATION_ABORT) {
       cozy.client._storage.clear()
@@ -69,6 +67,12 @@ export const registerDevice = (serverUrl) => async (dispatch, getState) => {
     }
     throw err
   })
+}
+
+export const saveClient = (client, token) => async (dispatch, getState) => {
+  dispatch(setClient(client))
+  dispatch(setTokenScope(token.scope))
+  startReplication(dispatch, getState)
 }
 
 export const startReplication = (dispatch, getState) => {

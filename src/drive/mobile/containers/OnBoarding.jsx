@@ -25,11 +25,11 @@ export default class OnBoarding extends Component {
     ]
   }
 
-  afterServerSelection () {
+  showOnboardingWizard () {
     this.setState({ isConnected: true })
   }
 
-  afterWizard () {
+  redirectToApp () {
     if (this.props.location.state && this.props.location.state.nextPathname) {
       this.props.router.replace(this.props.location.state.nextPathname)
     } else {
@@ -41,8 +41,8 @@ export default class OnBoarding extends Component {
     const { isConnected } = this.state
 
     return isConnected === false
-      ? <ServerSelectionWizard onComplete={() => this.afterServerSelection()} />
-      : <Wizard steps={this.onboardingSteps} onComplete={() => this.afterWizard()} />
+      ? <ServerSelectionWizard onComplete={() => this.showOnboardingWizard()} />
+      : <Wizard steps={this.onboardingSteps} onComplete={() => this.redirectToApp()} />
   }
 }
 
