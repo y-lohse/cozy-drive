@@ -1,51 +1,43 @@
+/* global prompt */
 
 const hasCordovaPlugin = () => {
   return window.cordova !== undefined &&
     window.cordova.InAppBrowser !== undefined
 }
 
+const REGISTRATION_ABORT = 'REGISTRATION_ABORT'
 
-export const REGISTRATION_ABORT = 'REGISTRATION_ABORT'
-
-const openRegistrationWith = inAppBrowser => new Promise((resolve, reject) => {
-  const loadStart = ({url}) => {
-    const accessCode = /\?access_code=(.+)$/.test(url)
-    const state = /\?state=(.+)$/.test(url)
-
-    if (accessCode || state) {
-      resolve(url)
-      removeListener()
-    }
-  }
-  const exit = () => {
-    reject(new Error(REGISTRATION_ABORT))
-    removeListener()
-  }
-  const removeListener = () => {
-    inAppBrowser.removeEventListener('loadstart', loadStart)
-    inAppBrowser.removeEventListener('exit', exit)
-  }
-  inAppBrowser.addEventListener('loadstart', loadStart)
-  inAppBrowser.addEventListener('exit', exit)
-})
-
-export const onRegistered = (client, url) => {
+export const authenticateWithCordova = (url) => {
   if (hasCordovaPlugin()) {
     return new Promise((resolve, reject) => {
       const target = '_blank'
       const options = 'clearcache=yes,zoom=no'
       const inAppBrowser = window.cordova.InAppBrowser.open(url, target, options)
-      return openRegistrationWith(inAppBrowser)
-      .then(
-        token => {
+
+      const removeListener = () => {
+        inAppBrowser.removeEventListener('loadstart', onLoadStart)
+        inAppBrowser.removeEventListener('exit', onExit)
+      }
+
+      const onLoadStart = ({url}) => {
+        const accessCode = /\?access_code=(.+)$/.test(url)
+        const state = /\?state=(.+)$/.test(url)
+
+        if (accessCode || state) {
+          resolve(url)
+          removeListener()
           inAppBrowser.close()
-          resolve(token)
-        },
-        err => {
-          inAppBrowser.close()
-          reject(err)
         }
-      )
+      }
+
+      const onExit = () => {
+        reject(new Error(REGISTRATION_ABORT))
+        removeListener()
+        inAppBrowser.close()
+      }
+
+      inAppBrowser.addEventListener('loadstart', onLoadStart)
+      inAppBrowser.addEventListener('exit', onExit)
     })
   } else {
     /**

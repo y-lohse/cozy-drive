@@ -6,7 +6,7 @@ import 'drive/mobile/styles/main'
 
 import React from 'react'
 import { render } from 'react-dom'
-import { Provider } from 'react-redux'
+import { CozyProvider } from 'redux-cozy-client'
 import { hashHistory } from 'react-router'
 
 import { I18n } from 'cozy-ui/react/I18n'
@@ -16,13 +16,16 @@ import AppRoute from 'drive/components/AppRoute'
 
 import configureStore from 'drive/mobile/store/configureStore'
 import { loadState } from 'drive/mobile/store/persistedState'
-import { initServices, getLang } from 'drive/mobile/lib/init'
+import { getLang } from 'drive/mobile/lib/device'
+import { initClient, initBar } from 'authentication/lib/client'
 import { startBackgroundService } from 'drive/mobile/lib/background'
 import { startTracker, useHistoryForTracker, startHeartBeat, stopHeartBeat } from 'drive/mobile/lib/tracker'
 import { pingOnceADay } from 'drive/mobile/actions/timestamp'
 import { backupImages } from 'drive/mobile/actions/mediaBackup'
 import { backupContacts } from 'drive/mobile/actions/contactsBackup'
-import { setUrl, saveCredentials } from 'drive/mobile/actions/settings'
+import { setUrl, saveCredentials, startReplication } from 'drive/mobile/actions/settings'
+import { revokeClient } from 'drive/mobile//actions/authorization'
+import { configure as configureReporter } from 'drive/mobile/lib/reporter'
 
 if (__DEVELOPMENT__) {
   // Enables React dev tools for Preact
@@ -34,9 +37,21 @@ if (__DEVELOPMENT__) {
 }
 
 const renderAppWithPersistedState = persistedState => {
+  const hasPersistedMobileStore = persistedState && persistedState.mobile
+  const client = initClient(hasPersistedMobileStore ? persistedState.mobile.settings.serverUrl : '')
+
   const store = configureStore(persistedState)
 
-  initServices(store)
+  client.isRegistered(hasPersistedMobileStore ? persistedState.settings.client : null).then(isRegistered => {
+    if (isRegistered) {
+      startReplication(store.dispatch, store.getState) // don't like to pass `store.dispatch` and `store.getState` as parameters, big coupling
+      initBar()
+    } else {
+      store.dispatch(revokeClient())
+    }
+  })
+
+  configureReporter(store.getState().mobile.settings.analytics)
 
   function isAuthorized () {
     return !store.getState().mobile.settings.authorized
@@ -46,10 +61,8 @@ const renderAppWithPersistedState = persistedState => {
     return store.getState().mobile.authorization.revoked
   }
 
-  function saveCredentials ({ url, client, token }, router) {
-    console.log('save creds', url, client, token, router)
-    if (!url) throw 'fuck'
-    store.dispatch(saveCredentials(client, token))
+  function saveCredentialsAndRedirect ({ url, clientInfo, token, router }) {
+    store.dispatch(saveCredentials(clientInfo, token))
     store.dispatch(setUrl(url))
     router.replace('/')
   }
@@ -86,16 +99,16 @@ const renderAppWithPersistedState = persistedState => {
 
   render((
     <I18n lang={getLang()} dictRequire={(lang) => require(`drive/locales/${lang}`)}>
-      <Provider store={store}>
+      <CozyProvider store={store} client={client}>
         <MobileRouter
           history={hashHistory}
           appRoutes={AppRoute}
           isAuthenticated={isAuthorized}
           isRevoked={isRevoked}
+          onAuthenticated={saveCredentialsAndRedirect}
           allowRegistration={false}
-          onAuthenticated={saveCredentials}
         />
-      </Provider>
+      </CozyProvider>
     </I18n>
   ), root)
 }

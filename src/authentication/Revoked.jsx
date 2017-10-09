@@ -1,28 +1,24 @@
 /* global cozy */
 
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import Modal from 'cozy-ui/react/Modal'
 import { translate } from 'cozy-ui/react/I18n'
 
 import { resetClient } from './lib/client'
+import { AUTH_PATH } from './MobileRouter'
 
-import { unrevokeClient } from 'drive/mobile/actions/authorization'
-import { registerDevice } from 'drive/mobile/actions/settings'
-
-class RevokableWrapper extends Component {
+class Revoked extends Component {
   logout () {
     resetClient()
-    this.props.unrevokeClient()
-    this.props.router.replace({
-      pathname: '/onboarding',
-      state: { nextPathname: this.props.location.pathname }
-    })
+    this.props.router.replace(`/${AUTH_PATH}`)
   }
 
-  loginagain () {
+  async logBackIn () {
+    const url = cozy.client._url
     cozy.client._storage.clear()
-    this.props.registerDevice()
+    const cozyClient = this.context.client
+    const { client, token } = await cozyClient.register(url)
+    this.props.onLogBackIn({ url, clientInfo: client, token, router: this.props.router })
   }
 
   render () {
@@ -36,7 +32,7 @@ class RevokableWrapper extends Component {
             secondaryText={t('mobile.revoked.logout')}
             secondaryAction={() => { this.logout() }}
             primaryText={t('mobile.revoked.loginagain')}
-            primaryAction={() => { this.loginagain() }}
+            primaryAction={() => { this.logBackIn() }}
             withCross={false}
           />
           {children}
@@ -47,10 +43,4 @@ class RevokableWrapper extends Component {
     }
   }
 }
-
-const mapDispatchToProps = (dispatch) => ({
-  unrevokeClient: () => dispatch(unrevokeClient()),
-  registerDevice: () => dispatch(registerDevice()).then(() => { dispatch(unrevokeClient()) })
-})
-
-export default connect(null, mapDispatchToProps)(translate()(RevokableWrapper))
+export default translate()(Revoked)

@@ -1,13 +1,15 @@
+/* global cozy __APP_VERSION__ */
+import { CozyClient } from 'redux-cozy-client'
 import { LocalStorage as Storage } from 'cozy-client-js'
-import { onRegistered } from './registration'
 
 const isCordova = () => window.cordova !== undefined
 const hasDeviceCordovaPlugin = () => isCordova() && window.device !== undefined
 export const getDeviceName = () => hasDeviceCordovaPlugin() ? window.device.model : 'Device'
-const SOFTWARE_ID = 'io.cozy.drive.mobile'
-const SOFTWARE_NAME = 'Cozy Drive'
+const SOFTWARE_ID = 'io.cozy.bank.mobile'
+const SOFTWARE_NAME = 'Cozy Bank'
+const getLang = () => (navigator && navigator.language) ? navigator.language.slice(0, 2) : 'en'
 
-export function resetClient () {
+export function resetClient (clientInfo) {
   // reset cozy-bar
   if (document.getElementById('coz-bar')) {
     document.getElementById('coz-bar').remove()
@@ -16,50 +18,43 @@ export function resetClient () {
   if (cozy.client.offline.destroyAllDatabase) {
     cozy.client.offline.destroyAllDatabase()
   }
+  // unregister the client
+  if (clientInfo && cozy.client.auth.unregisterClient) {
+    cozy.client.auth.unregisterClient(clientInfo)
+  }
   // reset cozy-client-js
   if (cozy.client._storage) {
     cozy.client._storage.clear()
   }
 }
 
-export const getClientParams = (device) => ({
-  redirectURI: 'http://localhost',
-  softwareID: SOFTWARE_ID,
-  clientName: `${SOFTWARE_NAME} (${device})`,
-  softwareVersion: __APP_VERSION__,
-  clientKind: 'mobile',
-  clientURI: 'https://github.com/cozy/cozy-drive/',
-  logoURI: 'https://raw.githubusercontent.com/cozy/cozy-drive/master/vendor/assets/apple-touch-icon-120x120.png',
-  policyURI: 'https://files.cozycloud.cc/cgu.pdf',
-  scopes: ['io.cozy.files', 'io.cozy.contacts', 'io.cozy.jobs:POST:sendmail:worker', 'io.cozy.settings']//:PUT:passphrase']
-})
-
-export const initClient = (url, onRegister = null, deviceName) => {
-  console.log('init', url)
-  if (url) {
-    console.log(`Cozy Client initializes a connection with ${url}`)
-    cozy.client.init({
-      cozyURL: url,
-      oauth: {
-        storage: new Storage(),
-        clientParams: getClientParams(deviceName),
-        onRegistered: onRegister
-      },
-      offline: {doctypes: ['io.cozy.files']}
-    })
-  }
-}
-
-const registrationCallback = (client, url) => {
-  return onRegistered(client, url)
-  .then(url => url)
-  .catch(err => {
-    logException(err)
-    throw err
+export const initClient = (url) => {
+  return new CozyClient({
+    cozyURL: url,
+    oauth: {
+      storage: new Storage(),
+      clientParams: {
+        redirectURI: 'http://localhost',
+        softwareID: SOFTWARE_ID,
+        clientName: `${SOFTWARE_NAME} (${getDeviceName()})`,
+        softwareVersion: __APP_VERSION__,
+        clientKind: 'mobile',
+        clientURI: 'https://github.com/cozy/cozy-drive/',
+        logoURI: 'https://raw.githubusercontent.com/cozy/cozy-drive/master/vendor/assets/apple-touch-icon-120x120.png',
+        policyURI: 'https://files.cozycloud.cc/cgu.pdf',
+        scopes: ['io.cozy.files', 'io.cozy.contacts', 'io.cozy.jobs:POST:sendmail:worker', 'io.cozy.settings']//:PUT:passphrase']
+      }
+    },
+    offline: {doctypes: ['io.cozy.files']}
   })
 }
 
-export const registerDevice = (serverUrl) => {
-  initClient(serverUrl, registrationCallback, getDeviceName())
-  return cozy.client.authorize(true)
+export const initBar = () => {
+  cozy.bar.init({
+    appName: 'Bank',
+    appEditor: 'Cozy',
+    iconPath: require('../../../targets/drive/vendor/assets/app-icon.svg'),
+    lang: getLang(),
+    replaceTitleOnMobile: true
+  })
 }
