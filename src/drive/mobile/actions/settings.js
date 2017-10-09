@@ -1,9 +1,7 @@
 /* global cozy */
 
-import { initClient } from '../lib/cozy-helper'
 import { startReplication as startPouchReplication } from '../lib/replication'
 import { setClient, setFirstReplication } from '../../actions/settings'
-import { getDeviceName } from '../lib/device'
 import { openFolder, getOpenedFolderId } from '../../actions'
 import { REGISTRATION_ABORT, onRegistered } from '../lib/registration'
 import { logException, logInfo, configure as configureReporter } from '../lib/reporter'
@@ -43,31 +41,6 @@ export const setBackupImages = backupImages => ({ type: BACKUP_IMAGES, backupIma
 export const setWifiOnly = wifiOnly => ({ type: WIFI_ONLY, wifiOnly })
 export const setBackupContacts = backupContacts => ({ type: BACKUP_CONTACTS, backupContacts })
 export const setTokenScope = (scope) => ({ type: TOKEN_SCOPE, scope })
-
-// registration
-const registrationCallback = (client, url) => {
-  return onRegistered(client, url)
-  .then(url => url)
-  .catch(err => {
-    logException(err)
-    throw err
-  })
-}
-
-export const registerDevice = (serverUrl) => async (dispatch, getState) => {
-  initClient(serverUrl, registrationCallback, getDeviceName())
-
-  return await cozy.client.authorize(true).then(({ client, token }) => {
-    saveClient(client, token)
-  }).catch(err => {
-    if (err.message === REGISTRATION_ABORT) {
-      cozy.client._storage.clear()
-    } else {
-      logException(err)
-    }
-    throw err
-  })
-}
 
 export const saveCredentials = (client, token) => (dispatch, getState) => {
   dispatch(setClient(client))

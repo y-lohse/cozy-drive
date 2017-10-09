@@ -4,9 +4,10 @@ import { LocalStorage as Storage } from 'cozy-client-js'
 
 const isCordova = () => window.cordova !== undefined
 const hasDeviceCordovaPlugin = () => isCordova() && window.device !== undefined
-export const getDeviceName = () => hasDeviceCordovaPlugin() ? window.device.model : 'Device'
-const SOFTWARE_ID = 'io.cozy.bank.mobile'
-const SOFTWARE_NAME = 'Cozy Bank'
+const getDeviceName = () => hasDeviceCordovaPlugin() ? window.device.model : 'Device'
+
+export const SOFTWARE_ID = 'io.cozy.drive.mobile'
+export const SOFTWARE_NAME = `Cozy Drive (${getDeviceName()})`
 const getLang = () => (navigator && navigator.language) ? navigator.language.slice(0, 2) : 'en'
 
 export function resetClient (clientInfo) {
@@ -42,7 +43,7 @@ export const initClient = (url) => {
         clientURI: 'https://github.com/cozy/cozy-drive/',
         logoURI: 'https://raw.githubusercontent.com/cozy/cozy-drive/master/vendor/assets/apple-touch-icon-120x120.png',
         policyURI: 'https://files.cozycloud.cc/cgu.pdf',
-        scopes: ['io.cozy.files', 'io.cozy.contacts', 'io.cozy.jobs:POST:sendmail:worker', 'io.cozy.settings']//:PUT:passphrase']
+        scopes: ['io.cozy.files', 'io.cozy.contacts', 'io.cozy.jobs:POST:sendmail:worker', 'io.cozy.settings:PUT:passphrase']
       }
     },
     offline: {doctypes: ['io.cozy.files']}
@@ -51,7 +52,7 @@ export const initClient = (url) => {
 
 export const initBar = () => {
   cozy.bar.init({
-    appName: 'Bank',
+    appName: 'Drive',
     appEditor: 'Cozy',
     iconPath: require('../../../targets/drive/vendor/assets/app-icon.svg'),
     lang: getLang(),

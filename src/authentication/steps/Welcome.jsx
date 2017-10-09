@@ -7,7 +7,7 @@ import styles from '../styles'
 
 export class Welcome extends Component {
   render () {
-    const { t, selectServer } = this.props
+    const { t, selectServer, register, allowRegistration } = this.props
 
     return (
       <div className={classNames(styles['wizard'], styles['welcome'])}>
@@ -29,12 +29,11 @@ export class Welcome extends Component {
           >
             {t('mobile.onboarding.welcome.button')}
           </button>
-          <a
-            href={'https://cozy.io/fr/try-it?from=io.cozy.drive.mobile'}
-            className={styles['link']}
-          >
-            {t('mobile.onboarding.welcome.no_account_link')}
-          </a>
+          {
+            allowRegistration
+            ? <a className={styles['link']} onClick={register}>{t('mobile.onboarding.welcome.sign_up')}</a>
+            : <a href={'https://cozy.io/fr/try-it?from=io.cozy.drive.mobile'} className={styles['link']}>{t('mobile.onboarding.welcome.no_account_link')}</a>
+          }
         </footer>
       </div>
     )
