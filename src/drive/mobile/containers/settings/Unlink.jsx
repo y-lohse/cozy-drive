@@ -5,6 +5,7 @@ import { translate } from 'cozy-ui/react/I18n'
 import SettingCategory, { ELEMENT_BUTTON } from '../../components/SettingCategory'
 import Modal from 'cozy-ui/react/Modal'
 import { showUnlinkConfirmation, hideUnlinkConfirmation, unlink } from '../../actions/unlink'
+import { AUTH_PATH } from 'authentication/MobileRouter'
 
 export const Unlink = ({ t, showUnlinkConfirmation, hideUnlinkConfirmation, displayUnlinkConfirmation, unlink, client }) => (
   <div>
@@ -43,7 +44,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   hideUnlinkConfirmation: () => dispatch(hideUnlinkConfirmation()),
   unlink: (client) => {
     dispatch(unlink(client))
-    ownProps.router.replace('/onboarding')
+    ownProps.router.replace(`/${AUTH_PATH}`)
   }
 })
 

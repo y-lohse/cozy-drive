@@ -64,7 +64,7 @@ const renderAppWithPersistedState = persistedState => {
   function saveCredentialsAndRedirect ({ url, clientInfo, token, router }) {
     store.dispatch(saveCredentials(clientInfo, token))
     store.dispatch(setUrl(url))
-    router.replace('/')
+    router.replace('/onboarding')
   }
 
   function pingOnceADayWithState () {
