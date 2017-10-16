@@ -11,6 +11,7 @@ import RenameInput from '../ducks/files/RenameInput'
 import { isDirectory } from '../ducks/files/files'
 import Spinner from 'cozy-ui/react/Spinner'
 import Preview from '../components/Preview'
+import { openOfflineFile } from '../mobile/lib/filesystem'
 
 import { getFolderUrl } from '../reducers'
 
@@ -117,10 +118,15 @@ class File extends Component {
         this.props.router.push(getFolderUrl(attributes.id, this.props.location))
       })
     } else {
-      this.props.onFileOpen({
-        ...attributes,
-        availableOffline: this.props.isAvailableOffline
-      })
+      if (this.props.isAvailableOffline) {
+        openOfflineFile(file).catch(error => {
+          this.setState({ opening: false })
+          console.error('openFileInNewTab', error)
+        })
+      } else {
+        this.setState({ opening: true })
+        this.props.router.push(`/file/${attributes.id}`)
+      }
     }
   }
 
