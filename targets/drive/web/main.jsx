@@ -10,6 +10,7 @@ import { Router, hashHistory } from 'react-router'
 import { I18n } from 'cozy-ui/react/I18n'
 import { CozyClient, CozyProvider } from 'redux-cozy-client'
 import { shouldEnableTracking, getTracker } from 'cozy-ui/react/helpers/tracker'
+import LaunchBar from 'drive/components/LaunchBar'
 
 import AppRoute from 'drive/components/AppRoute'
 import configureStore from 'drive/store/configureStore'
@@ -56,4 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
       </CozyProvider>
     </I18n>
   ), root)
+
+  setTimeout(() => {
+    LaunchBar.init(cozy.client)
+    const sb = document.querySelector('.coz-searchbar')
+    if (sb) sb.style.display = 'none'
+  }, 500)
 })

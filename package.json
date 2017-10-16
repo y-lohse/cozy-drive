@@ -131,6 +131,7 @@
     "webpack-merge": "^1.0.2"
   },
   "dependencies": {
+    "autocomplete.js": "^0.29.0",
     "classnames": "^2.2.0",
     "cozy-bar": "4.1.4",
     "cozy-client-js": "0.3.19",
