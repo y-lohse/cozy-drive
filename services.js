@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 642);
+/******/ 	return __webpack_require__(__webpack_require__.s = 669);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -83,9 +83,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Component", function() { return Component$1; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PureComponent", function() { return PureComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_renderSubtreeIntoContainer", function() { return renderSubtreeIntoContainer; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_preact__);
 /* harmony reexport (default from non-hamory) */ __webpack_require__.d(__webpack_exports__, "PropTypes", function() { return __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a; });
 
@@ -715,10 +715,10 @@ var index = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var global    = __webpack_require__(5)
-  , core      = __webpack_require__(54)
+  , core      = __webpack_require__(56)
   , hide      = __webpack_require__(18)
-  , redefine  = __webpack_require__(27)
-  , ctx       = __webpack_require__(24)
+  , redefine  = __webpack_require__(28)
+  , ctx       = __webpack_require__(25)
   , PROTOTYPE = 'prototype';
 
 var $export = function(type, name, source){
@@ -1070,9 +1070,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _translation = __webpack_require__(247);
+var _translation = __webpack_require__(240);
 
-var _format = __webpack_require__(265);
+var _format = __webpack_require__(258);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1180,8 +1180,8 @@ module.exports = function(it){
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var store      = __webpack_require__(175)('wks')
-  , uid        = __webpack_require__(34)
+var store      = __webpack_require__(168)('wks')
+  , uid        = __webpack_require__(36)
   , Symbol     = __webpack_require__(5).Symbol
   , USE_SYMBOL = typeof Symbol == 'function';
 
@@ -1193,7 +1193,8 @@ var $exports = module.exports = function(name){
 $exports.store = store;
 
 /***/ }),
-/* 10 */
+/* 10 */,
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = function(exec){
@@ -1205,13 +1206,12 @@ module.exports = function(exec){
 };
 
 /***/ }),
-/* 11 */,
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject       = __webpack_require__(7)
-  , IE8_DOM_DEFINE = __webpack_require__(211)
-  , toPrimitive    = __webpack_require__(55)
+  , IE8_DOM_DEFINE = __webpack_require__(204)
+  , toPrimitive    = __webpack_require__(57)
   , dP             = Object.defineProperty;
 
 exports.f = __webpack_require__(17) ? Object.defineProperty : function defineProperty(O, P, Attributes){
@@ -11110,7 +11110,7 @@ module.exports = function(it, key){
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(41)
+var toInteger = __webpack_require__(42)
   , min       = Math.min;
 module.exports = function(it){
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -11121,7 +11121,7 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 // Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(10)(function(){
+module.exports = !__webpack_require__(11)(function(){
   return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
 });
 
@@ -11130,7 +11130,7 @@ module.exports = !__webpack_require__(10)(function(){
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP         = __webpack_require__(12)
-  , createDesc = __webpack_require__(26);
+  , createDesc = __webpack_require__(27);
 module.exports = __webpack_require__(17) ? function(object, key, value){
   return dP.f(object, key, createDesc(1, value));
 } : function(object, key, value){
@@ -11210,7 +11210,7 @@ module.exports = warning;
 /* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isDate = __webpack_require__(89)
+var isDate = __webpack_require__(90)
 
 var MILLISECONDS_IN_HOUR = 3600000
 var MILLISECONDS_IN_MINUTE = 60000
@@ -11533,19 +11533,20 @@ module.exports = parse
 
 
 /***/ }),
-/* 21 */
+/* 21 */,
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(172)
-  , defined = __webpack_require__(28);
+var IObject = __webpack_require__(165)
+  , defined = __webpack_require__(29);
 module.exports = function(it){
   return IObject(defined(it));
 };
 
 /***/ }),
-/* 22 */,
-/* 23 */
+/* 23 */,
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11559,19 +11560,19 @@ exports.openFileWith = exports.toggleAvailableOffline = exports.downloadFiles = 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /* global cozy */
 
 
-var _device = __webpack_require__(159);
+var _device = __webpack_require__(160);
 
-var _filesystem = __webpack_require__(319);
+var _filesystem = __webpack_require__(312);
 
-var _actions = __webpack_require__(320);
+var _actions = __webpack_require__(313);
 
-var _files = __webpack_require__(52);
+var _files = __webpack_require__(53);
 
-var _availableOffline = __webpack_require__(53);
+var _availableOffline = __webpack_require__(54);
 
 var availableOffline = _interopRequireWildcard(_availableOffline);
 
-var _config = __webpack_require__(70);
+var _config = __webpack_require__(71);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -12562,11 +12563,11 @@ var isAlreadyInTrash = function isAlreadyInTrash(err) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(35);
+var aFunction = __webpack_require__(37);
 module.exports = function(fn, that, length){
   aFunction(fn);
   if(that === undefined)return fn;
@@ -12587,50 +12588,50 @@ module.exports = function(fn, that, length){
 };
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 if(__webpack_require__(17)){
-  var LIBRARY             = __webpack_require__(38)
+  var LIBRARY             = __webpack_require__(39)
     , global              = __webpack_require__(5)
-    , fails               = __webpack_require__(10)
+    , fails               = __webpack_require__(11)
     , $export             = __webpack_require__(1)
-    , $typed              = __webpack_require__(171)
-    , $buffer             = __webpack_require__(212)
-    , ctx                 = __webpack_require__(24)
-    , anInstance          = __webpack_require__(40)
-    , propertyDesc        = __webpack_require__(26)
+    , $typed              = __webpack_require__(164)
+    , $buffer             = __webpack_require__(205)
+    , ctx                 = __webpack_require__(25)
+    , anInstance          = __webpack_require__(41)
+    , propertyDesc        = __webpack_require__(27)
     , hide                = __webpack_require__(18)
-    , redefineAll         = __webpack_require__(39)
-    , toInteger           = __webpack_require__(41)
+    , redefineAll         = __webpack_require__(40)
+    , toInteger           = __webpack_require__(42)
     , toLength            = __webpack_require__(16)
-    , toIndex             = __webpack_require__(43)
-    , toPrimitive         = __webpack_require__(55)
+    , toIndex             = __webpack_require__(44)
+    , toPrimitive         = __webpack_require__(57)
     , has                 = __webpack_require__(15)
-    , same                = __webpack_require__(214)
-    , classof             = __webpack_require__(179)
+    , same                = __webpack_require__(207)
+    , classof             = __webpack_require__(172)
     , isObject            = __webpack_require__(8)
-    , toObject            = __webpack_require__(36)
-    , isArrayIter         = __webpack_require__(180)
-    , create              = __webpack_require__(57)
-    , getPrototypeOf      = __webpack_require__(58)
-    , gOPN                = __webpack_require__(56).f
-    , getIterFn           = __webpack_require__(181)
-    , uid                 = __webpack_require__(34)
+    , toObject            = __webpack_require__(38)
+    , isArrayIter         = __webpack_require__(173)
+    , create              = __webpack_require__(59)
+    , getPrototypeOf      = __webpack_require__(60)
+    , gOPN                = __webpack_require__(58).f
+    , getIterFn           = __webpack_require__(174)
+    , uid                 = __webpack_require__(36)
     , wks                 = __webpack_require__(9)
-    , createArrayMethod   = __webpack_require__(59)
-    , createArrayIncludes = __webpack_require__(173)
-    , speciesConstructor  = __webpack_require__(178)
-    , ArrayIterators      = __webpack_require__(182)
-    , Iterators           = __webpack_require__(45)
-    , $iterDetect         = __webpack_require__(72)
-    , setSpecies          = __webpack_require__(71)
-    , arrayFill           = __webpack_require__(177)
-    , arrayCopyWithin     = __webpack_require__(219)
+    , createArrayMethod   = __webpack_require__(61)
+    , createArrayIncludes = __webpack_require__(166)
+    , speciesConstructor  = __webpack_require__(171)
+    , ArrayIterators      = __webpack_require__(175)
+    , Iterators           = __webpack_require__(46)
+    , $iterDetect         = __webpack_require__(73)
+    , setSpecies          = __webpack_require__(72)
+    , arrayFill           = __webpack_require__(170)
+    , arrayCopyWithin     = __webpack_require__(212)
     , $DP                 = __webpack_require__(12)
-    , $GOPD               = __webpack_require__(29)
+    , $GOPD               = __webpack_require__(30)
     , dP                  = $DP.f
     , gOPD                = $GOPD.f
     , RangeError          = global.RangeError
@@ -13072,7 +13073,7 @@ if(__webpack_require__(17)){
 } else module.exports = function(){ /* empty */ };
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = function(bitmap, value){
@@ -13085,18 +13086,18 @@ module.exports = function(bitmap, value){
 };
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global    = __webpack_require__(5)
   , hide      = __webpack_require__(18)
   , has       = __webpack_require__(15)
-  , SRC       = __webpack_require__(34)('src')
+  , SRC       = __webpack_require__(36)('src')
   , TO_STRING = 'toString'
   , $toString = Function[TO_STRING]
   , TPL       = ('' + $toString).split(TO_STRING);
 
-__webpack_require__(54).inspectSource = function(it){
+__webpack_require__(56).inspectSource = function(it){
   return $toString.call(it);
 };
 
@@ -13122,7 +13123,7 @@ __webpack_require__(54).inspectSource = function(it){
 });
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
@@ -13132,15 +13133,15 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var pIE            = __webpack_require__(60)
-  , createDesc     = __webpack_require__(26)
-  , toIObject      = __webpack_require__(21)
-  , toPrimitive    = __webpack_require__(55)
+var pIE            = __webpack_require__(62)
+  , createDesc     = __webpack_require__(27)
+  , toIObject      = __webpack_require__(22)
+  , toPrimitive    = __webpack_require__(57)
   , has            = __webpack_require__(15)
-  , IE8_DOM_DEFINE = __webpack_require__(211)
+  , IE8_DOM_DEFINE = __webpack_require__(204)
   , gOPD           = Object.getOwnPropertyDescriptor;
 
 exports.f = __webpack_require__(17) ? gOPD : function getOwnPropertyDescriptor(O, P){
@@ -13153,45 +13154,8 @@ exports.f = __webpack_require__(17) ? gOPD : function getOwnPropertyDescriptor(O
 };
 
 /***/ }),
-/* 30 */,
 /* 31 */,
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-    Symbol.for &&
-    Symbol.for('react.element')) ||
-    0xeac7;
-
-  var isValidElement = function(object) {
-    return typeof object === 'object' &&
-      object !== null &&
-      object.$$typeof === REACT_ELEMENT_TYPE;
-  };
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(232)(isValidElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(234)();
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
-
-/***/ }),
+/* 32 */,
 /* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13207,13 +13171,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _i18n = __webpack_require__(202);
+var _i18n = __webpack_require__(195);
 
 var _classnames = __webpack_require__(4);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _styles = __webpack_require__(318);
+var _styles = __webpack_require__(311);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -13250,35 +13214,6 @@ exports.default = (0, _i18n.translate)()(Spinner);
 /* 34 */
 /***/ (function(module, exports) {
 
-var id = 0
-  , px = Math.random();
-module.exports = function(key){
-  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
-};
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports) {
-
-module.exports = function(it){
-  if(typeof it != 'function')throw TypeError(it + ' is not a function!');
-  return it;
-};
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.1.13 ToObject(argument)
-var defined = __webpack_require__(28);
-module.exports = function(it){
-  return Object(defined(it));
-};
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports) {
-
 var g;
 
 // This works in non-strict mode
@@ -13303,23 +13238,89 @@ module.exports = g;
 
 
 /***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
+
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(225)(isValidElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(227)();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports) {
+
+var id = 0
+  , px = Math.random();
+module.exports = function(key){
+  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+};
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports) {
+
+module.exports = function(it){
+  if(typeof it != 'function')throw TypeError(it + ' is not a function!');
+  return it;
+};
+
+/***/ }),
 /* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.13 ToObject(argument)
+var defined = __webpack_require__(29);
+module.exports = function(it){
+  return Object(defined(it));
+};
+
+/***/ }),
+/* 39 */
 /***/ (function(module, exports) {
 
 module.exports = false;
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var redefine = __webpack_require__(27);
+var redefine = __webpack_require__(28);
 module.exports = function(target, src, safe){
   for(var key in src)redefine(target, key, src[key], safe);
   return target;
 };
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 module.exports = function(it, Constructor, name, forbiddenField){
@@ -13329,7 +13330,7 @@ module.exports = function(it, Constructor, name, forbiddenField){
 };
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
@@ -13340,7 +13341,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -13350,10 +13351,10 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(41)
+var toInteger = __webpack_require__(42)
   , max       = Math.max
   , min       = Math.min;
 module.exports = function(index, length){
@@ -13362,7 +13363,7 @@ module.exports = function(index, length){
 };
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var def = __webpack_require__(12).f
@@ -13374,25 +13375,25 @@ module.exports = function(it, tag, stat){
 };
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports) {
 
 module.exports = {};
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys       = __webpack_require__(213)
-  , enumBugKeys = __webpack_require__(176);
+var $keys       = __webpack_require__(206)
+  , enumBugKeys = __webpack_require__(169);
 
 module.exports = Object.keys || function keys(O){
   return $keys(O, enumBugKeys);
 };
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.31 Array.prototype[@@unscopables]
@@ -13404,11 +13405,11 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 48 */,
 /* 49 */,
 /* 50 */,
 /* 51 */,
-/* 52 */
+/* 52 */,
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13465,7 +13466,7 @@ var getFiles = exports.getFiles = function getFiles(state) {
 };
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13513,14 +13514,15 @@ var isAvailableOffline = exports.isAvailableOffline = function isAvailableOfflin
 };
 
 /***/ }),
-/* 54 */
+/* 55 */,
+/* 56 */
 /***/ (function(module, exports) {
 
 var core = module.exports = {version: '2.4.0'};
 if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -13537,39 +13539,39 @@ module.exports = function(it, S){
 };
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys      = __webpack_require__(213)
-  , hiddenKeys = __webpack_require__(176).concat('length', 'prototype');
+var $keys      = __webpack_require__(206)
+  , hiddenKeys = __webpack_require__(169).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
   return $keys(O, hiddenKeys);
 };
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject    = __webpack_require__(7)
-  , dPs         = __webpack_require__(350)
-  , enumBugKeys = __webpack_require__(176)
-  , IE_PROTO    = __webpack_require__(174)('IE_PROTO')
+  , dPs         = __webpack_require__(345)
+  , enumBugKeys = __webpack_require__(169)
+  , IE_PROTO    = __webpack_require__(167)('IE_PROTO')
   , Empty       = function(){ /* empty */ }
   , PROTOTYPE   = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function(){
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(170)('iframe')
+  var iframe = __webpack_require__(163)('iframe')
     , i      = enumBugKeys.length
     , lt     = '<'
     , gt     = '>'
     , iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(215).appendChild(iframe);
+  __webpack_require__(208).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -13596,13 +13598,13 @@ module.exports = Object.create || function create(O, Properties){
 
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has         = __webpack_require__(15)
-  , toObject    = __webpack_require__(36)
-  , IE_PROTO    = __webpack_require__(174)('IE_PROTO')
+  , toObject    = __webpack_require__(38)
+  , IE_PROTO    = __webpack_require__(167)('IE_PROTO')
   , ObjectProto = Object.prototype;
 
 module.exports = Object.getPrototypeOf || function(O){
@@ -13614,7 +13616,7 @@ module.exports = Object.getPrototypeOf || function(O){
 };
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 0 -> Array#forEach
@@ -13624,11 +13626,11 @@ module.exports = Object.getPrototypeOf || function(O){
 // 4 -> Array#every
 // 5 -> Array#find
 // 6 -> Array#findIndex
-var ctx      = __webpack_require__(24)
-  , IObject  = __webpack_require__(172)
-  , toObject = __webpack_require__(36)
+var ctx      = __webpack_require__(25)
+  , IObject  = __webpack_require__(165)
+  , toObject = __webpack_require__(38)
   , toLength = __webpack_require__(16)
-  , asc      = __webpack_require__(351);
+  , asc      = __webpack_require__(346);
 module.exports = function(TYPE, $create){
   var IS_MAP        = TYPE == 1
     , IS_FILTER     = TYPE == 2
@@ -13663,16 +13665,16 @@ module.exports = function(TYPE, $create){
 };
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var META     = __webpack_require__(34)('meta')
+var META     = __webpack_require__(36)('meta')
   , isObject = __webpack_require__(8)
   , has      = __webpack_require__(15)
   , setDesc  = __webpack_require__(12).f
@@ -13680,7 +13682,7 @@ var META     = __webpack_require__(34)('meta')
 var isExtensible = Object.isExtensible || function(){
   return true;
 };
-var FREEZE = !__webpack_require__(10)(function(){
+var FREEZE = !__webpack_require__(11)(function(){
   return isExtensible(Object.preventExtensions({}));
 });
 var setMeta = function(it){
@@ -13727,7 +13729,7 @@ var meta = module.exports = {
 };
 
 /***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13771,7 +13773,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 module.exports = emptyFunction;
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13833,7 +13835,7 @@ module.exports = invariant;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13854,20 +13856,20 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 65 */,
-/* 66 */
+/* 67 */,
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var implementation = __webpack_require__(252);
+var implementation = __webpack_require__(245);
 
 module.exports = Function.prototype.bind || implementation;
 
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var startOfWeek = __webpack_require__(272)
+var startOfWeek = __webpack_require__(265)
 
 /**
  * @category ISO Week Helpers
@@ -13895,9 +13897,8 @@ module.exports = startOfISOWeek
 
 
 /***/ }),
-/* 68 */,
-/* 69 */,
-/* 70 */
+/* 70 */,
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13918,7 +13919,7 @@ var TRASH_DIR_PATH = exports.TRASH_DIR_PATH = '/.cozy_trash';
 var KONNECTORS_DIR_PATH = exports.KONNECTORS_DIR_PATH = '/.cozy_konnectors';
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13937,7 +13938,7 @@ module.exports = function(KEY){
 };
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ITERATOR     = __webpack_require__(9)('iterator')
@@ -13963,15 +13964,15 @@ module.exports = function(exec, skipClosing){
 };
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ctx         = __webpack_require__(24)
-  , call        = __webpack_require__(221)
-  , isArrayIter = __webpack_require__(180)
+var ctx         = __webpack_require__(25)
+  , call        = __webpack_require__(214)
+  , isArrayIter = __webpack_require__(173)
   , anObject    = __webpack_require__(7)
   , toLength    = __webpack_require__(16)
-  , getIterFn   = __webpack_require__(181)
+  , getIterFn   = __webpack_require__(174)
   , BREAK       = {}
   , RETURN      = {};
 var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
@@ -13993,23 +13994,23 @@ exports.BREAK  = BREAK;
 exports.RETURN = RETURN;
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var global            = __webpack_require__(5)
   , $export           = __webpack_require__(1)
-  , redefine          = __webpack_require__(27)
-  , redefineAll       = __webpack_require__(39)
-  , meta              = __webpack_require__(61)
-  , forOf             = __webpack_require__(73)
-  , anInstance        = __webpack_require__(40)
+  , redefine          = __webpack_require__(28)
+  , redefineAll       = __webpack_require__(40)
+  , meta              = __webpack_require__(63)
+  , forOf             = __webpack_require__(74)
+  , anInstance        = __webpack_require__(41)
   , isObject          = __webpack_require__(8)
-  , fails             = __webpack_require__(10)
-  , $iterDetect       = __webpack_require__(72)
-  , setToStringTag    = __webpack_require__(44)
-  , inheritIfRequired = __webpack_require__(363);
+  , fails             = __webpack_require__(11)
+  , $iterDetect       = __webpack_require__(73)
+  , setToStringTag    = __webpack_require__(45)
+  , inheritIfRequired = __webpack_require__(358);
 
 module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK){
   var Base  = global[NAME]
@@ -14084,13 +14085,13 @@ module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK){
 };
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -14111,15 +14112,15 @@ module.exports = function(fn, args, that){
 };
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var hide     = __webpack_require__(18)
-  , redefine = __webpack_require__(27)
-  , fails    = __webpack_require__(10)
-  , defined  = __webpack_require__(28)
+  , redefine = __webpack_require__(28)
+  , fails    = __webpack_require__(11)
+  , defined  = __webpack_require__(29)
   , wks      = __webpack_require__(9);
 
 module.exports = function(KEY, length, exec){
@@ -14145,12 +14146,12 @@ module.exports = function(KEY, length, exec){
 };
 
 /***/ }),
-/* 78 */,
 /* 79 */,
 /* 80 */,
 /* 81 */,
 /* 82 */,
-/* 83 */
+/* 83 */,
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14166,7 +14167,7 @@ module.exports = function(KEY, length, exec){
 
 
 
-var emptyFunction = __webpack_require__(62);
+var emptyFunction = __webpack_require__(64);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -14223,7 +14224,7 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(global, factory) {
@@ -14714,14 +14715,14 @@ module.exports = warning;
 //# sourceMappingURL=preact.js.map
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var keys = __webpack_require__(254);
-var foreach = __webpack_require__(256);
+var keys = __webpack_require__(247);
+var foreach = __webpack_require__(249);
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
 
 var toStr = Object.prototype.toString;
@@ -14777,14 +14778,14 @@ module.exports = defineProperties;
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bind = __webpack_require__(66);
-var ES = __webpack_require__(257);
+var bind = __webpack_require__(68);
+var ES = __webpack_require__(250);
 var replace = bind.call(Function.call, String.prototype.replace);
 
 var leftWhitespace = /^[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]+/;
@@ -14797,7 +14798,7 @@ module.exports = function trim() {
 
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14843,13 +14844,13 @@ module.exports = function isCallable(value) {
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var implementation = __webpack_require__(86);
+var implementation = __webpack_require__(87);
 
 var zeroWidthSpace = '\u200b';
 
@@ -14862,7 +14863,7 @@ module.exports = function getPolyfill() {
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports) {
 
 /**
@@ -14888,11 +14889,11 @@ module.exports = isDate
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(20)
-var startOfISOWeek = __webpack_require__(67)
+var startOfISOWeek = __webpack_require__(69)
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -14939,11 +14940,11 @@ module.exports = getISOYear
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(92)
-var buildFormatLocale = __webpack_require__(93)
+var buildDistanceInWordsLocale = __webpack_require__(93)
+var buildFormatLocale = __webpack_require__(94)
 
 /**
  * @category Locales
@@ -14956,7 +14957,7 @@ module.exports = {
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -15061,7 +15062,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -15155,107 +15156,107 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"./_lib/build_formatting_tokens_reg_exp/index": 2,
-	"./ar/build_distance_in_words_locale/index": 95,
-	"./ar/build_format_locale/index": 96,
-	"./ar/index": 275,
-	"./bg/build_distance_in_words_locale/index": 97,
-	"./bg/build_format_locale/index": 98,
-	"./bg/index": 276,
-	"./ca/build_distance_in_words_locale/index": 99,
-	"./ca/build_format_locale/index": 100,
-	"./ca/index": 277,
-	"./cs/build_distance_in_words_locale/index": 101,
-	"./cs/build_format_locale/index": 102,
-	"./cs/index": 278,
-	"./da/build_distance_in_words_locale/index": 103,
-	"./da/build_format_locale/index": 104,
-	"./da/index": 279,
-	"./de/build_distance_in_words_locale/index": 105,
-	"./de/build_format_locale/index": 106,
-	"./de/index": 280,
-	"./el/build_distance_in_words_locale/index": 107,
-	"./el/build_format_locale/index": 108,
-	"./el/index": 281,
-	"./en/build_distance_in_words_locale/index": 92,
-	"./en/build_format_locale/index": 93,
-	"./en/index": 91,
-	"./eo/build_distance_in_words_locale/index": 109,
-	"./eo/build_format_locale/index": 110,
-	"./eo/index": 282,
-	"./es/build_distance_in_words_locale/index": 111,
-	"./es/build_format_locale/index": 112,
-	"./es/index": 283,
-	"./fi/build_distance_in_words_locale/index": 113,
-	"./fi/build_format_locale/index": 114,
-	"./fi/index": 284,
-	"./fil/build_distance_in_words_locale/index": 115,
-	"./fil/build_format_locale/index": 116,
-	"./fil/index": 285,
-	"./fr/build_distance_in_words_locale/index": 117,
-	"./fr/build_format_locale/index": 118,
-	"./fr/index": 286,
-	"./hr/build_distance_in_words_locale/index": 119,
-	"./hr/build_format_locale/index": 120,
-	"./hr/index": 287,
-	"./id/build_distance_in_words_locale/index": 121,
-	"./id/build_format_locale/index": 122,
-	"./id/index": 288,
-	"./is/build_distance_in_words_locale/index": 123,
-	"./is/build_format_locale/index": 124,
-	"./is/index": 289,
-	"./it/build_distance_in_words_locale/index": 125,
-	"./it/build_format_locale/index": 126,
-	"./it/index": 290,
-	"./ja/build_distance_in_words_locale/index": 127,
-	"./ja/build_format_locale/index": 128,
-	"./ja/index": 291,
-	"./ko/build_distance_in_words_locale/index": 129,
-	"./ko/build_format_locale/index": 130,
-	"./ko/index": 292,
-	"./mk/build_distance_in_words_locale/index": 131,
-	"./mk/build_format_locale/index": 132,
-	"./mk/index": 293,
-	"./nb/build_distance_in_words_locale/index": 133,
-	"./nb/build_format_locale/index": 134,
-	"./nb/index": 294,
-	"./nl/build_distance_in_words_locale/index": 135,
-	"./nl/build_format_locale/index": 136,
-	"./nl/index": 295,
-	"./pl/build_distance_in_words_locale/index": 137,
-	"./pl/build_format_locale/index": 138,
-	"./pl/index": 296,
-	"./pt/build_distance_in_words_locale/index": 139,
-	"./pt/build_format_locale/index": 140,
-	"./pt/index": 297,
-	"./ro/build_distance_in_words_locale/index": 141,
-	"./ro/build_format_locale/index": 142,
-	"./ro/index": 298,
-	"./ru/build_distance_in_words_locale/index": 143,
-	"./ru/build_format_locale/index": 144,
-	"./ru/index": 299,
-	"./sk/build_distance_in_words_locale/index": 145,
-	"./sk/build_format_locale/index": 146,
-	"./sk/index": 300,
-	"./sv/build_distance_in_words_locale/index": 147,
-	"./sv/build_format_locale/index": 148,
-	"./sv/index": 301,
-	"./th/build_distance_in_words_locale/index": 149,
-	"./th/build_format_locale/index": 150,
-	"./th/index": 302,
-	"./tr/build_distance_in_words_locale/index": 151,
-	"./tr/build_format_locale/index": 152,
-	"./tr/index": 303,
-	"./zh_cn/build_distance_in_words_locale/index": 153,
-	"./zh_cn/build_format_locale/index": 154,
-	"./zh_cn/index": 304,
-	"./zh_tw/build_distance_in_words_locale/index": 155,
-	"./zh_tw/build_format_locale/index": 156,
-	"./zh_tw/index": 305
+	"./ar/build_distance_in_words_locale/index": 96,
+	"./ar/build_format_locale/index": 97,
+	"./ar/index": 268,
+	"./bg/build_distance_in_words_locale/index": 98,
+	"./bg/build_format_locale/index": 99,
+	"./bg/index": 269,
+	"./ca/build_distance_in_words_locale/index": 100,
+	"./ca/build_format_locale/index": 101,
+	"./ca/index": 270,
+	"./cs/build_distance_in_words_locale/index": 102,
+	"./cs/build_format_locale/index": 103,
+	"./cs/index": 271,
+	"./da/build_distance_in_words_locale/index": 104,
+	"./da/build_format_locale/index": 105,
+	"./da/index": 272,
+	"./de/build_distance_in_words_locale/index": 106,
+	"./de/build_format_locale/index": 107,
+	"./de/index": 273,
+	"./el/build_distance_in_words_locale/index": 108,
+	"./el/build_format_locale/index": 109,
+	"./el/index": 274,
+	"./en/build_distance_in_words_locale/index": 93,
+	"./en/build_format_locale/index": 94,
+	"./en/index": 92,
+	"./eo/build_distance_in_words_locale/index": 110,
+	"./eo/build_format_locale/index": 111,
+	"./eo/index": 275,
+	"./es/build_distance_in_words_locale/index": 112,
+	"./es/build_format_locale/index": 113,
+	"./es/index": 276,
+	"./fi/build_distance_in_words_locale/index": 114,
+	"./fi/build_format_locale/index": 115,
+	"./fi/index": 277,
+	"./fil/build_distance_in_words_locale/index": 116,
+	"./fil/build_format_locale/index": 117,
+	"./fil/index": 278,
+	"./fr/build_distance_in_words_locale/index": 118,
+	"./fr/build_format_locale/index": 119,
+	"./fr/index": 279,
+	"./hr/build_distance_in_words_locale/index": 120,
+	"./hr/build_format_locale/index": 121,
+	"./hr/index": 280,
+	"./id/build_distance_in_words_locale/index": 122,
+	"./id/build_format_locale/index": 123,
+	"./id/index": 281,
+	"./is/build_distance_in_words_locale/index": 124,
+	"./is/build_format_locale/index": 125,
+	"./is/index": 282,
+	"./it/build_distance_in_words_locale/index": 126,
+	"./it/build_format_locale/index": 127,
+	"./it/index": 283,
+	"./ja/build_distance_in_words_locale/index": 128,
+	"./ja/build_format_locale/index": 129,
+	"./ja/index": 284,
+	"./ko/build_distance_in_words_locale/index": 130,
+	"./ko/build_format_locale/index": 131,
+	"./ko/index": 285,
+	"./mk/build_distance_in_words_locale/index": 132,
+	"./mk/build_format_locale/index": 133,
+	"./mk/index": 286,
+	"./nb/build_distance_in_words_locale/index": 134,
+	"./nb/build_format_locale/index": 135,
+	"./nb/index": 287,
+	"./nl/build_distance_in_words_locale/index": 136,
+	"./nl/build_format_locale/index": 137,
+	"./nl/index": 288,
+	"./pl/build_distance_in_words_locale/index": 138,
+	"./pl/build_format_locale/index": 139,
+	"./pl/index": 289,
+	"./pt/build_distance_in_words_locale/index": 140,
+	"./pt/build_format_locale/index": 141,
+	"./pt/index": 290,
+	"./ro/build_distance_in_words_locale/index": 142,
+	"./ro/build_format_locale/index": 143,
+	"./ro/index": 291,
+	"./ru/build_distance_in_words_locale/index": 144,
+	"./ru/build_format_locale/index": 145,
+	"./ru/index": 292,
+	"./sk/build_distance_in_words_locale/index": 146,
+	"./sk/build_format_locale/index": 147,
+	"./sk/index": 293,
+	"./sv/build_distance_in_words_locale/index": 148,
+	"./sv/build_format_locale/index": 149,
+	"./sv/index": 294,
+	"./th/build_distance_in_words_locale/index": 150,
+	"./th/build_format_locale/index": 151,
+	"./th/index": 295,
+	"./tr/build_distance_in_words_locale/index": 152,
+	"./tr/build_format_locale/index": 153,
+	"./tr/index": 296,
+	"./zh_cn/build_distance_in_words_locale/index": 154,
+	"./zh_cn/build_format_locale/index": 155,
+	"./zh_cn/index": 297,
+	"./zh_tw/build_distance_in_words_locale/index": 156,
+	"./zh_tw/build_format_locale/index": 157,
+	"./zh_tw/index": 298
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -15271,10 +15272,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 94;
+webpackContext.id = 95;
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -15379,7 +15380,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -15458,7 +15459,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -15563,7 +15564,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -15656,7 +15657,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -15761,7 +15762,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -15851,7 +15852,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports) {
 
 function declensionGroup (scheme, count) {
@@ -16059,7 +16060,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -16138,7 +16139,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -16243,7 +16244,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -16322,7 +16323,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -16513,7 +16514,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -16596,7 +16597,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -16701,7 +16702,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -16794,7 +16795,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -16899,7 +16900,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -16974,7 +16975,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -17079,7 +17080,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -17158,7 +17159,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -17300,7 +17301,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -17372,7 +17373,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -17477,7 +17478,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -17589,7 +17590,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -17694,7 +17695,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -17822,7 +17823,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -18006,7 +18007,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -18095,7 +18096,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -18200,7 +18201,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -18292,7 +18293,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -18397,7 +18398,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -18476,7 +18477,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -18581,7 +18582,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -18660,7 +18661,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -18765,7 +18766,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -18844,7 +18845,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -18949,7 +18950,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -19028,7 +19029,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -19133,7 +19134,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -19222,7 +19223,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -19327,7 +19328,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -19406,7 +19407,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -19511,7 +19512,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -19590,7 +19591,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports) {
 
 function declensionGroup (scheme, count) {
@@ -19761,7 +19762,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -19837,7 +19838,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -19942,7 +19943,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -20021,7 +20022,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -20126,7 +20127,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -20206,7 +20207,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports) {
 
 function declension (scheme, count) {
@@ -20446,7 +20447,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -20541,7 +20542,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports) {
 
 function declensionGroup (scheme, count) {
@@ -20749,7 +20750,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -20828,7 +20829,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -20950,7 +20951,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -21028,7 +21029,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -21137,7 +21138,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -21204,7 +21205,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -21320,7 +21321,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -21432,7 +21433,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -21537,7 +21538,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -21604,7 +21605,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -21709,7 +21710,7 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var buildFormattingTokensRegExp = __webpack_require__(2)
@@ -21788,9 +21789,9 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 157 */,
 /* 158 */,
-/* 159 */
+/* 159 */,
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21825,343 +21826,7 @@ var getDeviceName = exports.getDeviceName = function getDeviceName() {
 };
 
 /***/ }),
-/* 160 */,
-/* 161 */
-/***/ (function(module, exports) {
-
-module.exports = {
-	"Nav": {
-		"item_drive": "Drive",
-		"item_recent": "Recent",
-		"item_shared": "Shared by me",
-		"item_activity": "Activity",
-		"item_trash": "Trash",
-		"item_settings": "Settings",
-		"btn-client": "Get Cozy for desktop",
-		"btn-client-web": "Get Cozy",
-		"btn-client-mobile": "Get Cozy Drive on your mobile!",
-		"banner-txt-client": "Tip: your pictures, bills, ID documents, all accessible anytime, from any of your device with Cozy Drive installed on your computer",
-		"banner-btn-client": "Download now",
-		"link-client": "https://docs.cozy.io/en/download/",
-		"link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
-	},
-	"breadcrumb": {
-		"title_drive": "Laufwerk",
-		"title_recent": "Neueste",
-		"title_shared": "Von mir geteilt",
-		"title_activity": "Aktivität",
-		"title_trash": "Mülleimer"
-	},
-	"toolbar": {
-		"item_upload": "Hochladen",
-		"item_more": "Mehr",
-		"menu_upload": "Dateien hochladen",
-		"menu_new_folder": "Neuer Ordner",
-		"menu_select": "Elemente auswählen",
-		"menu_download_folder": "Download Ordner",
-		"empty_trash": "Mülleimer leeren",
-		"share": "Teilen"
-	},
-	"Share": {
-		"status": {
-			"pending": "Ausstehend",
-			"accepted": {
-				"master-slave": "Darf sehen",
-				"master-master": "Darf ändern"
-			},
-			"refused": "Verweigert",
-			"error": "Fehler",
-			"unregistered": "Fehler",
-			"mail-not-sent": "Fehler",
-			"revoked": "Fehler"
-		}
-	},
-	"Files": {
-		"share": {
-			"cta": "Teilen",
-			"title": "Mit Anderen teilen",
-			"shareByLink": {
-				"title": "über öffentlichen Link",
-				"subtitle": "Geteilt über Link",
-				"desc": "Jeder der den Link kennt, kann deine Dateien sehen und herunterladen."
-			},
-			"shareByEmail": {
-				"title": "Per Email",
-				"subtitle": "Geteilt über Email",
-				"email": "Email",
-				"emailPlaceholder": "E-Mail-Adresse oder Name des Empfängers eingeben",
-				"send": "Senden",
-				"success": "Du hast eine Einladung an %{email} geschickt."
-			},
-			"unshare": {
-				"title": "Remove from sharing",
-				"success": "You removed this shared file from %{email}."
-			},
-			"sharingLink": {
-				"title": "Link zum Teilen",
-				"copy": "Kopie",
-				"copied": "Kopiert"
-			},
-			"whoHasAccess": {
-				"title": "Wer hat Zugriff"
-			},
-			"protectedShare": {
-				"title": "Kommt später!",
-				"desc": "Teile irgendetwas per Email mit Familie und Freunden!"
-			},
-			"close": "Schließen",
-			"gettingLink": "Erstelle deinen Link ...",
-			"error": {
-				"generic": "Beim Erstellen der Dateifreigabeverknüpfung ist ein Fehler aufgetreten, bitte versuche es erneut."
-			}
-		}
-	},
-	"table": {
-		"head_name": "Name",
-		"head_update": "Letzte Aktualisierung",
-		"head_size": "Größe",
-		"head_status": "Status",
-		"row_update_format": "MMM D, YYYY",
-		"row_read_only": "Teilen (nur Lesen)",
-		"row_read_write": "Teilen (Lesen & Schreiben)",
-		"row_size_symbols": {
-			"B": "Byte",
-			"KB": "Kilobyte",
-			"MB": "Megabyte",
-			"GB": "Gigabyte",
-			"TB": "Terabyte",
-			"PB": "Petabyte",
-			"EB": "Exabyte",
-			"ZB": "Zettabyte",
-			"YB": "Yottabyte"
-		}
-	},
-	"SelectionBar": {
-		"selected_count": "Element ausgewählt |||| Elemente ausgewählt",
-		"share": "Teilen",
-		"download": "Herunterladen",
-		"trash": "Enfernen",
-		"destroy": "Dauerhaft löschen",
-		"moveto": "Verschieben",
-		"rename": "Umbenennen",
-		"restore": "Wiederherstellen",
-		"close": "Schließen",
-		"openWith": "Öffnen mit",
-		"availableOffline": "Make available offline"
-	},
-	"deleteconfirmation": {
-		"title": "Dieses Element löschen? |||| Diese Elemente löschen?",
-		"trash": "Es wird in den Papierkorb verschoben. |||| Sie werden in den Papierkorb verschoben.",
-		"restore": "Du kannst es immer wiederherstellen, wann du willst. |||| Du kannst sie immer wiederherstellen, wann du willst.",
-		"shared": "Wenn du es geteilt hast, können die Leute nicht darauf zugreifen. |||| Wenn du sie geteilt hast, können die Leute nicht darauf zugreifen.",
-		"referenced": "Einige der Dateien innerhalb der Auswahl beziehen sich auf ein Fotoalbum. Sie werden aus ihm entfernt, wenn du sie in den Müll verschiebst.",
-		"cancel": "Abbrechen",
-		"delete": "Entfernen"
-	},
-	"emptytrashconfirmation": {
-		"title": " Dauerhaft löschen? ",
-		"forbidden": "Du kannst nicht mehr auf diese Dateien zugreifen.",
-		"restore": "Du kannst diese Dateien nicht wiederherstellen, wenn du keine Sicherung gemacht hast.",
-		"cancel": "Abbrechen",
-		"delete": "Alles löschen"
-	},
-	"destroyconfirmation": {
-		"title": "Dauerhaft löschen?",
-		"forbidden": "Du kannst nicht mehr auf diese Datei zugreifen. |||| Du kannst nicht mehr auf diese Dateien zugreifen.",
-		"restore": "Du kannst diese Datei nicht wiederherstellen, wenn du keine Sicherung gemacht hast. |||| Du kannst diese Dateien nicht wiederherstellen, wenn du keine Sicherung gemacht hast.",
-		"cancel": "Abbrechen",
-		"delete": "Dauerhaft löschen"
-	},
-	"quotaalert": {
-		"title": "Dein Speicherplatz ist voll :(",
-		"desc": "Bitte entferne Dateien und leere den Papierkorb, bevor du Dateien erneut hochlädst.",
-		"confirm": "OK"
-	},
-	"loading": {
-		"message": "Lade"
-	},
-	"empty": {
-		"title": "Du hast keine Dateien in diesem Ordner.",
-		"text": "Klicke auf die Schaltfläche \"Hochladen\", um Dateien zu diesem Ordner hinzuzufügen.",
-		"trash": {
-			"title": "Du hast keine gelöschten Dateien. ",
-			"text": "Verschiebe Dateien, die du nicht mehr benötigst, in den Papierkorb und lösche Elemente endgültig um Speicherplatz freizugeben."
-		}
-	},
-	"error": {
-		"open_folder": "Beim Öffnen des Ordners ist etwas schief gelaufen.",
-		"button": {
-			"reload": "Jetzt aktualisieren"
-		},
-		"download_file": {
-			"offline": "Du solltest verbunden sein, um diese Datei herunterzuladen.",
-			"missing": "Diese Datei fehlt"
-		},
-		"public_unshared_title": "Dieser Link ist leider nicht mehr verfügbar.",
-		"public_unshared_text": "Eins verloren, zehn gefunden ... oder bitte einfach nur den Besitzer um Hilfe. Diese Datei ist möglicherweise nicht verloren."
-	},
-	"alert": {
-		"try_again": "Ein Fehler ist aufgetreten, bitte versuche es noch einmal.",
-		"restore_file_success": "Die Auswahl wurde erfolgreich wiederhergestellt.",
-		"trash_file_success": "Die Auswahl wurde in den Mülleimer verschoben.",
-		"destroy_file_success": "Die Auswahl wurde entgültig gelöscht.",
-		"empty_trash_success": "Der Mülleimer wurde geleert.",
-		"folder_name": "Das Element %{folderName} existiert bereits, bitte wähle einen neuen Namen.",
-		"folder_generic": " Ein Fehler ist aufgetreten, bitte versuche es noch einmal.",
-		"folder_abort": "Du musst deinem neuen Ordner einen Namen hinzufügen, wenn du ihn speichern möchtest. Deine Daten wurden nicht gespeichert.",
-		"offline": "Diese Funktion ist offline nicht verfügbar."
-	},
-	"mobile": {
-		"onboarding": {
-			"welcome": {
-				"title1": "Willkommen bei Cozy",
-				"title2": "Deine eigene Personal Cloud",
-				"button": "Melde dich bei deinem Cozy an",
-				"no_account_link": "Du hast kein Konto? Hier anfordern"
-			},
-			"server_selection": {
-				"description": "Dies ist die Web-Adresse, die du verwendest, um auf dein Cozy zuzugreifen.",
-				"cozy_address_placeholder": "tonystark.mycozy.cloud",
-				"button": "Nächster",
-				"wrong_address_with_email": "Du hast eine E-Mail-Adresse eingegeben. Um dich mit deinem Cozy zu verbinden, musst du eine URL eingeben, etwas wie https://tonystark.mycozy.cloud",
-				"wrong_address_v2": "Du hast gerade die Adresse der alten Cosy Version eingegeben. Diese Anwendung ist nur mit der neuesten Version kompatibel. [Bitte beachte unsere Website für weitere Informationen.] (https://blog.cozycloud.cc/post/2016/11/21/On-the-road-to-Cozy-version-3?lang=en)",
-				"wrong_address": "Unter dieser Adresse scheint es kein Cozy zu geben. Bitte überprüfe die von dir angegebene Adresse."
-			},
-			"files": {
-				"title": "Zugriff auf Ihr Laufwerk",
-				"description": "Um Ihr Cozy Drive auf Ihrem Gerät zu speichern, muss die Anwendung auf deine Dateien zugreifen."
-			},
-			"photos": {
-				"title": "Sichere deine Fotos und Videos",
-				"description": "Automatische Sicherung der Fotos, die mit deinem Telefon aufgenommen wurden, in Cozy. Also verlierst du sie nie."
-			},
-			"contacts": {
-				"title": "Syncronisiere deine Kontakte",
-				"description": "Speichere die Kontakte auf deinem Telefon auf dein Cozy - das erleichtert das Teilen von Dateien mit deinen Kontakten."
-			},
-			"step": {
-				"button": "Jetzt aktivieren",
-				"skip": "Später",
-				"next": "Nächster"
-			},
-			"analytics": {
-				"title": "Hilf uns, Cozy zu verbessern",
-				"description": "Die Anwendung liefert automatisch Daten (hauptsächlich Fehler) an Cozy Cloud. Das wird uns erlauben, Probleme schneller zu lösen."
-			}
-		},
-		"settings": {
-			"title": "Einstellungen",
-			"about": {
-				"title": "Über",
-				"app_version": "App Version",
-				"account": "Konto"
-			},
-			"unlink": {
-				"title": "Diese Anwendung zurücksetzen",
-				"description": "Wenn du auf Reset klickst, kannst du deine Anwendung starten und verlierst nur die, auf deinem Smartphone, gespeicherten Daten.",
-				"button": "Zurücksetzen",
-				"confirmation": {
-					"title": "Diese Anwendung zurücksetzen?",
-					"description": "Durch das Abmelden von deinem Cozy, löschst du alle Daten, die lokal von deiner mobilen Anwendung synchronisiert wurden.",
-					"cancel": "Abbrechen",
-					"unlink": "Zurücksetzen"
-				}
-			},
-			"media_backup": {
-				"media_folder": "/Fotos/Gesichert von deinem Handy",
-				"title": "Medien Sicherung",
-				"images": {
-					"title": "Fotosicherung",
-					"label": "Sichere deine Bilder automatisch zu deinem Cozy, um sie niemals zu verlieren und sie leicht zu teilen."
-				},
-				"launch": "Sicherungskopie starten",
-				"stop": "Sicherungskopie stoppen",
-				"wifi": {
-					"title": "Sicherungskopie nur per WLan",
-					"label": "Wenn die Option aktiviert ist, wird dein Gerät nur Fotos sichern, wenn WLan aktiviert ist."
-				},
-				"media_upload": "Sichere %{upload_counter} von %{total_upload} Fotos"
-			},
-			"support": {
-				"title": "Support",
-				"analytics": {
-					"title": "Hilf uns, Cozy zu verbessern",
-					"label": "Die Anwendung liefert automatisch Daten (hauptsächlich Fehler) an Cozy Cloud. Das wird uns erlauben, Probleme schneller zu lösen."
-				},
-				"logs": {
-					"title": "Hilf uns, dein Problem zu verstehen",
-					"description": "Sende das Anwendungsprotokoll, um uns zu helfen, Qualität und Stabilität zu verbessern.",
-					"button": "Sende meine Log-Dateien",
-					"success": "Danke, wir werden dein Problem untersuchen und dann mit dir in Verbindung treten.",
-					"error": "Ein Problem ist aufgetreten, Log-Dateien konnten nicht gesendet werden, bitte versuche es erneut."
-				}
-			},
-			"contacts": {
-				"title": "Kontakte",
-				"subtitle": "Importierte Kontakte",
-				"text": "Importiere Kontakte von deinem Gerät zu deinem Cozy, um Inhalte mit ihnen leicht zu teilen."
-			}
-		},
-		"error": {
-			"open_with": {
-				"offline": "Du sollten verbunden sein, um diese Datei zu öffnen",
-				"noapp": "Keine Anwendung kann diese Datei öffnen"
-			}
-		},
-		"revoked": {
-			"title": "Zugang widerrufen",
-			"description": "Es scheint, dass du dieses Gerät von deinem Cozy widerrufen hast. Wenn du das nicht getan hast, informiere uns bitte unter contact@cozycloud.cc. Alle deine lokalen Daten im Zusammenhang mit deinem Cozy werden entfernt.",
-			"loginagain": "Nochmal anmelden",
-			"logout": "Ausloggen"
-		},
-		"rating": {
-			"enjoy": {
-				"title": "Erfreut dich Cozy Drive?",
-				"yes": "Ja!",
-				"no": "Nicht wirklich"
-			},
-			"rate": {
-				"title": "Würdest du es bewerten?",
-				"yes": "Lass uns das tun!",
-				"no": "Nein, Danke",
-				"later": "Vielleicht später"
-			},
-			"feedback": {
-				"title": "Würdest du uns etwas Feedback geben?",
-				"yes": "Senden",
-				"no": "Nein, Danke"
-			},
-			"email": {
-				"subject": "Feedback zu Cozy Drive",
-				"placeholder": "Hallo, ich denke Cozy Drive wäre besser, wenn ..."
-			},
-			"alert": {
-				"rated": "Danke! Du bist ⭐️⭐️⭐️⭐️⭐️",
-				"declined": "Genial. Du wirst die kommenden Features lieben. Bleib bei Cozy!",
-				"later": "Kein Problem, wir werden später noch einmal fragen.",
-				"feedback": "Danke für die Bewertung. Wir werden definitiv daran arbeiten!"
-			}
-		}
-	},
-	"upload": {
-		"alert": {
-			"success": "%{smart_count} Datei erfolgreich hochgeladen . |||| %{smart_count} Dateien erfolgreich hochgeladen.",
-			"success_conflicts": "%{smart_count} Datei hochgeladen mit %{conflictNumber} Konflikt(en). |||| %{smart_count} Dateien hochgeladen mit %{conflictNumber} Konflikt(en).",
-			"errors": "Während des Hochladens sind Fehler aufgetreten."
-		}
-	},
-	"UploadQueue": {
-		"header": "Hochladen von %{smart_count} Foto zum Cozy Drive |||| Hochladen von %{smart_count} Fotos zum Cozy Drive",
-		"header_mobile": "%{done} von %{total} hochgeladen…",
-		"header_done": "Hochladen %{done} aus %{total} erfolgreich",
-		"close": "Schließen",
-		"item": {
-			"pending": "Ausstehend"
-		}
-	}
-};
-
-/***/ }),
+/* 161 */,
 /* 162 */
 /***/ (function(module, exports) {
 
@@ -22250,7 +21915,8 @@ module.exports = {
 			"error": {
 				"generic": "An error occurred when creating the file share link, please try again."
 			}
-		}
+		},
+		"viewer-fallback": "If the file has started downloading, you can close this."
 	},
 	"table": {
 		"head_name": "Name",
@@ -22337,6 +22003,7 @@ module.exports = {
 		"public_unshared_text": "One lost, ten found... or just check out with the owner for help. This file might not be lost."
 	},
 	"alert": {
+		"could_not_open_file": "The file could not be opened",
 		"try_again": "An error has occurred, please try again in a moment.",
 		"restore_file_success": "The selection has been successfully restored.",
 		"trash_file_success": "The selection has been moved to the Trash.",
@@ -22499,2358 +22166,6 @@ module.exports = {
 
 /***/ }),
 /* 163 */
-/***/ (function(module, exports) {
-
-module.exports = {
-	"Nav": {
-		"item_drive": "Drive",
-		"item_recent": "Reciente",
-		"item_shared": "Compartido por mí",
-		"item_activity": "Actividad",
-		"item_trash": "Papelera",
-		"item_settings": "Ajustes",
-		"btn-client": "Descargar Cozy Desktop",
-		"btn-client-web": "Descargar Cozy",
-		"btn-client-mobile": "Descargar Cozy Drive en su celular",
-		"banner-txt-client": "Consejo: sus imágenes, facturas, documentos de identidad, todo accesible cuando usted quiera, desde cualquiera de sus periféricos con Cozy Drive instalado en su ordenador",
-		"banner-btn-client": "Descargar ahora",
-		"link-client": "https://docs.cozy.io/es/download/",
-		"link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
-	},
-	"breadcrumb": {
-		"title_drive": "Drive",
-		"title_recent": "Recientes",
-		"title_shared": "Mis archivos compartidos",
-		"title_activity": "Actividad",
-		"title_trash": "Papelera"
-	},
-	"toolbar": {
-		"item_upload": "Cargar",
-		"item_more": "Más",
-		"menu_upload": "Transferir archivos",
-		"menu_new_folder": "Nueva carpeta",
-		"menu_select": "Seleccionar items",
-		"menu_download_folder": "Descargar carpeta",
-		"empty_trash": "Vaciar la papelera",
-		"share": "Compartir"
-	},
-	"Share": {
-		"status": {
-			"pending": "Pendiente",
-			"accepted": {
-				"master-slave": "Puede visualizar",
-				"master-master": "Puede cambiar"
-			},
-			"refused": "Rechazado",
-			"error": "Error",
-			"unregistered": "Error",
-			"mail-not-sent": "Error",
-			"revoked": "Error"
-		}
-	},
-	"Files": {
-		"share": {
-			"cta": "Compartir",
-			"title": "Compartir con otros",
-			"shareByLink": {
-				"title": "Mediante enlace público",
-				"subtitle": "Compartir mediante enlace",
-				"desc": "Nadie con el enlace suministrado puede mirar y descargar sus archivos."
-			},
-			"shareByEmail": {
-				"title": "Por email",
-				"subtitle": "Compartir mediante email",
-				"email": "email",
-				"emailPlaceholder": "Entre su dirección email o el nombre de su destinatario",
-				"send": "Enviar",
-				"success": "Ystad envía un envitado a %{email}."
-			},
-			"unshare": {
-				"title": "Borrar desde en compartir",
-				"success": "Usted ha borrado este archivo compartido desde %{email}"
-			},
-			"sharingLink": {
-				"title": "Enlace a compartir",
-				"copy": "Copiar",
-				"copied": "Copiado"
-			},
-			"whoHasAccess": {
-				"title": "Quién tiene acceso"
-			},
-			"protectedShare": {
-				"title": "Vendrá pronto!",
-				"desc": "Compartir algo por email con su familia y sus amigos!"
-			},
-			"close": "Cerrar",
-			"gettingLink": "Adquiriendo su enlace...",
-			"error": {
-				"generic": "Ha ocurrido un error al usted crear el link para compartir el archivo, por favor vuelva a ansayar."
-			}
-		}
-	},
-	"table": {
-		"head_name": "Nombre",
-		"head_update": "Ultima actualización",
-		"head_size": "Tamaño",
-		"head_status": "Estatuto",
-		"row_update_format": "MMM D, AAAA",
-		"row_read_only": "Compartido (sólo en lectura)",
-		"row_read_write": "Compartido (Lectura & Escritura)",
-		"row_size_symbols": {
-			"B": "o",
-			"KB": "Ko",
-			"MB": "Mo",
-			"GB": "Go",
-			"TB": "To",
-			"PB": "Po",
-			"EB": "Eo",
-			"ZB": "Zo",
-			"YB": "Yo"
-		}
-	},
-	"SelectionBar": {
-		"selected_count": "item seleccionado |||| items seleccionados",
-		"share": "Compartir",
-		"download": "Descargar",
-		"trash": "Borrar",
-		"destroy": "Borrar definitivamente",
-		"moveto": "Trasladar",
-		"rename": "Cambiar el nombre",
-		"restore": "Restaurar",
-		"close": "Cerrar",
-		"openWith": "Abir con",
-		"availableOffline": "Hacerla disponible cuando esté desconectado"
-	},
-	"deleteconfirmation": {
-		"title": "¿Suprimir este elemento? |||| ¿Suprimir estos elementos?",
-		"trash": "Será desplazado(a) a la Papelera. ||| Serán desplazado(a)s a la Papelera.",
-		"restore": "Usted puede restaurarl(o)a cuando lo desee. ||| Usted puede restaurarlo(a)s cuando lo desee.",
-		"shared": "Si usted lo(a) ha compartido, la gente no podrá acceder a él o ella. ||| Si usted lo(a)s ha compartido, la gente no podrá acceder a ello(a)s.",
-		"referenced": "Algunos de los archivos incluidos en la selección se refieren a un álbum de fotos. Se borrarán si usted procede a enviarlos a la papelera.",
-		"cancel": "Anular",
-		"delete": "Suprimir"
-	},
-	"emptytrashconfirmation": {
-		"title": "¿Suprimir definitivamente?",
-		"forbidden": "Usted no podrá acceder más a estos archivos.",
-		"restore": "Usted no podrá recuperar estos archivos si no ha hecho una copia de seguridad.",
-		"cancel": "Anular",
-		"delete": "Suprimir definitivamente"
-	},
-	"destroyconfirmation": {
-		"title": "¿Suprimir definitivamente?",
-		"forbidden": "Usted no podrá acceder más a este archivo. ||| Usted no podrá acceder más a estos archivos.",
-		"restore": "Usted no podrá recuperar este archivo si no ha hecho una copia de seguridad. ||| Usted no podrá recuperar estos archivos si no ha hecho una copia de seguridad.",
-		"cancel": "Anular",
-		"delete": "Suprimir definitivamente"
-	},
-	"quotaalert": {
-		"title": "Su espacio disco está lleno :(",
-		"desc": "Por favor, suprimir archivos y vaciar la Papelera antes de cargar nuevos archivos.",
-		"confirm": "OK"
-	},
-	"loading": {
-		"message": "Cargando"
-	},
-	"empty": {
-		"title": "No hay archivos en esta carpeta.",
-		"text": "Haga clic en el botón \"cargar\" para añadir archivos a esta carpeta.",
-		"trash": {
-			"title": "Usted no tiene ningún archivo borrado.",
-			"text": "Los archivos que no necesita más échelos a la Papelera y suprímalos definitivamente para liberar espacio de almacenamiento."
-		}
-	},
-	"error": {
-		"open_folder": "Algo ha fallado al abrir la carpeta.",
-		"button": {
-			"reload": "Actualizar ahora"
-		},
-		"download_file": {
-			"offline": "Usted debe estar conectado para descargar este archivo",
-			"missing": "Este archivo no existe"
-		},
-		"public_unshared_title": "Lo sentimos, este enlace ya no es válido.",
-		"public_unshared_text": "Por uno que se pierde, diez que se encuentran... o mire a ver con el propietario para que le ayude. Este archivo quizás no está perdido."
-	},
-	"alert": {
-		"try_again": "Ha ocurrido un error, por favor ensaye más tarde.",
-		"restore_file_success": "La selección ha sido restaurada con éxito.",
-		"trash_file_success": "La selección ha sido desplazada a la Papelera.",
-		"destroy_file_success": "Se ha suprimido definitivamente la selección.",
-		"empty_trash_success": "Se ha vaciado la papelera.",
-		"folder_name": "El elemento %{folderName} ya existe, por favor escoger otro nombre.",
-		"folder_generic": "Ha ocurrido un error, por favor vuelva a ensayar.",
-		"folder_abort": "Se requiere poner un nombre a la nueva carpeta si desea guardarla. Su información no ha sido guardada.",
-		"offline": "Esta función no esta disponible cuando usted está desconectado."
-	},
-	"mobile": {
-		"onboarding": {
-			"welcome": {
-				"title1": "Bienvenida(o) a Cozy",
-				"title2": "Su propia nube personal",
-				"button": "Iniciar sesión en su Cozy",
-				"no_account_link": "¿No tiene usted una cuenta? Solicite una aquí."
-			},
-			"server_selection": {
-				"description": "Esta es la dirección que tiene que usar para conectarse a su Cozy.",
-				"cozy_address_placeholder": "tonystark.mycozy.cloud",
-				"button": "Siguiente",
-				"wrong_address_with_email": "Usted ha escrito una dirección email. Para conectarse a su cozy usted debe escribir la url, algo así como https://tonystark.mycozy.cloud",
-				"wrong_address_v2": "Usted ha entrado la dirección de la vieja versión de Cozy. Esta aplicación es sólo compatible con la última versión. [Por favor vaya a nuestra página para una mayor información.}\n(https://blog.cozycloud.cc/post/2016/11/21/On-the-road-to-Cozy-version-3?lang=es)",
-				"wrong_address": "Esta dirección no parece ser la de una cozy. Por favor, chequée la dirección de su proveedor."
-			},
-			"files": {
-				"title": "Acceder a sus archivos",
-				"description": "Para guardar sus archivos Cozy en su periférico, la aplicación debe poder acceder a sus archivos."
-			},
-			"photos": {
-				"title": "Hacer una copia de seguridad de sus fotos y sus vídeos",
-				"description": "Haga automáticamente una copia de seguridad de las fotos que usted toma con su teléfono en su Cozy, así nunca se perderán."
-			},
-			"contacts": {
-				"title": "Sincronizar sus contactos",
-				"description": "Guardar los contactos de su teléfono en su Cozy - esto le facilitará compartir archivos con ellos."
-			},
-			"step": {
-				"button": "Activar ahora",
-				"skip": "Más tarde",
-				"next": "Siguiente"
-			},
-			"analytics": {
-				"title": "Ayúdenos a mejorar Cozy",
-				"description": "La aplicación enviará automáticamente información (principalmente errores) a Cozy Cloud. Esto permitirá resolver problemas más tarde."
-			}
-		},
-		"settings": {
-			"title": "Ajustes",
-			"about": {
-				"title": "Acerca de",
-				"app_version": "Versión ",
-				"account": "Cuenta"
-			},
-			"unlink": {
-				"title": "Reiniciar esta aplicación",
-				"description": "Al hacer clic en Reset, usted podrá lanzar su aplicación de nuevo, y sólo perderá los datos guardados en su smartphone.",
-				"button": "Reiniciar",
-				"confirmation": {
-					"title": "¿Reiniciar esta aplicación?",
-					"description": "Al desconectarse de su Cozy, se borran todos los datos sincronizados localmente por su aplicación móvil.",
-					"cancel": "Anular",
-					"unlink": "Reiniciar"
-				}
-			},
-			"media_backup": {
-				"media_folder": "/Fotos/Salvaguardadas de su celular",
-				"title": "Copia de seguridad de Medios",
-				"images": {
-					"title": "Copia de seguridad de imágenes",
-					"label": "Cree automáticamente una Copia de seguridad de sus imágenes en Cozy, así nunca se perderán y podrá compartirlas fácilmente."
-				},
-				"launch": "Lanzar Copia de Seguridad",
-				"stop": "Parar la Copia de Seguridad",
-				"wifi": {
-					"title": "Copia de seguridad sólo con WIFI",
-					"label": "Si la opción está activada, su periférico sólo hará una copia de seguridad de las fotos cuando haya WIFI disponible."
-				},
-				"media_upload": "Haciendo la copia de seguridad de  %{upload_counter} de %{total_upload} fotos"
-			},
-			"support": {
-				"title": "Asistencia",
-				"analytics": {
-					"title": "Ayúdenos a mejorar Cozy",
-					"label": "La aplicación enviará automáticamente información (principalmente errores) a Cozy Cloud. Esto permitirá resolver problemas más tarde."
-				},
-				"logs": {
-					"title": "Ayúdenos a entender su problema",
-					"description": "Envíenos el log de la aplicación para ayudarnos a mejorar su calidad y estabilidad.",
-					"button": "Enviar mis logs",
-					"success": "Gracias, investigaremos su problema y le contactaremos pronto.",
-					"error": "Ha ocurrido un problema, los logs no podrán enviarse, por favor vuelva a ensayar más tarde"
-				}
-			},
-			"contacts": {
-				"title": "Contactos",
-				"subtitle": "Importar contactos",
-				"text": "Importar los contactos de su aparato a su Cozy para así poder compartir contenidos con ellos."
-			}
-		},
-		"error": {
-			"open_with": {
-				"offline": "Para abrir este archivo usted debe estar conectado",
-				"noapp": "Ninguna aplicación puede abrir este archivo"
-			}
-		},
-		"revoked": {
-			"title": "Acceso revocado",
-			"description": "Parece que usted ha desconectado este periférico de su Cozy. Si no es así, háganoslo saber a contact@cozycloud.cc.  Todos sus datos locales relacionados con su Cozy serán borrados.",
-			"loginagain": "Iniciar sesión de nuevo",
-			"logout": "Desconectarse"
-		},
-		"rating": {
-			"enjoy": {
-				"title": "¿Disfruta usted de Cozy Drive?",
-				"yes": "¡Sí!",
-				"no": "Realmente no"
-			},
-			"rate": {
-				"title": "¿Le importaría evaluarlo?",
-				"yes": "¡Hagámoslo pues!",
-				"no": "No, gracias",
-				"later": "Quizás más tarde"
-			},
-			"feedback": {
-				"title": "¿Podría usted hacernos algunos comentarios?",
-				"yes": "Enviar",
-				"no": "No, gracias"
-			},
-			"email": {
-				"subject": "Comentarios sobre Cozy Drive",
-				"placeholder": "Hola, pienso que Cozy Drive sería mejor si..."
-			},
-			"alert": {
-				"rated": "¡Gracias! Usted es ⭐️⭐️⭐️⭐️",
-				"declined": "Impresionante. Le gustarán las funciones que vienen. ¡Permanezca en Cozy!",
-				"later": "No hay problema, ya le preguntaremos más tarde.",
-				"feedback": "Gracias por sus comentarios. ¡Trabajamos precisamente en ello!"
-			}
-		}
-	},
-	"upload": {
-		"alert": {
-			"success": "%{smart_count} archivo cargado con éxito |||| %{smart_count} archivos cargados con éxito.",
-			"success_conflicts": "%{smart_count} archivo cargado con %{conflictNumber} conflicto(s). |||| %{smart_count} archivos cargados con %{conflictNumber} conflicto(s).",
-			"errors": "Han ocurrido errores al subir el archivo."
-		}
-	},
-	"UploadQueue": {
-		"header": "Cargando %{smart_count} foto a Cozy Drive |||| Cargando %{smart_count} fotos a Cozy Drive",
-		"header_mobile": "%{done} de %{total} cargando…",
-		"header_done": "Cargados %{done} de %{total} con éxito",
-		"close": "cerrar",
-		"item": {
-			"pending": "Pendiente"
-		}
-	}
-};
-
-/***/ }),
-/* 164 */
-/***/ (function(module, exports) {
-
-module.exports = {
-	"Nav": {
-		"item_drive": "Drive",
-		"item_recent": "Récents",
-		"item_shared": "Partagés",
-		"item_activity": "Activité",
-		"item_trash": "Corbeille",
-		"item_settings": "Paramètres",
-		"btn-client": "Télécharger Cozy Drive pour ordinateur",
-		"btn-client-web": "Obtenez un Cozy",
-		"btn-client-mobile": "Téléchargez Cozy Drive sur votre mobile !",
-		"banner-txt-client": "Astuce : vos photos, vos factures, vos documents d'identité accessibles n'importe quand, depuis tous vos appareils avec Cozy Drive installé sur votre ordinateur",
-		"banner-btn-client": "Télécharger maintenant",
-		"link-client": "https://docs.cozy.io/fr/download/",
-		"link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
-	},
-	"breadcrumb": {
-		"title_drive": "Drive",
-		"title_recent": "Récents",
-		"title_shared": "Mes fichiers partagés",
-		"title_activity": "Activité",
-		"title_trash": "Corbeille"
-	},
-	"toolbar": {
-		"item_upload": "Transférer des fichiers",
-		"item_more": "Plus",
-		"menu_upload": "Transférer des fichiers",
-		"menu_new_folder": "Nouveau dossier",
-		"menu_select": "Sélectionner les éléments",
-		"menu_download_folder": "Télécharger le dossier",
-		"empty_trash": "Vider la corbeille",
-		"share": "Partager"
-	},
-	"Share": {
-		"status": {
-			"pending": "En attente",
-			"accepted": {
-				"master-slave": "Peut consulter",
-				"master-master": "Peut modifier"
-			},
-			"refused": "Refusé",
-			"error": "Erreur",
-			"unregistered": "Erreur",
-			"mail-not-sent": "Erreur",
-			"revoked": "Erreur"
-		}
-	},
-	"Files": {
-		"share": {
-			"cta": "Partager",
-			"title": "Partager avec d'autres",
-			"shareByLink": {
-				"title": "Par lien",
-				"subtitle": "Partager par lien",
-				"desc": "Chaque personne possédant le lien fourni peut voir et télécharger vos fichiers."
-			},
-			"shareByEmail": {
-				"title": "Par e-mail",
-				"subtitle": "Partager par e-mail",
-				"email": "e-mail",
-				"emailPlaceholder": "Entrez l'adresse e-mail ou le nom de votre destinataire",
-				"send": "Envoyer",
-				"success": "Vous avez envoyé une invitation à %{email}."
-			},
-			"unshare": {
-				"title": "Révoquer le partage",
-				"success": "Vous avez cessé de partager ce fichier avec %{email}."
-			},
-			"sharingLink": {
-				"title": "Partager",
-				"copy": "Copier",
-				"copied": "Copié"
-			},
-			"whoHasAccess": {
-				"title": "Qui a accès"
-			},
-			"protectedShare": {
-				"title": "Prochainement !",
-				"desc": "Partagez ce que vous souhaitez par email avec votre famille et vos amis !"
-			},
-			"close": "Fermer",
-			"gettingLink": "Création du lien…",
-			"error": {
-				"generic": "Une erreur est survenue lors de la création du lien de partage, merci de réessayer"
-			}
-		}
-	},
-	"table": {
-		"head_name": "Nom",
-		"head_update": "Mise à jour",
-		"head_size": "Taille",
-		"head_status": "État",
-		"row_update_format": "D MMM YYYY",
-		"row_read_only": "Partagé (lecture seule)",
-		"row_read_write": "Partagé (lecture & écriture)",
-		"row_size_symbols": {
-			"B": "o",
-			"KB": "Ko",
-			"MB": "Mo",
-			"GB": "Go",
-			"TB": "To",
-			"PB": "Po",
-			"EB": "Eo",
-			"ZB": "Zo",
-			"YB": "Yo"
-		}
-	},
-	"SelectionBar": {
-		"selected_count": "élément sélectionné |||| éléments sélectionnés",
-		"share": "Partager",
-		"download": "Télécharger",
-		"trash": "Supprimer",
-		"destroy": "Supprimer définitivement",
-		"moveto": "Déplacer",
-		"rename": "Renommer",
-		"restore": "Restaurer",
-		"close": "Fermer",
-		"openWith": "Ouvrir avec",
-		"availableOffline": "Rendre accessible hors-ligne"
-	},
-	"deleteconfirmation": {
-		"title": "Supprimer cet élément ? |||| Supprimer ces éléments ?",
-		"trash": "Cet élément sera déplacé dans la corbeille. |||| Ces éléments seront déplacés dans la corbeille.",
-		"restore": "Vous pouvez toujours le restaurer quand vous voulez.",
-		"shared": "Les gens auxquels vous l'aviez partagé ne pourront plus y accéder.",
-		"referenced": "Des photos de la sélection sont dans un album. Elles seront retirées de l'album si vous validez.",
-		"cancel": "Annuler",
-		"delete": "Supprimer"
-	},
-	"emptytrashconfirmation": {
-		"title": "Supprimer définitivement ?",
-		"forbidden": "Vous ne pourrez plus accéder à ces fichiers.",
-		"restore": "Vous ne pourrez pas restaurer ces fichiers.",
-		"cancel": "Annuler",
-		"delete": "Supprimer tout"
-	},
-	"destroyconfirmation": {
-		"title": "Supprimer définitivement ?",
-		"forbidden": "Vous ne pourrez plus accéder à ce fichier. |||| Vous ne pourrez plus accéder à ces fichiers.",
-		"restore": "Vous ne pourrez pas restaurer ce fichier. |||| Vous ne pourrez pas restaurer ces fichiers.",
-		"cancel": "Annuler",
-		"delete": "Supprimer définitivement"
-	},
-	"quotaalert": {
-		"title": "Votre espace disque est plein :(",
-		"desc": "Merci de supprimer des fichiers et vider la corbeille avant de transférer de nouveaux fichiers.",
-		"confirm": "OK"
-	},
-	"loading": {
-		"message": "Chargement"
-	},
-	"empty": {
-		"title": "Vous n'avez aucun fichier dans ce dossier.",
-		"text": "Cliquez sur le bouton \"Transférer des fichiers\" pour ajouter des fichiers à ce dossier.",
-		"trash": {
-			"title": "Vous n'avez aucun fichier supprimé.",
-			"text": "Déplacez les fichiers dont vous n'avez plus besoin dans la corbeille et supprimez-les définitivement pour récupérer de l'espace de stockage."
-		}
-	},
-	"error": {
-		"open_folder": "Une erreur est survenue pendant l'ouverture du dossier.",
-		"button": {
-			"reload": "Rafraîchir"
-		},
-		"download_file": {
-			"offline": "Vous devez être connecté pour pouvoir ouvrir ce fichier",
-			"missing": "Le fichier n'existe pas"
-		},
-		"public_unshared_title": "Désolé, ce lien n'est plus disponible.",
-		"public_unshared_text": "Un de perdu, dix de retrouvés... ou alors prenez contact avec le propriétaire. Ce fichier n'est peut-être pas perdu."
-	},
-	"alert": {
-		"try_again": "Une erreur est survenue, merci de réessayer dans un instant.",
-		"restore_file_success": "La sélection a été restaurée avec succès.",
-		"trash_file_success": "La sélection a été déplacée dans la Corbeille.",
-		"destroy_file_success": "La sélection a été supprimée définitivement.",
-		"empty_trash_success": "La corbeille a été vidée.",
-		"folder_name": "L'élément %{folderName} existe déjà, merci de choisir un nouveau nom.",
-		"folder_generic": "Une erreur est survenue, merci de réessayer.",
-		"folder_abort": "Vous devez nommer votre dossier si vous voulez le sauvegarder. Vos informations n'ont pas été enregistrées.",
-		"offline": "C'est fonctionnalité n'est pas disponible en mode hors-ligne."
-	},
-	"mobile": {
-		"onboarding": {
-			"welcome": {
-				"title1": "Bienvenue sur Cozy",
-				"title2": "Votre propre cloud personnel",
-				"button": "Vous connecter à votre Cozy",
-				"no_account_link": "Vous n'avez pas de compte? Demandez-en un ici."
-			},
-			"server_selection": {
-				"description": "C'est l'adresse internet que vous utilisez pour accéder à votre Cozy",
-				"cozy_address_placeholder": "tonystark.mycozy.cloud",
-				"button": "Suivant",
-				"wrong_address_with_email": "Vous avez entré une adresse email. Pour vous connecter à votre Cozy vous devez entrer son url, sous la forme https://tonystark.mycozy.cloud",
-				"wrong_address_v2": "Vous avez entré l'adresse d'une Cozy v2. Cette application n'est compatible qu'avec la dernière version de Cozy. Rendez-vous sur [notre site](https://blog.cozycloud.cc/post/2016/11/21/On-the-road-to-Cozy-version-3?lang=fr) pour plus d'informations",
-				"wrong_address": "Cette adresse ne semble pas correspondre à un Cozy."
-			},
-			"files": {
-				"title": "Accéder à vos fichiers",
-				"description": "Pour sauvegarder les fichiers de votre Cozy sur votre périphérique, l'application doit accéder à vos fichiers."
-			},
-			"photos": {
-				"title": "Sauvegarder vos photos et vos vidéos",
-				"description": "Sauvegarder automatiquement les photos prises avec votre téléphone dans votre Cozy, pour ne jamais les perdre."
-			},
-			"contacts": {
-				"title": "Synchronisez vos contacts",
-				"description": "Sauvegardez les contacts de votre appareil sur votre Cozy — cela facilitera le partage de fichiers avec eux."
-			},
-			"step": {
-				"button": "Activer maintenant",
-				"skip": "Plus tard",
-				"next": "Suivant"
-			},
-			"analytics": {
-				"title": "Aidez-nous à améliorer Cozy",
-				"description": "Cette application transmettra automatiquement des données (surtout des erreurs) à notre équipe support. Cela nous permettra de résoudre les problèmes plus vite."
-			}
-		},
-		"settings": {
-			"title": "Paramètres",
-			"about": {
-				"title": "À propos",
-				"app_version": "Version",
-				"account": "Compte"
-			},
-			"unlink": {
-				"title": "Réinitialiser cette application",
-				"description": "En cliquant sur Réinitialiser, vous pourrez redémarrer à zéro votre application et perdrez uniquement les données sauvegardées sur votre téléphone.",
-				"button": "Réinitialiser",
-				"confirmation": {
-					"title": "Réinitialiser cette application?",
-					"description": "En vous déconnectant de votre Cozy, vous allez écraser les données locales enregistrées par votre application mobile.",
-					"cancel": "Annuler",
-					"unlink": "Réinitialiser"
-				}
-			},
-			"media_backup": {
-				"media_folder": "/Photos/Sauvegardées depuis mon mobile",
-				"title": "Sauvegarder des médias",
-				"images": {
-					"title": "Sauvegarde des images",
-					"label": "Sauvegardez vos photos automatiquement dans votre Cozy pour ne jamais les perdre et les partager efficacement."
-				},
-				"launch": "Lancer la sauvegarde",
-				"stop": "Arrêter la sauvegarde",
-				"wifi": {
-					"title": "Sauvegarder seulement en WIFI",
-					"label": "Si l'option est activée, votre périphérique ne sauvegardera les photos que lorsqu'il est connecté en WIFI afin d'économiser votre forfait."
-				},
-				"media_upload": "Sauvegarde en cours de %{upload_counter} sur %{total_upload} photos"
-			},
-			"support": {
-				"title": "Support",
-				"analytics": {
-					"title": " Aidez-nous à améliorer Cozy",
-					"label": "Cette application transmettra automatiquement des données (surtout des erreurs) à notre équipe support. Cela nous permettra de résoudre les problèmes plus vite."
-				},
-				"logs": {
-					"title": "Aidez-nous à comprendre votre problème",
-					"description": "Envoyez-nous le journal de l'application afin de nous aider à améliorer sa qualité et sa fiabilité.",
-					"button": "Envoyer mon journal",
-					"success": "Merci, nous allons investiguer votre problème et vous recontacter rapidement.",
-					"error": "Un problème n'a pas permis d'envoyer les informations."
-				}
-			},
-			"contacts": {
-				"title": "Contacts",
-				"subtitle": "Import de contacts",
-				"text": "Importez les contacts de votre téléphone dans votre Cozy pour partager plus facilement du contenu avec eux."
-			}
-		},
-		"error": {
-			"open_with": {
-				"offline": "Vous devez être connecté pour pouvoir ouvrir ce fichier",
-				"noapp": "Aucune application ne vous permet de lire ce fichier"
-			}
-		},
-		"revoked": {
-			"title": "Accès révoqué",
-			"description": "Vous semblez avoir révoqué votre périphérique depuis votre Cozy. Si ce n'est pas vous, n'hésitez pas à nous contacter à contact@cozycloud.cc. Toutes les données relatives à Cozy présentes localement vont être supprimées.",
-			"loginagain": "Se réenregistrer",
-			"logout": "Se déconnecter"
-		},
-		"rating": {
-			"enjoy": {
-				"title": "Aimez-vous Cozy Drive ?",
-				"yes": "Oui !",
-				"no": "Non"
-			},
-			"rate": {
-				"title": "Pouvez-vous nous noter sur le Store ?",
-				"yes": "Allons-y",
-				"no": "Non, merci",
-				"later": "Plus tard"
-			},
-			"feedback": {
-				"title": "Pouvez-vous nous donner des idées d'amélioration ?",
-				"yes": "Envoyer",
-				"no": "Non, merci"
-			},
-			"email": {
-				"subject": "Améiloration de Cozy Drive",
-				"placeholder": "Bonjour,\nJ'aimerais faire des suggestions sur Cozy Drive. Je pense que vous pourriez améliorer…"
-			},
-			"alert": {
-				"rated": "Merci ! Vous êtes au top ⭐️⭐️⭐️⭐️⭐️",
-				"declined": "Pas de problème. Vous allez adorer les prochaines améliorations. Restez Cozy !",
-				"later": "Vous avez raison de prendre votre temps pour nous répondre.",
-				"feedback": "Merci pour votre retour. Nous allons y travailler."
-			}
-		}
-	},
-	"upload": {
-		"alert": {
-			"success": "%{smart_count} fichier mis en ligne. |||| %{smart_count} fichiers mis en ligne.",
-			"success_conflicts": "%{smart_count} fichier mis en ligne avec %{conflictNumber} conflit(s). |||| %{smart_count} fichiers mis en ligne avec %{conflictNumber} conflit(s).",
-			"errors": "Une erreur est survenue lors de la mise en ligne du fichier, merci de réessayer plus tard."
-		}
-	},
-	"UploadQueue": {
-		"header": "Mise en ligne de %{smart_count} fichier dans votre Cozy |||| Mise en ligne de %{smart_count} fichiers dans votre Cozy",
-		"header_mobile": "%{done} sur %{total} mis en ligne…",
-		"header_done": "%{done} sur %{total} mises en ligne terminées",
-		"close": "Fermer",
-		"item": {
-			"pending": "En attente"
-		}
-	}
-};
-
-/***/ }),
-/* 165 */
-/***/ (function(module, exports) {
-
-module.exports = {
-	"Nav": {
-		"item_drive": "ドライブ",
-		"item_recent": "最近使用したファイル",
-		"item_shared": "自分が共有した",
-		"item_activity": "アクティビティ",
-		"item_trash": "ゴミ箱",
-		"item_settings": "設定",
-		"btn-client": "デスクトップ用 Cozy を入手",
-		"btn-client-web": "Cozy を入手する",
-		"btn-client-mobile": "お使いのモバイルで Cozy ドライブを入手しましょう!",
-		"banner-txt-client": "ヒント: お使いのコンピュータにインストールされた Cozy ドライブで、デバイスから、写真、請求書、身分証明書がいつでもアクセス可能です",
-		"banner-btn-client": "今すぐダウンロード",
-		"link-client": "https://docs.cozy.io/en/download/",
-		"link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
-	},
-	"breadcrumb": {
-		"title_drive": "ドライブ",
-		"title_recent": "最近使用したファイル",
-		"title_shared": "自分が共有した",
-		"title_activity": "アクティビティ",
-		"title_trash": "ゴミ箱"
-	},
-	"toolbar": {
-		"item_upload": "アップロード",
-		"item_more": "さらに",
-		"menu_upload": "ファイルのアップロード",
-		"menu_new_folder": "新しいフォルダー",
-		"menu_select": "アイテムを選択",
-		"menu_download_folder": "ダウンロードフォルダー",
-		"empty_trash": "ゴミ箱を空にする",
-		"share": "共有"
-	},
-	"Share": {
-		"status": {
-			"pending": "保留",
-			"accepted": {
-				"master-slave": "表示可能",
-				"master-master": "変更可能"
-			},
-			"refused": "拒否されました",
-			"error": "エラー",
-			"unregistered": "エラー",
-			"mail-not-sent": "エラー",
-			"revoked": "エラー"
-		}
-	},
-	"Files": {
-		"share": {
-			"cta": "共有",
-			"title": "他の人と共有",
-			"shareByLink": {
-				"title": "公開リンクで",
-				"subtitle": "リンクで共有",
-				"desc": "提供されたリンクを持つ人は、誰でもあなたのファイルを見たりダウンロードしたりすることができます。"
-			},
-			"shareByEmail": {
-				"title": "メールで",
-				"subtitle": "メールで共有",
-				"email": "メール",
-				"emailPlaceholder": "メールアドレスまたは受信者の名前を入力してください",
-				"send": "送信",
-				"success": "招待状を %{email} に送信しました。"
-			},
-			"unshare": {
-				"title": "共有から削除",
-				"success": "この共有済ファイルを %{email} から削除しました。"
-			},
-			"sharingLink": {
-				"title": "共有するリンク",
-				"copy": "コピー",
-				"copied": "コピーしました"
-			},
-			"whoHasAccess": {
-				"title": "アクセスできる人"
-			},
-			"protectedShare": {
-				"title": "まもなく登場します!",
-				"desc": "あなたの家族や友達とメールで何でも共有してください!"
-			},
-			"close": "閉じる",
-			"gettingLink": "リンクの取得中...",
-			"error": {
-				"generic": "ファイル共有リンクの作成中にエラーが発生しました。もう一度やり直してください。"
-			}
-		}
-	},
-	"table": {
-		"head_name": "名前",
-		"head_update": "最終更新",
-		"head_size": "サイズ",
-		"head_status": "ステータス",
-		"row_update_format": "yyyy/MM/dd",
-		"row_read_only": "共有 (読み取り専用)",
-		"row_read_write": "共有 (読み書き)",
-		"row_size_symbols": {
-			"B": "B",
-			"KB": "KB",
-			"MB": "MB",
-			"GB": "GB",
-			"TB": "TB",
-			"PB": "PB",
-			"EB": "EB",
-			"ZB": "ZB",
-			"YB": "YB"
-		}
-	},
-	"SelectionBar": {
-		"selected_count": "アイテム選択 |||| アイテム選択",
-		"share": "共有",
-		"download": "ダウンロード",
-		"trash": "削除",
-		"destroy": "完全に削除",
-		"moveto": "移動",
-		"rename": "名前の変更",
-		"restore": "復元",
-		"close": "閉じる",
-		"openWith": "開く...",
-		"availableOffline": "オフラインで利用可能にする"
-	},
-	"deleteconfirmation": {
-		"title": "この要素を削除しますか? |||| これらの要素を削除しますか?",
-		"trash": "ゴミ箱に移動されます。 |||| ゴミ箱に移動されます。",
-		"restore": "いつでも元に戻すことができます。 |||| いつでも元に戻すことができます。",
-		"shared": "共有している場合、他の人がアクセスすることができなくなります。 |||| 共有している場合、他の人がアクセスすることができなくなります。",
-		"referenced": "選択範囲内の一部のファイルがフォトアルバムに関連しています。それらはゴミ箱に移動すると、削除されます。",
-		"cancel": "キャンセル",
-		"delete": "削除"
-	},
-	"emptytrashconfirmation": {
-		"title": "完全に削除しますか?",
-		"forbidden": "これらのファイルにもうアクセスすることはできません。",
-		"restore": "バックアップを作成していない場合、これらのファイルを復元することはできません。",
-		"cancel": "キャンセル",
-		"delete": "すべて削除"
-	},
-	"destroyconfirmation": {
-		"title": "完全に削除しますか?",
-		"forbidden": "このファイルにもうアクセスすることはできません。 |||| これらのファイルにもうアクセスすることはできません。",
-		"restore": "バックアップを作成していない場合、このファイルを復元することはできません。 |||| バックアップを作成していない場合、これらのファイルを復元することはできません。",
-		"cancel": "キャンセル",
-		"delete": "完全に削除"
-	},
-	"quotaalert": {
-		"title": "お使いのディスク容量が一杯です :(",
-		"desc": "ファイルを再度アップロードする前に、ファイルを削除してごみ箱を空にしてください。",
-		"confirm": "OK"
-	},
-	"loading": {
-		"message": "読み込み中"
-	},
-	"empty": {
-		"title": "このフォルダーにファイルはありません。",
-		"text": "\"アップロード\" ボタンをクリックして、このフォルダーにファイルを追加します。",
-		"trash": {
-			"title": "削除されたファイルはありません。",
-			"text": "不要になったファイルをゴミ箱に移動し、アイテムを完全に削除するとストレージページを解放します。"
-		}
-	},
-	"error": {
-		"open_folder": "フォルダーを開くときに何か問題が発生しました。",
-		"button": {
-			"reload": "今すぐ更新"
-		},
-		"download_file": {
-			"offline": "このファイルをダウンロードするには接続している必要があります",
-			"missing": "このファイルが見つかりません"
-		},
-		"public_unshared_title": "申し訳ありません。このリンクはもう利用できません。",
-		"public_unshared_text": "1 つ失い、10 見つかりました... そうでなければオーナーの支援を受けてチェックしてください。 このファイルは失われないかもしれません。"
-	},
-	"alert": {
-		"try_again": "エラーが発生しました。しばらくしてからもう一度やり直してください。",
-		"restore_file_success": "選択を正常に復元しました。",
-		"trash_file_success": "選択をゴミ箱に移動しました。",
-		"destroy_file_success": "選択を完全に削除しました。",
-		"empty_trash_success": "ゴミ箱を空にしました。",
-		"folder_name": "要素 %{folderName} はすでに存在します。新しい名前を選んでください。",
-		"folder_generic": "エラーが発生しました。もう一度やり直してください。",
-		"folder_abort": "保存したい場合、新しいフォルダーに名前を追加する必要があります。 情報は保存されていません。",
-		"offline": "この機能はオフラインでは利用できません。"
-	},
-	"mobile": {
-		"onboarding": {
-			"welcome": {
-				"title1": "Cozy へようこそ",
-				"title2": "あなた独自のパーソナルクラウド",
-				"button": "Cozy にサインインしてください",
-				"no_account_link": "アカウントをお持ちではありませんか? ここからリクエストしてください。"
-			},
-			"server_selection": {
-				"description": "これは Cozy に接続するために使用する Web アドレスです。",
-				"cozy_address_placeholder": "tonystark.mycozy.cloud",
-				"button": "次へ",
-				"wrong_address_with_email": "メールアドレスを入力しました。 Cozy に接続するには、https://tonystark.mycozy.cloud のような URL を入力する必要があります",
-				"wrong_address_v2": "古い Cozy バージョンのアドレスを入力しました。 このアプリケーションは、最新バージョンとのみ互換性があります。 [詳細については、私たちのサイトを参照してください。](https://blog.cozycloud.cc/post/2016/11/21/On-the-road-to-Cozy-version-3?lang=en)",
-				"wrong_address": "このアドレスは Cozy ではないようです。 入力したアドレスを確認してください。"
-			},
-			"files": {
-				"title": "ファイルのアクセス",
-				"description": "お使いのデバイスで Cozy のファイルを保存するには、アプリケーションがファイルにアクセスする必要があります。"
-			},
-			"photos": {
-				"title": "写真とビデオをバックアップ",
-				"description": "お使いの電話で撮影した写真を自動的に Cozy にバックアップして、失わないようにします。"
-			},
-			"contacts": {
-				"title": "連絡先を同期",
-				"description": "お使いの携帯電話の連絡先を Cozy に保存します — これにより、連絡先とファイルの共有が容易になります。"
-			},
-			"step": {
-				"button": "今すぐ有効にする",
-				"skip": "後で",
-				"next": "次へ"
-			},
-			"analytics": {
-				"title": "Cozy の改善を手伝う",
-				"description": "アプリケーションは、自動的にデータ (主にエラー) を Cozy クラウドに提供します。 これにより問題をより早く解決することができます。"
-			}
-		},
-		"settings": {
-			"title": "設定",
-			"about": {
-				"title": "アプリについて",
-				"app_version": "アプリのバージョン",
-				"account": "アカウント"
-			},
-			"unlink": {
-				"title": "このアプリケーションをリセット",
-				"description": "リセットをクリックすると、アプリケーションを起動することができ、スマートフォンに保存されているデータのみが失われます。",
-				"button": "リセット",
-				"confirmation": {
-					"title": "アプリケーションをリセットしますか?",
-					"description": "Cozy からログアウトすると、モバイルアプリケーションによってローカルに同期されたデータはすべて消去されます",
-					"cancel": "キャンセル",
-					"unlink": "リセット"
-				}
-			},
-			"media_backup": {
-				"media_folder": "自分のモバイルから /Photos/Backuped",
-				"title": "メディアバックアップ",
-				"images": {
-					"title": "画像のバックアップ",
-					"label": "画像を自動的に Cozy にバックアップして、無くさないようにして、簡単に共有できるようにします。"
-				},
-				"launch": "バックアップを起動",
-				"stop": "バックアップを停止",
-				"wifi": {
-					"title": "WIFI でのみバックアップ",
-					"label": "このオプションが有効になっている場合、パケットを節約するために、お使いのデバイスが WIFI 接続時にのみ写真をバックアップします。"
-				},
-				"media_upload": "%{upload_counter} / %{total_upload} 枚の写真をバックアップ中"
-			},
-			"support": {
-				"title": "サポート",
-				"analytics": {
-					"title": "Cozy の改善を手伝う",
-					"label": "アプリケーションは、自動的にデータ (主にエラー) を Cozy クラウドに提供します。 これにより問題をより早く解決することができます。"
-				},
-				"logs": {
-					"title": "あなたの問題を理解できるように私たちを手伝ってください",
-					"description": "アプリケーションログをメールで送って、品質と安定性の向上を支援してください。",
-					"button": "ログを送信",
-					"success": "ありがとうございます、私たちは問題を調査し、すぐにご連絡いたします。",
-					"error": "問題が発生しました。ログを送信できませんでした。もう一度やり直してください。"
-				}
-			},
-			"contacts": {
-				"title": "連絡先",
-				"subtitle": "連絡先をインポート",
-				"text": "お使いのデバイスから Cozy に連絡先をインポートすると、コンテンツを簡単に共有できます。"
-			}
-		},
-		"error": {
-			"open_with": {
-				"offline": "このファイルを開くには接続している必要があります",
-				"noapp": "このファイルを開くことができるアプリケーションがありません"
-			}
-		},
-		"revoked": {
-			"title": "アクセスが取り消されました",
-			"description": "あなたはこのデバイスを Cozy から取り消したようです。 あなたが行っていない場合は、contact@cozycloud.cc までお知らせください。 あなたの Cozy に関連するすべてのローカルデータが削除されます。",
-			"loginagain": "もう一度ログイン",
-			"logout": "ログアウト"
-		},
-		"rating": {
-			"enjoy": {
-				"title": "Cozy ドライブを楽しんでますか?",
-				"yes": "はい!",
-				"no": "あまり"
-			},
-			"rate": {
-				"title": "評価して頂けますか?",
-				"yes": "そうする!",
-				"no": "いいえ結構です",
-				"later": "後で"
-			},
-			"feedback": {
-				"title": "フィードバックをお願いできますか?",
-				"yes": "送信",
-				"no": "いいえ結構です"
-			},
-			"email": {
-				"subject": "Cozy ドライブでフィードバック",
-				"placeholder": "こんにちは、Cozy ドライブはいいと思います..."
-			},
-			"alert": {
-				"rated": "ありがとう! ⭐️⭐️⭐️⭐️⭐️ です",
-				"declined": "素晴らしい。今後の機能が楽しみです。 Cozy を使い続けます!",
-				"later": "問題ありません、後でまた尋ねます。",
-				"feedback": "フィードバックいただきありがとうございます。 私たちは間違いなく取り組んでいきます!"
-			}
-		}
-	},
-	"upload": {
-		"alert": {
-			"success": "%{smart_count} ファイルを正常にアップロードしました。 |||| %{smart_count} ファイルを正常にアップロードしました。",
-			"success_conflicts": "%{smart_count} ファイルをアップロードしましたが %{conflictNumber} の競合がありました。 |||| ファイルをアップロードしましたが %{conflictNumber} の競合がありました。",
-			"errors": "ファイルのアップロード中にエラーが発生しました。"
-		}
-	},
-	"UploadQueue": {
-		"header": "%{smart_count} 枚の写真を Cozy ドライブにアップロード中 |||| %{smart_count} 枚の写真を Cozy ドライブにアップロード中",
-		"header_mobile": "%{done} / %{total} アップロード中…",
-		"header_done": "%{done} / %{total} を正常にアップロードしました",
-		"close": "閉じる",
-		"item": {
-			"pending": "保留"
-		}
-	}
-};
-
-/***/ }),
-/* 166 */
-/***/ (function(module, exports) {
-
-module.exports = {
-	"Nav": {
-		"item_drive": "Drive",
-		"item_recent": "Recent",
-		"item_shared": "Shared by me",
-		"item_activity": "Activity",
-		"item_trash": "Trash",
-		"item_settings": "Settings",
-		"btn-client": "Get Cozy for desktop",
-		"btn-client-web": "Get Cozy",
-		"btn-client-mobile": "Get Cozy Drive on your mobile!",
-		"banner-txt-client": "Tip: your pictures, bills, ID documents, all accessible anytime, from any of your device with Cozy Drive installed on your computer",
-		"banner-btn-client": "Download now",
-		"link-client": "https://docs.cozy.io/en/download/",
-		"link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
-	},
-	"breadcrumb": {
-		"title_drive": "Drive",
-		"title_recent": "Recent",
-		"title_shared": "Shared by me",
-		"title_activity": "Activity",
-		"title_trash": "Trash"
-	},
-	"toolbar": {
-		"item_upload": "Upload",
-		"item_more": "More",
-		"menu_upload": "Upload files",
-		"menu_new_folder": "New folder",
-		"menu_select": "Select items",
-		"menu_download_folder": "Download folder",
-		"empty_trash": "Empty trash",
-		"share": "Share"
-	},
-	"Share": {
-		"status": {
-			"pending": "Pending",
-			"accepted": {
-				"master-slave": "Can View",
-				"master-master": "Can Change"
-			},
-			"refused": "Refused",
-			"error": "Error",
-			"unregistered": "Error",
-			"mail-not-sent": "Error",
-			"revoked": "Error"
-		}
-	},
-	"Files": {
-		"share": {
-			"cta": "Share",
-			"title": "Share with others",
-			"shareByLink": {
-				"title": "By public link",
-				"subtitle": "Share by link",
-				"desc": "Anyone with the provided link can see and download your files."
-			},
-			"shareByEmail": {
-				"title": "By email",
-				"subtitle": "Share by email",
-				"email": "email",
-				"emailPlaceholder": "Enter email address or name of your recipient",
-				"send": "Send",
-				"success": "You sent an invite to %{email}."
-			},
-			"unshare": {
-				"title": "Remove from sharing",
-				"success": "You removed this shared file from %{email}."
-			},
-			"sharingLink": {
-				"title": "Link to share",
-				"copy": "Copy",
-				"copied": "Copied"
-			},
-			"whoHasAccess": {
-				"title": "Who has access"
-			},
-			"protectedShare": {
-				"title": "Coming soon!",
-				"desc": "Share anything by email with your family and friends!"
-			},
-			"close": "Close",
-			"gettingLink": "Getting your link...",
-			"error": {
-				"generic": "An error occurred when creating the file share link, please try again."
-			}
-		}
-	},
-	"table": {
-		"head_name": "Name",
-		"head_update": "Last update",
-		"head_size": "Size",
-		"head_status": "Status",
-		"row_update_format": "MMM D, YYYY",
-		"row_read_only": "Share (Read only)",
-		"row_read_write": "Share (Read & Write)",
-		"row_size_symbols": {
-			"B": "B",
-			"KB": "KB",
-			"MB": "MB",
-			"GB": "GB",
-			"TB": "TB",
-			"PB": "PB",
-			"EB": "EB",
-			"ZB": "ZB",
-			"YB": "YB"
-		}
-	},
-	"SelectionBar": {
-		"selected_count": "item selected |||| items selected",
-		"share": "Share",
-		"download": "Download",
-		"trash": "Remove",
-		"destroy": "Delete permanently",
-		"moveto": "Move",
-		"rename": "Rename",
-		"restore": "Restore",
-		"close": "Close",
-		"openWith": "Open with",
-		"availableOffline": "Make available offline"
-	},
-	"deleteconfirmation": {
-		"title": "Delete this element? |||| Delete these elements?",
-		"trash": "It will be moved to the Trash. |||| They will be moved to the Trash.",
-		"restore": "You can still restore it whenever you want. |||| You can still restore them whenever you want.",
-		"shared": "If you have shared it, people won't be able to access it. |||| If you have shared them, people won't be able to access them.",
-		"referenced": "Some of the files within the selection are related to a photo album. They will be removed from it if you proceed to trash them.",
-		"cancel": "Cancel",
-		"delete": "Remove"
-	},
-	"emptytrashconfirmation": {
-		"title": "Permanently delete?",
-		"forbidden": "You won't be able to access these files anymore.",
-		"restore": "You won't be able to restore these files if you didn't make a backup.",
-		"cancel": "Cancel",
-		"delete": "Delete all"
-	},
-	"destroyconfirmation": {
-		"title": "Permanently delete?",
-		"forbidden": "You won't be able to access this file anymore. |||| You won't be able to access these files anymore.",
-		"restore": "You won't be able to restore this file if you didn't make a backup. |||| You won't be able to restore these files if you didn't make a backup.",
-		"cancel": "Cancel",
-		"delete": "Delete permanently"
-	},
-	"quotaalert": {
-		"title": "Your disk space is full :(",
-		"desc": " Please remove files and empty your trash before uploading files again.",
-		"confirm": "OK"
-	},
-	"loading": {
-		"message": "Loading"
-	},
-	"empty": {
-		"title": "You don’t have any files in this folder.",
-		"text": "Click the \"upload\" button to add files to this folder.",
-		"trash": {
-			"title": "You don’t have any deleted files.",
-			"text": "Move files you don't need anymore to the Trash and permanently delete items to free up storage page."
-		}
-	},
-	"error": {
-		"open_folder": "Something went wrong when opening the folder.",
-		"button": {
-			"reload": "Refresh now"
-		},
-		"download_file": {
-			"offline": "You should be connected to download this file",
-			"missing": "This file is missing"
-		},
-		"public_unshared_title": "Sorry, this link is no longer available.",
-		"public_unshared_text": "One lost, ten found... or just check out with the owner for help. This file might not be lost."
-	},
-	"alert": {
-		"try_again": "An error has occurred, please try again in a moment.",
-		"restore_file_success": "The selection has been successfully restored.",
-		"trash_file_success": "The selection has been moved to the Trash.",
-		"destroy_file_success": "The selection has been deleted permanently.",
-		"empty_trash_success": "The trash has been emptied.",
-		"folder_name": "The element %{folderName} already exists, please choose a new name.",
-		"folder_generic": "An error occurred, please try again.",
-		"folder_abort": "You need to add a name to your new folder if you would like to save it. Your information has not been saved.",
-		"offline": "This feature is not available offline."
-	},
-	"mobile": {
-		"onboarding": {
-			"welcome": {
-				"title1": "Welcome to Cozy",
-				"title2": "Your own personal cloud",
-				"button": "Sign in to your Cozy",
-				"no_account_link": "Don’t have an account? Request one here."
-			},
-			"server_selection": {
-				"description": "This is the web address you use to access your Cozy.",
-				"cozy_address_placeholder": "tonystark.mycozy.cloud",
-				"button": "Next",
-				"wrong_address_with_email": "You typed an email address. To connect on your cozy you must type its url, something like https://tonystark.mycozy.cloud",
-				"wrong_address_v2": "You have just entered the address of old Cozy version. This application is only compatible with the latest version. [Please refer to our site for more information.](https://blog.cozycloud.cc/post/2016/11/21/On-the-road-to-Cozy-version-3?lang=en)",
-				"wrong_address": "This address doesn’t seem to be a cozy. Please check the address you provide."
-			},
-			"files": {
-				"title": "Access your drive",
-				"description": "In order to save your Cozy Drive on your device, the application must access your files."
-			},
-			"photos": {
-				"title": "Backup your photos and videos",
-				"description": "Automatically backup the photos taken with your phone to your Cozy, so you never lose them."
-			},
-			"contacts": {
-				"title": "Sync your contacts",
-				"description": "Save your phone's contact on your Cozy — this will facilitate sharing files with them."
-			},
-			"step": {
-				"button": "Enable now",
-				"skip": "Later",
-				"next": "Next"
-			},
-			"analytics": {
-				"title": "Help us improve Cozy",
-				"description": "The application will automatically provide data (mainly errors) to Cozy Cloud. It will allow us to resolve problems faster."
-			}
-		},
-		"settings": {
-			"title": "Settings",
-			"about": {
-				"title": "About",
-				"app_version": "App Version",
-				"account": "Account"
-			},
-			"unlink": {
-				"title": "Reset this application",
-				"description": "By clicking Reset, you will be able to start your application over, and will only lose the data saved on your smartphone.",
-				"button": "Reset",
-				"confirmation": {
-					"title": "Reset this application?",
-					"description": "By logging out of your Cozy, you will erase all data synchronized locally by your mobile application.",
-					"cancel": "Cancel",
-					"unlink": "Reset"
-				}
-			},
-			"media_backup": {
-				"media_folder": "/Photos/Backuped from my mobile",
-				"title": "Media Backup",
-				"images": {
-					"title": "Backup images",
-					"label": "Backup your images automatically to your Cozy not to ever lose them and share them easily."
-				},
-				"launch": "Launch Backup",
-				"stop": "Stop Backup",
-				"wifi": {
-					"title": "Backup on WIFI only",
-					"label": "If the option is enabled, your device will only backup photos when it's on WIFI in order to save your package."
-				},
-				"media_upload": "Backing up %{upload_counter} of %{total_upload} photos"
-			},
-			"support": {
-				"title": "Support",
-				"analytics": {
-					"title": "Help us improve Cozy",
-					"label": "The application will automatically provide data (mainly errors) to Cozy Cloud. It will allow us to resolve problems faster."
-				},
-				"logs": {
-					"title": "Help us to understand your problem",
-					"description": "Send the application log to help us improve its quality and stability.",
-					"button": "Send my logs",
-					"success": "Thanks, we will investigate your problem and contact you soon.",
-					"error": "A problem happened, logs couldn't be sent, please try again."
-				}
-			},
-			"contacts": {
-				"title": "Contacts",
-				"subtitle": "Import contacts",
-				"text": "Import the contacts from your device to your Cozy to easily share content with them."
-			}
-		},
-		"error": {
-			"open_with": {
-				"offline": "You should be connected to open this file",
-				"noapp": "No application can open this file"
-			}
-		},
-		"revoked": {
-			"title": "Access revoked",
-			"description": "It appears you revoked this device from your Cozy. If you didn't, please let us know at contact@cozycloud.cc. All your local data related to your Cozy will be removed.",
-			"loginagain": "Log in again",
-			"logout": "Log out"
-		},
-		"rating": {
-			"enjoy": {
-				"title": "Enjoying Cozy Drive?",
-				"yes": "Yes!",
-				"no": "Not really"
-			},
-			"rate": {
-				"title": "Would you mind rating it?",
-				"yes": "Let's do that!",
-				"no": "No, thanks",
-				"later": "Maybe later"
-			},
-			"feedback": {
-				"title": "Would you mind giving us some feedback?",
-				"yes": "Send",
-				"no": "No, thanks"
-			},
-			"email": {
-				"subject": "Feedback on Cozy Drive",
-				"placeholder": "Hello, I think Cozy Drive would be better if…"
-			},
-			"alert": {
-				"rated": "Thank you! You're ⭐️⭐️⭐️⭐️⭐️",
-				"declined": "Awesome. You will love the upcoming features. Stay Cozy!",
-				"later": "No problem, we'll ask again later.",
-				"feedback": "Thank you for the feedback. We'll definitely work on it!"
-			}
-		}
-	},
-	"upload": {
-		"alert": {
-			"success": "%{smart_count} file uploaded with success. |||| %{smart_count} files uploaded with success.",
-			"success_conflicts": "%{smart_count} file uploaded with %{conflictNumber} conflict(s). |||| %{smart_count} files uploaded with %{conflictNumber} conflict(s).",
-			"errors": "Errors occurred during the file upload."
-		}
-	},
-	"UploadQueue": {
-		"header": "Uploading %{smart_count} photo to Cozy Drive |||| Uploading %{smart_count} photos to Cozy Drive",
-		"header_mobile": "%{done} of %{total} uploading…",
-		"header_done": "Uploaded %{done} out of %{total} successfully",
-		"close": "close",
-		"item": {
-			"pending": "Pending"
-		}
-	}
-};
-
-/***/ }),
-/* 167 */
-/***/ (function(module, exports) {
-
-module.exports = {
-	"Nav": {
-		"item_drive": "Drive",
-		"item_recent": "Recent",
-		"item_shared": "Shared by me",
-		"item_activity": "Activity",
-		"item_trash": "Trash",
-		"item_settings": "Settings",
-		"btn-client": "Get Cozy for desktop",
-		"btn-client-web": "Get Cozy",
-		"btn-client-mobile": "Get Cozy Drive on your mobile!",
-		"banner-txt-client": "Tip: your pictures, bills, ID documents, all accessible anytime, from any of your device with Cozy Drive installed on your computer",
-		"banner-btn-client": "Download now",
-		"link-client": "https://docs.cozy.io/en/download/",
-		"link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
-	},
-	"breadcrumb": {
-		"title_drive": "Schijf",
-		"title_recent": "Recent",
-		"title_shared": "Gedeeld door mij",
-		"title_activity": "Activiteit",
-		"title_trash": "Prullenbak"
-	},
-	"toolbar": {
-		"item_upload": "Upload",
-		"item_more": "Meer",
-		"menu_upload": "Upload bestand",
-		"menu_new_folder": "Nieuwe map",
-		"menu_select": "Selecteer items",
-		"menu_download_folder": "Download folder",
-		"empty_trash": "Leeg de prullenbak",
-		"share": "Share"
-	},
-	"Share": {
-		"status": {
-			"pending": "Pending",
-			"accepted": {
-				"master-slave": "Can View",
-				"master-master": "Can Change"
-			},
-			"refused": "Refused",
-			"error": "Error",
-			"unregistered": "Error",
-			"mail-not-sent": "Error",
-			"revoked": "Error"
-		}
-	},
-	"Files": {
-		"share": {
-			"cta": "Share",
-			"title": "Share with others",
-			"shareByLink": {
-				"title": "By public link",
-				"subtitle": "Share by link",
-				"desc": "Anyone with the provided link can see and download your files."
-			},
-			"shareByEmail": {
-				"title": "By email",
-				"subtitle": "Share by email",
-				"email": "email",
-				"emailPlaceholder": "Enter email address or name of your recipient",
-				"send": "Send",
-				"success": "You sent an invite to %{email}."
-			},
-			"unshare": {
-				"title": "Remove from sharing",
-				"success": "You removed this shared file from %{email}."
-			},
-			"sharingLink": {
-				"title": "Link to share",
-				"copy": "Copy",
-				"copied": "Copied"
-			},
-			"whoHasAccess": {
-				"title": "Who has access"
-			},
-			"protectedShare": {
-				"title": "Coming soon!",
-				"desc": "Share anything by email with your family and friends!"
-			},
-			"close": "Close",
-			"gettingLink": "Getting your link...",
-			"error": {
-				"generic": "An error occurred when creating the file share link, please try again."
-			}
-		}
-	},
-	"table": {
-		"head_name": "Naam",
-		"head_update": "Laatst bijgewerkt",
-		"head_size": "Grootte",
-		"head_status": "Status",
-		"row_update_format": "MMM D, YYYY",
-		"row_read_only": "Delen (alleen lezen)",
-		"row_read_write": "Delen (Lezen en schrijven)",
-		"row_size_symbols": {
-			"B": "B",
-			"KB": "KB",
-			"MB": "MB",
-			"GB": "GB",
-			"TB": "TB",
-			"PB": "PB",
-			"EB": "EB",
-			"ZB": "ZB",
-			"YB": "YB"
-		}
-	},
-	"SelectionBar": {
-		"selected_count": "item selected |||| items selected",
-		"share": "Share",
-		"download": "Download",
-		"trash": "Remove",
-		"destroy": "Delete permanently",
-		"moveto": "Move",
-		"rename": "Rename",
-		"restore": "Restore",
-		"close": "Close",
-		"openWith": "Open with",
-		"availableOffline": "Make available offline"
-	},
-	"deleteconfirmation": {
-		"title": "Verwijder dit element? |||| Verwijder deze elementen?",
-		"trash": "Het zal worden verplaatst naar de Prullenbak. ||| Ze zullen worden verplaatst naar de Prullenbak.",
-		"restore": "Je kunt het nog steeds terughalen als je wilt. |||| Je kunt ze nog steeds terughalen als je wilt.",
-		"shared": "Als je het gedeeld hebt, kunnen de mensen er niet meer bij. |||| Als je ze gedeeld hebt, kunnen de mensen er niet meer bij.",
-		"referenced": "Some of the files within the selection are related to a photo album. They will be removed from it if you proceed to trash them.",
-		"cancel": "Annuleren",
-		"delete": "Verwijderen"
-	},
-	"emptytrashconfirmation": {
-		"title": "Permanent verwijderen?",
-		"forbidden": "Je kunt deze bestanden niet meer benaderen.",
-		"restore": "Als je geen back-up gemaakt hebt, kun je deze bestanden niet meer terugzetten.",
-		"cancel": "Annuleren",
-		"delete": "Verwijder alles"
-	},
-	"destroyconfirmation": {
-		"title": "Verwijder permanent?",
-		"forbidden": "Je kunt dit bestand net meer benaderen. |||| Je kunt deze bestanden niet meer benaderen.",
-		"restore": "Als je geen back-up gemaakt hebt, kun je dit bestand niet meer terugzetten. |||| Als je geen back-up gemaakt hebt, kun je deze bestanden niet meer terugzetten.",
-		"cancel": "Annuleren",
-		"delete": "Verwijder permanent"
-	},
-	"quotaalert": {
-		"title": "Jouw schijfruimte is vol :(",
-		"desc": "Verwijder alsjeblieft bestanden en leeg de prullenbak voordat je opnieuw bestanden upload.",
-		"confirm": "OK"
-	},
-	"loading": {
-		"message": "Laden"
-	},
-	"empty": {
-		"title": "Er staan geen bestanden in deze map.",
-		"text": "Klik op de \"upload\" knop om bestanden aan deze map toe te voegen.",
-		"trash": {
-			"title": "Je hebt geen verwijderde bestanden.",
-			"text": "Verplaats bestanden die je niet meer nodig hebt naar de prullenbak en verwijder bestanden permanent om schijfruimte op te schonen."
-		}
-	},
-	"error": {
-		"open_folder": "Er is is fout gegaan bij het openen van de map.",
-		"button": {
-			"reload": "Nu verversen"
-		},
-		"download_file": {
-			"offline": "Je moet verbonden zijn om dit  bestand te downloaden",
-			"missing": "Dit bestand bestaat niet"
-		},
-		"public_unshared_title": "Sorry, this link is no longer available.",
-		"public_unshared_text": "One lost, ten found... or just check out with the owner for help. This file might not be lost."
-	},
-	"alert": {
-		"try_again": "Er is een fout opgetreden, probeer het later nog eens.",
-		"restore_file_success": "De selectie is succesvol herstelt.",
-		"trash_file_success": "De selectie is verplaatst naar de Prullenbak.",
-		"destroy_file_success": "De selectie is permanent verwijderd.",
-		"empty_trash_success": "De prullenbak is geleegd.",
-		"folder_name": "Het element %{foldername} bestaat al, kies een andere naam.",
-		"folder_generic": "Er is een fout opgetreden, probeer het opnieuw.",
-		"folder_abort": "Je moet de nieuwe map een naam geven als je het wilt opslaan. De gegevens zijn niet opgeslagen.",
-		"offline": "Deze mogelijkheid is niet beschikbaar offline."
-	},
-	"mobile": {
-		"onboarding": {
-			"welcome": {
-				"title1": "Welkom bij Cozy",
-				"title2": "Jouw eigen persoonlijke cloud",
-				"button": "Log in op jouw Cozy",
-				"no_account_link": "Heb je geen account? Vraag er hier een aan."
-			},
-			"server_selection": {
-				"description": "Dit is het web adres dat je kunt gebruiken om jouw Cozy te benaderen.",
-				"cozy_address_placeholder": "tonhaai.mycozy.cloud",
-				"button": "Volgende",
-				"wrong_address_with_email": "Je hebt een e-mail adres getypt. On te verbinden met jouw cozy moet je een URL typen, zoals https://tonhaai.mycozy.cloud",
-				"wrong_address_v2": "You have just entered the address of old Cozy version. This application is only compatible with the latest version. [Please refer to our site for more information.](https://blog.cozycloud.cc/post/2016/11/21/On-the-road-to-Cozy-version-3?lang=en)",
-				"wrong_address": "This address doesn’t seem to be a cozy. Please check the address you provide."
-			},
-			"files": {
-				"title": "Toegang tot jouw schijf",
-				"description": "Om jouw Cozy schijf op jouw apparaat te zetten, moet de toepassing toegang hebben tot jouw bestanden."
-			},
-			"photos": {
-				"title": "Maak een back-up van jouw foto's en video's",
-				"description": "Maak automatisch een back-up op jouw Cozy van de foto's die je neem met jouw telefoon, zodat je ze nooit verliest."
-			},
-			"contacts": {
-				"title": "Sync your contacts",
-				"description": "Save your phone's contact on your Cozy — this will facilitate sharing files with them."
-			},
-			"step": {
-				"button": "Zet nu aan",
-				"skip": "Later",
-				"next": "Volgende"
-			},
-			"analytics": {
-				"title": "Help ons om Cozy te verbeteren",
-				"description": "Deze toepassing zal automatisch gegevens (meest foutmeldingen)  toevoegen aan de Cozy cloud. Dit zal ons helpen om problemen sneller op te lossen."
-			}
-		},
-		"settings": {
-			"title": "Instellingen",
-			"about": {
-				"title": "Over",
-				"app_version": "App Versie",
-				"account": "Account"
-			},
-			"unlink": {
-				"title": "Reset this application",
-				"description": "By clicking Reset, you will be able to start your application over, and will only lose the data saved on your smartphone.",
-				"button": "Reset",
-				"confirmation": {
-					"title": "Reset this application?",
-					"description": "Door uit te loggen op jouw Cozy, zullen alle gegevens die je lokaal gesynchroniseerd hebt door de mobiele toepassing, worden verwijderd.",
-					"cancel": "Annuleren",
-					"unlink": "Reset"
-				}
-			},
-			"media_backup": {
-				"media_folder": "/Photos/Back-up-ed van mijn telefoon",
-				"title": "Media Back-up",
-				"images": {
-					"title": "Back-up foto's",
-					"label": "Back up jouw foto's automatisch naar jouw Cozy, zodat je ze nooit kwijt kunt raken en makkelijk kunt delen."
-				},
-				"launch": "Start Back-up",
-				"stop": "Stop back-up",
-				"wifi": {
-					"title": "Back-up alleen bij WIFI bereik",
-					"label": "Als die optie geselecteerd is, zal jouw apparaat alleen back-ups maken van foto's als het via WIFI verbonden is, om je databundel te beschermen."
-				},
-				"media_upload": "Back-up maken van %{upload_counter} van %{total_upload} foto's"
-			},
-			"support": {
-				"title": "Support",
-				"analytics": {
-					"title": "Help ons om Cozy te verbeteren",
-					"label": "De toepassing zal automatisch gegevens (meestal foutmeldingen) aanbieden aan Cozy. Dit stelt on in staat om problemen snel op te lossen."
-				},
-				"logs": {
-					"title": "Help ons om het probleem te begrijpen",
-					"description": "Stuur de toepassingslogbestanden om ons te helpen om de kwaliteit en stabiliteit te verbeteren.",
-					"button": "Stuur mijn log bestanden",
-					"success": "Bedankt, we gaan jouw probleem analyseren en nemen spoedig contact met je op.",
-					"error": "Er is een probleem, logbestanden konden niet worden verstuurd, probeer het later nog eens."
-				}
-			},
-			"contacts": {
-				"title": "Contacts",
-				"subtitle": "Import contacts",
-				"text": "Import the contacts from your device to your Cozy to easily share content with them."
-			}
-		},
-		"error": {
-			"open_with": {
-				"offline": "Je moet verbonden zijn om dit bestand te openen",
-				"noapp": "Er is geen toepassing die dit bestand kan openen"
-			}
-		},
-		"revoked": {
-			"title": "Toegang geweigerd",
-			"description": "Het lijkt erop dat je dit apparaat verboden hebt om verbinding te maken met Cozy. Als je dit niet gedaan hebt, neem dan contact met ons op via contact@cozycloud.cc. All jouw gegevens gerelateerd aan Cozy zullen worden verwijderd.",
-			"loginagain": "Log opnieuw in",
-			"logout": "Log uit"
-		},
-		"rating": {
-			"enjoy": {
-				"title": "Enjoying Cozy Drive?",
-				"yes": "Yes!",
-				"no": "Not really"
-			},
-			"rate": {
-				"title": "Would you mind rating it?",
-				"yes": "Let's do that!",
-				"no": "No, thanks",
-				"later": "Maybe later"
-			},
-			"feedback": {
-				"title": "Would you mind giving us some feedback?",
-				"yes": "Send",
-				"no": "No, thanks"
-			},
-			"email": {
-				"subject": "Feedback on Cozy Drive",
-				"placeholder": "Hello, I think Cozy Drive would be better if…"
-			},
-			"alert": {
-				"rated": "Thank you! You're ⭐️⭐️⭐️⭐️⭐️",
-				"declined": "Awesome. You will love the upcoming features. Stay Cozy!",
-				"later": "No problem, we'll ask again later.",
-				"feedback": "Thank you for the feedback. We'll definitely work on it!"
-			}
-		}
-	},
-	"upload": {
-		"alert": {
-			"success": "%{smart_count} file uploaded with success. |||| %{smart_count} files uploaded with success.",
-			"success_conflicts": "%{smart_count} file uploaded with %{conflictNumber} conflict(s). |||| %{smart_count} files uploaded with %{conflictNumber} conflict(s).",
-			"errors": "Errors occurred during the file upload."
-		}
-	},
-	"UploadQueue": {
-		"header": "Uploading %{smart_count} photo to Cozy Drive |||| Uploading %{smart_count} photos to Cozy Drive",
-		"header_mobile": "%{done} of %{total} uploading…",
-		"header_done": "Uploaded %{done} out of %{total} successfully",
-		"close": "close",
-		"item": {
-			"pending": "Pending"
-		}
-	}
-};
-
-/***/ }),
-/* 168 */
-/***/ (function(module, exports) {
-
-module.exports = {
-	"Nav": {
-		"item_drive": "Drive",
-		"item_recent": "Recent",
-		"item_shared": "Доступно мне",
-		"item_activity": "Активность",
-		"item_trash": "Корзина",
-		"item_settings": "Настройки",
-		"btn-client": "Get Cozy for desktop",
-		"btn-client-web": "Get Cozy",
-		"btn-client-mobile": "Get Cozy Drive on your mobile!",
-		"banner-txt-client": "Tip: your pictures, bills, ID documents, all accessible anytime, from any of your device with Cozy Drive installed on your computer",
-		"banner-btn-client": "Скачать сейчас",
-		"link-client": "https://docs.cozy.io/en/download/",
-		"link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
-	},
-	"breadcrumb": {
-		"title_drive": "Drive",
-		"title_recent": "Recent",
-		"title_shared": "Shared by me",
-		"title_activity": "Активность",
-		"title_trash": "Корзина"
-	},
-	"toolbar": {
-		"item_upload": "Загрузить",
-		"item_more": "Еще",
-		"menu_upload": "Загрузить файлы",
-		"menu_new_folder": "Новая папка",
-		"menu_select": "Select items",
-		"menu_download_folder": "Скачать папку",
-		"empty_trash": "Очистить корзину",
-		"share": "Поделится"
-	},
-	"Share": {
-		"status": {
-			"pending": "Pending",
-			"accepted": {
-				"master-slave": "Can View",
-				"master-master": "Can Change"
-			},
-			"refused": "Refused",
-			"error": "Ошибка",
-			"unregistered": "Ошибка",
-			"mail-not-sent": "Ошибка",
-			"revoked": "Ошибка"
-		}
-	},
-	"Files": {
-		"share": {
-			"cta": "Share",
-			"title": "Share with others",
-			"shareByLink": {
-				"title": "By public link",
-				"subtitle": "Share by link",
-				"desc": "Anyone with the provided link can see and download your files."
-			},
-			"shareByEmail": {
-				"title": "By email",
-				"subtitle": "Share by email",
-				"email": "email",
-				"emailPlaceholder": "Enter email address or name of your recipient",
-				"send": "Send",
-				"success": "You sent an invite to %{email}."
-			},
-			"unshare": {
-				"title": "Remove from sharing",
-				"success": "You removed this shared file from %{email}."
-			},
-			"sharingLink": {
-				"title": "Link to share",
-				"copy": "Копировать",
-				"copied": "Скопировано"
-			},
-			"whoHasAccess": {
-				"title": "Кто имеет доступ"
-			},
-			"protectedShare": {
-				"title": "Скоро!",
-				"desc": "Share anything by email with your family and friends!"
-			},
-			"close": "Закрыть",
-			"gettingLink": "Getting your link...",
-			"error": {
-				"generic": "An error occurred when creating the file share link, please try again."
-			}
-		}
-	},
-	"table": {
-		"head_name": "Имя",
-		"head_update": "Последнее обновление",
-		"head_size": "Размер",
-		"head_status": "Статус",
-		"row_update_format": "MMM D, YYYY",
-		"row_read_only": "Поделится (Чтение)",
-		"row_read_write": "Поделится (Чтение и Запись)",
-		"row_size_symbols": {
-			"B": "Б",
-			"KB": "Кб",
-			"MB": "МБ",
-			"GB": "ГБ",
-			"TB": "ТБ",
-			"PB": "ПБ",
-			"EB": "ЕБ",
-			"ZB": "ЗБ",
-			"YB": "ЮБ"
-		}
-	},
-	"SelectionBar": {
-		"selected_count": "item selected |||| items selected",
-		"share": "Поделится",
-		"download": "Скачать",
-		"trash": "Удалить",
-		"destroy": "Удалить полностью",
-		"moveto": "Перенести",
-		"rename": "Переименовать",
-		"restore": "Сбросить",
-		"close": "Закрыть",
-		"openWith": "Открыть через",
-		"availableOffline": "Сделать доступным офлайн"
-	},
-	"deleteconfirmation": {
-		"title": "Delete this element? |||| Delete these elements?",
-		"trash": "It will be moved to the Trash. |||| They will be moved to the Trash.",
-		"restore": "You can still restore it whenever you want. |||| You can still restore them whenever you want.",
-		"shared": "If you have shared it, people won't be able to access it. |||| If you have shared them, people won't be able to access them.",
-		"referenced": "Some of the files within the selection are related to a photo album. They will be removed from it if you proceed to trash them.",
-		"cancel": "Отмена",
-		"delete": "Удалить"
-	},
-	"emptytrashconfirmation": {
-		"title": "Удалить полностью?",
-		"forbidden": "You won't be able to access these files anymore.",
-		"restore": "You won't be able to restore these files if you didn't make a backup.",
-		"cancel": "Отмена",
-		"delete": "Удалить все"
-	},
-	"destroyconfirmation": {
-		"title": "Удалить полностью?",
-		"forbidden": "You won't be able to access this file anymore. |||| You won't be able to access these files anymore.",
-		"restore": "You won't be able to restore this file if you didn't make a backup. |||| You won't be able to restore these files if you didn't make a backup.",
-		"cancel": "Отмена",
-		"delete": "Удалить полностью"
-	},
-	"quotaalert": {
-		"title": "Нет мета на диске ;(",
-		"desc": "Удалите файлы и очистите корзину перед продолжением загрузки.",
-		"confirm": "ОК"
-	},
-	"loading": {
-		"message": "Загрузка"
-	},
-	"empty": {
-		"title": "You don’t have any files in this folder.",
-		"text": "Click the \"upload\" button to add files to this folder.",
-		"trash": {
-			"title": "You don’t have any deleted files.",
-			"text": "Move files you don't need anymore to the Trash and permanently delete items to free up storage page."
-		}
-	},
-	"error": {
-		"open_folder": "Something went wrong when opening the folder.",
-		"button": {
-			"reload": "Обновить"
-		},
-		"download_file": {
-			"offline": "You should be connected to download this file",
-			"missing": "Этот файл не найден"
-		},
-		"public_unshared_title": "Sorry, this link is no longer available.",
-		"public_unshared_text": "One lost, ten found... or just check out with the owner for help. This file might not be lost."
-	},
-	"alert": {
-		"try_again": "An error has occurred, please try again in a moment.",
-		"restore_file_success": "The selection has been successfully restored.",
-		"trash_file_success": "The selection has been moved to the Trash.",
-		"destroy_file_success": "The selection has been deleted permanently.",
-		"empty_trash_success": "Корзина очищена.",
-		"folder_name": "The element %{folderName} already exists, please choose a new name.",
-		"folder_generic": "An error occurred, please try again.",
-		"folder_abort": "You need to add a name to your new folder if you would like to save it. Your information has not been saved.",
-		"offline": "This feature is not available offline."
-	},
-	"mobile": {
-		"onboarding": {
-			"welcome": {
-				"title1": "Добро пожаловать в Cozy",
-				"title2": "Ваше личное облако",
-				"button": "Sign in to your Cozy",
-				"no_account_link": "Нет учетной записи? Зарегистрируйтесь."
-			},
-			"server_selection": {
-				"description": "This is the web address you use to access your Cozy.",
-				"cozy_address_placeholder": "tonystark.mycozy.cloud",
-				"button": "Далее",
-				"wrong_address_with_email": "You typed an email address. To connect on your cozy you must type its url, something like https://tonystark.mycozy.cloud",
-				"wrong_address_v2": "You have just entered the address of old Cozy version. This application is only compatible with the latest version. [Please refer to our site for more information.](https://blog.cozycloud.cc/post/2016/11/21/On-the-road-to-Cozy-version-3?lang=en)",
-				"wrong_address": "This address doesn’t seem to be a cozy. Please check the address you provide."
-			},
-			"files": {
-				"title": "Access your drive",
-				"description": "In order to save your Cozy Drive on your device, the application must access your files."
-			},
-			"photos": {
-				"title": "Backup your photos and videos",
-				"description": "Automatically backup the photos taken with your phone to your Cozy, so you never lose them."
-			},
-			"contacts": {
-				"title": "Sync your contacts",
-				"description": "Save your phone's contact on your Cozy — this will facilitate sharing files with them."
-			},
-			"step": {
-				"button": "Включить",
-				"skip": "Позже",
-				"next": "Далее"
-			},
-			"analytics": {
-				"title": "Помочь улучшить Cozy",
-				"description": "The application will automatically provide data (mainly errors) to Cozy Cloud. It will allow us to resolve problems faster."
-			}
-		},
-		"settings": {
-			"title": "Настройки",
-			"about": {
-				"title": "О программе",
-				"app_version": "Версия",
-				"account": "Пользователь"
-			},
-			"unlink": {
-				"title": "Сбросить настройки",
-				"description": "By clicking Reset, you will be able to start your application over, and will only lose the data saved on your smartphone.",
-				"button": "Сбросить",
-				"confirmation": {
-					"title": "Сбросить все настройки?",
-					"description": "By logging out of your Cozy, you will erase all data synchronized locally by your mobile application.",
-					"cancel": "Отмена",
-					"unlink": "Сбросить"
-				}
-			},
-			"media_backup": {
-				"media_folder": "/Photos/Backuped from my mobile",
-				"title": "Media Backup",
-				"images": {
-					"title": "Backup images",
-					"label": "Backup your images automatically to your Cozy not to ever lose them and share them easily."
-				},
-				"launch": "Запустить копирование",
-				"stop": "Остановить копирование",
-				"wifi": {
-					"title": "Делать копии только при WiFi подключении",
-					"label": "If the option is enabled, your device will only backup photos when it's on WIFI in order to save your package."
-				},
-				"media_upload": "Backing up %{upload_counter} of %{total_upload} photos"
-			},
-			"support": {
-				"title": "Помощь",
-				"analytics": {
-					"title": "Help us improve Cozy",
-					"label": "The application will automatically provide data (mainly errors) to Cozy Cloud. It will allow us to resolve problems faster."
-				},
-				"logs": {
-					"title": "Help us to understand your problem",
-					"description": "Send the application log to help us improve its quality and stability.",
-					"button": "Send my logs",
-					"success": "Thanks, we will investigate your problem and contact you soon.",
-					"error": "A problem happened, logs couldn't be sent, please try again."
-				}
-			},
-			"contacts": {
-				"title": "Контакты",
-				"subtitle": "Импортировать контакты",
-				"text": "Import the contacts from your device to your Cozy to easily share content with them."
-			}
-		},
-		"error": {
-			"open_with": {
-				"offline": "You should be connected to open this file",
-				"noapp": "No application can open this file"
-			}
-		},
-		"revoked": {
-			"title": "Access revoked",
-			"description": "It appears you revoked this device from your Cozy. If you didn't, please let us know at contact@cozycloud.cc. All your local data related to your Cozy will be removed.",
-			"loginagain": "Войти заного",
-			"logout": "Выйти"
-		},
-		"rating": {
-			"enjoy": {
-				"title": "Enjoying Cozy Drive?",
-				"yes": "Да!",
-				"no": "Не возможно"
-			},
-			"rate": {
-				"title": "Would you mind rating it?",
-				"yes": "Сделаем это!",
-				"no": "Нет, спасибо",
-				"later": "Позже"
-			},
-			"feedback": {
-				"title": "Would you mind giving us some feedback?",
-				"yes": "Отправить",
-				"no": "Нет, спасибо"
-			},
-			"email": {
-				"subject": "Feedback on Cozy Drive",
-				"placeholder": "Hello, I think Cozy Drive would be better if…"
-			},
-			"alert": {
-				"rated": "Thank you! You're ⭐️⭐️⭐️⭐️⭐️",
-				"declined": "Awesome. You will love the upcoming features. Stay Cozy!",
-				"later": "No problem, we'll ask again later.",
-				"feedback": "Thank you for the feedback. We'll definitely work on it!"
-			}
-		}
-	},
-	"upload": {
-		"alert": {
-			"success": "%{smart_count} file uploaded with success. |||| %{smart_count} files uploaded with success.",
-			"success_conflicts": "%{smart_count} file uploaded with %{conflictNumber} conflict(s). |||| %{smart_count} files uploaded with %{conflictNumber} conflict(s).",
-			"errors": "Errors occurred during the file upload."
-		}
-	},
-	"UploadQueue": {
-		"header": "Uploading %{smart_count} photo to Cozy Drive |||| Uploading %{smart_count} photos to Cozy Drive",
-		"header_mobile": "%{done} of %{total} uploading…",
-		"header_done": "Uploaded %{done} out of %{total} successfully",
-		"close": "отмена",
-		"item": {
-			"pending": "Pending"
-		}
-	}
-};
-
-/***/ }),
-/* 169 */
-/***/ (function(module, exports) {
-
-module.exports = {
-	"Nav": {
-		"item_drive": "Drive",
-		"item_recent": "Recent",
-		"item_shared": "Shared by me",
-		"item_activity": "Activity",
-		"item_trash": "Trash",
-		"item_settings": "Settings",
-		"btn-client": "Get Cozy for desktop",
-		"btn-client-web": "Get Cozy",
-		"btn-client-mobile": "Get Cozy Drive on your mobile!",
-		"banner-txt-client": "Tip: your pictures, bills, ID documents, all accessible anytime, from any of your device with Cozy Drive installed on your computer",
-		"banner-btn-client": "Download now",
-		"link-client": "https://docs.cozy.io/en/download/",
-		"link-client-web": "https://cozy.io/fr/try-it?from=albumsharing"
-	},
-	"breadcrumb": {
-		"title_drive": "Drive",
-		"title_recent": "Recent",
-		"title_shared": "Shared by me",
-		"title_activity": "Activity",
-		"title_trash": "Trash"
-	},
-	"toolbar": {
-		"item_upload": "Upload",
-		"item_more": "More",
-		"menu_upload": "Upload files",
-		"menu_new_folder": "New folder",
-		"menu_select": "Select items",
-		"menu_download_folder": "Download folder",
-		"empty_trash": "Empty trash",
-		"share": "Share"
-	},
-	"Share": {
-		"status": {
-			"pending": "Pending",
-			"accepted": {
-				"master-slave": "Can View",
-				"master-master": "Can Change"
-			},
-			"refused": "Refused",
-			"error": "Error",
-			"unregistered": "Error",
-			"mail-not-sent": "Error",
-			"revoked": "Error"
-		}
-	},
-	"Files": {
-		"share": {
-			"cta": "Share",
-			"title": "Share with others",
-			"shareByLink": {
-				"title": "By public link",
-				"subtitle": "Share by link",
-				"desc": "Anyone with the provided link can see and download your files."
-			},
-			"shareByEmail": {
-				"title": "By email",
-				"subtitle": "Share by email",
-				"email": "email",
-				"emailPlaceholder": "Enter email address or name of your recipient",
-				"send": "Send",
-				"success": "You sent an invite to %{email}."
-			},
-			"unshare": {
-				"title": "Remove from sharing",
-				"success": "You removed this shared file from %{email}."
-			},
-			"sharingLink": {
-				"title": "Link to share",
-				"copy": "Copy",
-				"copied": "Copied"
-			},
-			"whoHasAccess": {
-				"title": "Who has access"
-			},
-			"protectedShare": {
-				"title": "Coming soon!",
-				"desc": "Share anything by email with your family and friends!"
-			},
-			"close": "Close",
-			"gettingLink": "Getting your link...",
-			"error": {
-				"generic": "An error occurred when creating the file share link, please try again."
-			}
-		}
-	},
-	"table": {
-		"head_name": "Name",
-		"head_update": "Last update",
-		"head_size": "Size",
-		"head_status": "Status",
-		"row_update_format": "MMM D, YYYY",
-		"row_read_only": "Share (Read only)",
-		"row_read_write": "Share (Read & Write)",
-		"row_size_symbols": {
-			"B": "B",
-			"KB": "KB",
-			"MB": "MB",
-			"GB": "GB",
-			"TB": "TB",
-			"PB": "PB",
-			"EB": "EB",
-			"ZB": "ZB",
-			"YB": "YB"
-		}
-	},
-	"SelectionBar": {
-		"selected_count": "item selected |||| items selected",
-		"share": "Share",
-		"download": "Download",
-		"trash": "Remove",
-		"destroy": "Delete permanently",
-		"moveto": "Move",
-		"rename": "Rename",
-		"restore": "Restore",
-		"close": "Close",
-		"openWith": "Open with",
-		"availableOffline": "Make available offline"
-	},
-	"deleteconfirmation": {
-		"title": "Delete this element? |||| Delete these elements?",
-		"trash": "It will be moved to the Trash. |||| They will be moved to the Trash.",
-		"restore": "You can still restore it whenever you want. |||| You can still restore them whenever you want.",
-		"shared": "If you have shared it, people won't be able to access it. |||| If you have shared them, people won't be able to access them.",
-		"referenced": "Some of the files within the selection are related to a photo album. They will be removed from it if you proceed to trash them.",
-		"cancel": "Cancel",
-		"delete": "Remove"
-	},
-	"emptytrashconfirmation": {
-		"title": "Permanently delete?",
-		"forbidden": "You won't be able to access these files anymore.",
-		"restore": "You won't be able to restore these files if you didn't make a backup.",
-		"cancel": "Cancel",
-		"delete": "Delete all"
-	},
-	"destroyconfirmation": {
-		"title": "Permanently delete?",
-		"forbidden": "You won't be able to access this file anymore. |||| You won't be able to access these files anymore.",
-		"restore": "You won't be able to restore this file if you didn't make a backup. |||| You won't be able to restore these files if you didn't make a backup.",
-		"cancel": "Cancel",
-		"delete": "Delete permanently"
-	},
-	"quotaalert": {
-		"title": "Your disk space is full :(",
-		"desc": " Please remove files and empty your trash before uploading files again.",
-		"confirm": "OK"
-	},
-	"loading": {
-		"message": "Loading"
-	},
-	"empty": {
-		"title": "You don’t have any files in this folder.",
-		"text": "Click the \"upload\" button to add files to this folder.",
-		"trash": {
-			"title": "You don’t have any deleted files.",
-			"text": "Move files you don't need anymore to the Trash and permanently delete items to free up storage page."
-		}
-	},
-	"error": {
-		"open_folder": "Something went wrong when opening the folder.",
-		"button": {
-			"reload": "Refresh now"
-		},
-		"download_file": {
-			"offline": "You should be connected to download this file",
-			"missing": "This file is missing"
-		},
-		"public_unshared_title": "Sorry, this link is no longer available.",
-		"public_unshared_text": "One lost, ten found... or just check out with the owner for help. This file might not be lost."
-	},
-	"alert": {
-		"try_again": "An error has occurred, please try again in a moment.",
-		"restore_file_success": "The selection has been successfully restored.",
-		"trash_file_success": "The selection has been moved to the Trash.",
-		"destroy_file_success": "The selection has been deleted permanently.",
-		"empty_trash_success": "The trash has been emptied.",
-		"folder_name": "The element %{folderName} already exists, please choose a new name.",
-		"folder_generic": "An error occurred, please try again.",
-		"folder_abort": "You need to add a name to your new folder if you would like to save it. Your information has not been saved.",
-		"offline": "This feature is not available offline."
-	},
-	"mobile": {
-		"onboarding": {
-			"welcome": {
-				"title1": "Welcome to Cozy",
-				"title2": "Your own personal cloud",
-				"button": "Sign in to your Cozy",
-				"no_account_link": "Don’t have an account? Request one here."
-			},
-			"server_selection": {
-				"description": "This is the web address you use to access your Cozy.",
-				"cozy_address_placeholder": "tonystark.mycozy.cloud",
-				"button": "Next",
-				"wrong_address_with_email": "You typed an email address. To connect on your cozy you must type its url, something like https://tonystark.mycozy.cloud",
-				"wrong_address_v2": "You have just entered the address of old Cozy version. This application is only compatible with the latest version. [Please refer to our site for more information.](https://blog.cozycloud.cc/post/2016/11/21/On-the-road-to-Cozy-version-3?lang=en)",
-				"wrong_address": "This address doesn’t seem to be a cozy. Please check the address you provide."
-			},
-			"files": {
-				"title": "Access your drive",
-				"description": "In order to save your Cozy Drive on your device, the application must access your files."
-			},
-			"photos": {
-				"title": "Backup your photos and videos",
-				"description": "Automatically backup the photos taken with your phone to your Cozy, so you never lose them."
-			},
-			"contacts": {
-				"title": "Sync your contacts",
-				"description": "Save your phone's contact on your Cozy — this will facilitate sharing files with them."
-			},
-			"step": {
-				"button": "Enable now",
-				"skip": "Later",
-				"next": "Next"
-			},
-			"analytics": {
-				"title": "Help us improve Cozy",
-				"description": "The application will automatically provide data (mainly errors) to Cozy Cloud. It will allow us to resolve problems faster."
-			}
-		},
-		"settings": {
-			"title": "Settings",
-			"about": {
-				"title": "About",
-				"app_version": "App Version",
-				"account": "Account"
-			},
-			"unlink": {
-				"title": "Reset this application",
-				"description": "By clicking Reset, you will be able to start your application over, and will only lose the data saved on your smartphone.",
-				"button": "Reset",
-				"confirmation": {
-					"title": "Reset this application?",
-					"description": "By logging out of your Cozy, you will erase all data synchronized locally by your mobile application.",
-					"cancel": "Cancel",
-					"unlink": "Reset"
-				}
-			},
-			"media_backup": {
-				"media_folder": "/Photos/Backuped from my mobile",
-				"title": "Media Backup",
-				"images": {
-					"title": "Backup images",
-					"label": "Backup your images automatically to your Cozy not to ever lose them and share them easily."
-				},
-				"launch": "Launch Backup",
-				"stop": "Stop Backup",
-				"wifi": {
-					"title": "Backup on WIFI only",
-					"label": "If the option is enabled, your device will only backup photos when it's on WIFI in order to save your package."
-				},
-				"media_upload": "Backing up %{upload_counter} of %{total_upload} photos"
-			},
-			"support": {
-				"title": "Support",
-				"analytics": {
-					"title": "Help us improve Cozy",
-					"label": "The application will automatically provide data (mainly errors) to Cozy Cloud. It will allow us to resolve problems faster."
-				},
-				"logs": {
-					"title": "Help us to understand your problem",
-					"description": "Send the application log to help us improve its quality and stability.",
-					"button": "Send my logs",
-					"success": "Thanks, we will investigate your problem and contact you soon.",
-					"error": "A problem happened, logs couldn't be sent, please try again."
-				}
-			},
-			"contacts": {
-				"title": "Contacts",
-				"subtitle": "Import contacts",
-				"text": "Import the contacts from your device to your Cozy to easily share content with them."
-			}
-		},
-		"error": {
-			"open_with": {
-				"offline": "You should be connected to open this file",
-				"noapp": "No application can open this file"
-			}
-		},
-		"revoked": {
-			"title": "Access revoked",
-			"description": "It appears you revoked this device from your Cozy. If you didn't, please let us know at contact@cozycloud.cc. All your local data related to your Cozy will be removed.",
-			"loginagain": "Log in again",
-			"logout": "Log out"
-		},
-		"rating": {
-			"enjoy": {
-				"title": "Enjoying Cozy Drive?",
-				"yes": "Yes!",
-				"no": "Not really"
-			},
-			"rate": {
-				"title": "Would you mind rating it?",
-				"yes": "Let's do that!",
-				"no": "No, thanks",
-				"later": "Maybe later"
-			},
-			"feedback": {
-				"title": "Would you mind giving us some feedback?",
-				"yes": "Send",
-				"no": "No, thanks"
-			},
-			"email": {
-				"subject": "Feedback on Cozy Drive",
-				"placeholder": "Hello, I think Cozy Drive would be better if…"
-			},
-			"alert": {
-				"rated": "Thank you! You're ⭐️⭐️⭐️⭐️⭐️",
-				"declined": "Awesome. You will love the upcoming features. Stay Cozy!",
-				"later": "No problem, we'll ask again later.",
-				"feedback": "Thank you for the feedback. We'll definitely work on it!"
-			}
-		}
-	},
-	"upload": {
-		"alert": {
-			"success": "%{smart_count} file uploaded with success. |||| %{smart_count} files uploaded with success.",
-			"success_conflicts": "%{smart_count} file uploaded with %{conflictNumber} conflict(s). |||| %{smart_count} files uploaded with %{conflictNumber} conflict(s).",
-			"errors": "Errors occurred during the file upload."
-		}
-	},
-	"UploadQueue": {
-		"header": "Uploading %{smart_count} photo to Cozy Drive |||| Uploading %{smart_count} photos to Cozy Drive",
-		"header_mobile": "%{done} of %{total} uploading…",
-		"header_done": "Uploaded %{done} out of %{total} successfully",
-		"close": "close",
-		"item": {
-			"pending": "Pending"
-		}
-	}
-};
-
-/***/ }),
-/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(8)
@@ -24862,12 +22177,12 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 171 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(5)
   , hide   = __webpack_require__(18)
-  , uid    = __webpack_require__(34)
+  , uid    = __webpack_require__(36)
   , TYPED  = uid('typed_array')
   , VIEW   = uid('view')
   , ABV    = !!(global.ArrayBuffer && global.DataView)
@@ -24893,24 +22208,24 @@ module.exports = {
 };
 
 /***/ }),
-/* 172 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(42);
+var cof = __webpack_require__(43);
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
 
 /***/ }),
-/* 173 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(21)
+var toIObject = __webpack_require__(22)
   , toLength  = __webpack_require__(16)
-  , toIndex   = __webpack_require__(43);
+  , toIndex   = __webpack_require__(44);
 module.exports = function(IS_INCLUDES){
   return function($this, el, fromIndex){
     var O      = toIObject($this)
@@ -24929,17 +22244,17 @@ module.exports = function(IS_INCLUDES){
 };
 
 /***/ }),
-/* 174 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(175)('keys')
-  , uid    = __webpack_require__(34);
+var shared = __webpack_require__(168)('keys')
+  , uid    = __webpack_require__(36);
 module.exports = function(key){
   return shared[key] || (shared[key] = uid(key));
 };
 
 /***/ }),
-/* 175 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(5)
@@ -24950,7 +22265,7 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 176 */
+/* 169 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -24959,14 +22274,14 @@ module.exports = (
 ).split(',');
 
 /***/ }),
-/* 177 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 
-var toObject = __webpack_require__(36)
-  , toIndex  = __webpack_require__(43)
+var toObject = __webpack_require__(38)
+  , toIndex  = __webpack_require__(44)
   , toLength = __webpack_require__(16);
 module.exports = function fill(value /*, start = 0, end = @length */){
   var O      = toObject(this)
@@ -24980,12 +22295,12 @@ module.exports = function fill(value /*, start = 0, end = @length */){
 };
 
 /***/ }),
-/* 178 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
 var anObject  = __webpack_require__(7)
-  , aFunction = __webpack_require__(35)
+  , aFunction = __webpack_require__(37)
   , SPECIES   = __webpack_require__(9)('species');
 module.exports = function(O, D){
   var C = anObject(O).constructor, S;
@@ -24993,11 +22308,11 @@ module.exports = function(O, D){
 };
 
 /***/ }),
-/* 179 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(42)
+var cof = __webpack_require__(43)
   , TAG = __webpack_require__(9)('toStringTag')
   // ES3 wrong here
   , ARG = cof(function(){ return arguments; }()) == 'Arguments';
@@ -25021,11 +22336,11 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 180 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
-var Iterators  = __webpack_require__(45)
+var Iterators  = __webpack_require__(46)
   , ITERATOR   = __webpack_require__(9)('iterator')
   , ArrayProto = Array.prototype;
 
@@ -25034,34 +22349,34 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 181 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof   = __webpack_require__(179)
+var classof   = __webpack_require__(172)
   , ITERATOR  = __webpack_require__(9)('iterator')
-  , Iterators = __webpack_require__(45);
-module.exports = __webpack_require__(54).getIteratorMethod = function(it){
+  , Iterators = __webpack_require__(46);
+module.exports = __webpack_require__(56).getIteratorMethod = function(it){
   if(it != undefined)return it[ITERATOR]
     || it['@@iterator']
     || Iterators[classof(it)];
 };
 
 /***/ }),
-/* 182 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var addToUnscopables = __webpack_require__(47)
-  , step             = __webpack_require__(217)
-  , Iterators        = __webpack_require__(45)
-  , toIObject        = __webpack_require__(21);
+var addToUnscopables = __webpack_require__(48)
+  , step             = __webpack_require__(210)
+  , Iterators        = __webpack_require__(46)
+  , toIObject        = __webpack_require__(22);
 
 // 22.1.3.4 Array.prototype.entries()
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(218)(Array, 'Array', function(iterated, kind){
+module.exports = __webpack_require__(211)(Array, 'Array', function(iterated, kind){
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -25087,7 +22402,7 @@ addToUnscopables('values');
 addToUnscopables('entries');
 
 /***/ }),
-/* 183 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Works with __proto__ only. Old v8 can't work with null proto objects.
@@ -25102,7 +22417,7 @@ module.exports = {
   set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
     function(test, buggy, set){
       try {
-        set = __webpack_require__(24)(Function.call, __webpack_require__(29).f(Object.prototype, '__proto__').set, 2);
+        set = __webpack_require__(25)(Function.call, __webpack_require__(30).f(Object.prototype, '__proto__').set, 2);
         set(test, []);
         buggy = !(test instanceof Array);
       } catch(e){ buggy = true; }
@@ -25117,13 +22432,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 184 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ctx                = __webpack_require__(24)
-  , invoke             = __webpack_require__(76)
-  , html               = __webpack_require__(215)
-  , cel                = __webpack_require__(170)
+var ctx                = __webpack_require__(25)
+  , invoke             = __webpack_require__(77)
+  , html               = __webpack_require__(208)
+  , cel                = __webpack_require__(163)
   , global             = __webpack_require__(5)
   , process            = global.process
   , setTask            = global.setImmediate
@@ -25159,7 +22474,7 @@ if(!setTask || !clearTask){
     delete queue[id];
   };
   // Node.js 0.8-
-  if(__webpack_require__(42)(process) == 'process'){
+  if(__webpack_require__(43)(process) == 'process'){
     defer = function(id){
       process.nextTick(ctx(run, id, 1));
     };
@@ -25197,12 +22512,12 @@ module.exports = {
 };
 
 /***/ }),
-/* 185 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // helper for String#{startsWith, endsWith, includes}
-var isRegExp = __webpack_require__(227)
-  , defined  = __webpack_require__(28);
+var isRegExp = __webpack_require__(220)
+  , defined  = __webpack_require__(29);
 
 module.exports = function(that, searchString, NAME){
   if(isRegExp(searchString))throw TypeError('String#' + NAME + " doesn't accept regex!");
@@ -25210,7 +22525,7 @@ module.exports = function(that, searchString, NAME){
 };
 
 /***/ }),
-/* 186 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var MATCH = __webpack_require__(9)('match');
@@ -25227,13 +22542,13 @@ module.exports = function(KEY){
 };
 
 /***/ }),
-/* 187 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $defineProperty = __webpack_require__(12)
-  , createDesc      = __webpack_require__(26);
+  , createDesc      = __webpack_require__(27);
 
 module.exports = function(object, index, value){
   if(index in object)$defineProperty.f(object, index, createDesc(0, value));
@@ -25241,7 +22556,7 @@ module.exports = function(object, index, value){
 };
 
 /***/ }),
-/* 188 */
+/* 181 */
 /***/ (function(module, exports) {
 
 // 20.2.2.28 Math.sign(x)
@@ -25250,7 +22565,7 @@ module.exports = Math.sign || function sign(x){
 };
 
 /***/ }),
-/* 189 */
+/* 182 */
 /***/ (function(module, exports) {
 
 // 20.2.2.14 Math.expm1(x)
@@ -25265,19 +22580,19 @@ module.exports = (!$expm1
 } : $expm1;
 
 /***/ }),
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
 /* 190 */,
 /* 191 */,
 /* 192 */,
 /* 193 */,
 /* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25351,35 +22666,19 @@ I18nProvider.childContextTypes = {
 };
 
 /***/ }),
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./de": 161,
-	"./de.json": 161,
 	"./en": 162,
-	"./en.json": 162,
-	"./es": 163,
-	"./es.json": 163,
-	"./fr": 164,
-	"./fr.json": 164,
-	"./ja": 165,
-	"./ja.json": 165,
-	"./ko": 166,
-	"./ko.json": 166,
-	"./nl": 167,
-	"./nl.json": 167,
-	"./ru": 168,
-	"./ru.json": 168,
-	"./zh_CN": 169,
-	"./zh_CN.json": 169
+	"./en.json": 162
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -25395,36 +22694,36 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 210;
+webpackContext.id = 203;
 
 /***/ }),
-/* 211 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = !__webpack_require__(17) && !__webpack_require__(10)(function(){
-  return Object.defineProperty(__webpack_require__(170)('div'), 'a', {get: function(){ return 7; }}).a != 7;
+module.exports = !__webpack_require__(17) && !__webpack_require__(11)(function(){
+  return Object.defineProperty(__webpack_require__(163)('div'), 'a', {get: function(){ return 7; }}).a != 7;
 });
 
 /***/ }),
-/* 212 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var global         = __webpack_require__(5)
   , DESCRIPTORS    = __webpack_require__(17)
-  , LIBRARY        = __webpack_require__(38)
-  , $typed         = __webpack_require__(171)
+  , LIBRARY        = __webpack_require__(39)
+  , $typed         = __webpack_require__(164)
   , hide           = __webpack_require__(18)
-  , redefineAll    = __webpack_require__(39)
-  , fails          = __webpack_require__(10)
-  , anInstance     = __webpack_require__(40)
-  , toInteger      = __webpack_require__(41)
+  , redefineAll    = __webpack_require__(40)
+  , fails          = __webpack_require__(11)
+  , anInstance     = __webpack_require__(41)
+  , toInteger      = __webpack_require__(42)
   , toLength       = __webpack_require__(16)
-  , gOPN           = __webpack_require__(56).f
+  , gOPN           = __webpack_require__(58).f
   , dP             = __webpack_require__(12).f
-  , arrayFill      = __webpack_require__(177)
-  , setToStringTag = __webpack_require__(44)
+  , arrayFill      = __webpack_require__(170)
+  , setToStringTag = __webpack_require__(45)
   , ARRAY_BUFFER   = 'ArrayBuffer'
   , DATA_VIEW      = 'DataView'
   , PROTOTYPE      = 'prototype'
@@ -25685,13 +22984,13 @@ exports[ARRAY_BUFFER] = $ArrayBuffer;
 exports[DATA_VIEW] = $DataView;
 
 /***/ }),
-/* 213 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var has          = __webpack_require__(15)
-  , toIObject    = __webpack_require__(21)
-  , arrayIndexOf = __webpack_require__(173)(false)
-  , IE_PROTO     = __webpack_require__(174)('IE_PROTO');
+  , toIObject    = __webpack_require__(22)
+  , arrayIndexOf = __webpack_require__(166)(false)
+  , IE_PROTO     = __webpack_require__(167)('IE_PROTO');
 
 module.exports = function(object, names){
   var O      = toIObject(object)
@@ -25707,7 +23006,7 @@ module.exports = function(object, names){
 };
 
 /***/ }),
-/* 214 */
+/* 207 */
 /***/ (function(module, exports) {
 
 // 7.2.9 SameValue(x, y)
@@ -25716,23 +23015,23 @@ module.exports = Object.is || function is(x, y){
 };
 
 /***/ }),
-/* 215 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(5).document && document.documentElement;
 
 /***/ }),
-/* 216 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
-var cof = __webpack_require__(42);
+var cof = __webpack_require__(43);
 module.exports = Array.isArray || function isArray(arg){
   return cof(arg) == 'Array';
 };
 
 /***/ }),
-/* 217 */
+/* 210 */
 /***/ (function(module, exports) {
 
 module.exports = function(done, value){
@@ -25740,20 +23039,20 @@ module.exports = function(done, value){
 };
 
 /***/ }),
-/* 218 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY        = __webpack_require__(38)
+var LIBRARY        = __webpack_require__(39)
   , $export        = __webpack_require__(1)
-  , redefine       = __webpack_require__(27)
+  , redefine       = __webpack_require__(28)
   , hide           = __webpack_require__(18)
   , has            = __webpack_require__(15)
-  , Iterators      = __webpack_require__(45)
-  , $iterCreate    = __webpack_require__(353)
-  , setToStringTag = __webpack_require__(44)
-  , getPrototypeOf = __webpack_require__(58)
+  , Iterators      = __webpack_require__(46)
+  , $iterCreate    = __webpack_require__(348)
+  , setToStringTag = __webpack_require__(45)
+  , getPrototypeOf = __webpack_require__(60)
   , ITERATOR       = __webpack_require__(9)('iterator')
   , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
   , FF_ITERATOR    = '@@iterator'
@@ -25816,14 +23115,14 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 };
 
 /***/ }),
-/* 219 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 
-var toObject = __webpack_require__(36)
-  , toIndex  = __webpack_require__(43)
+var toObject = __webpack_require__(38)
+  , toIndex  = __webpack_require__(44)
   , toLength = __webpack_require__(16);
 
 module.exports = [].copyWithin || function copyWithin(target/*= 0*/, start/*= 0, end = @length*/){
@@ -25848,23 +23147,23 @@ module.exports = [].copyWithin || function copyWithin(target/*= 0*/, start/*= 0,
 };
 
 /***/ }),
-/* 220 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var dP          = __webpack_require__(12).f
-  , create      = __webpack_require__(57)
-  , redefineAll = __webpack_require__(39)
-  , ctx         = __webpack_require__(24)
-  , anInstance  = __webpack_require__(40)
-  , defined     = __webpack_require__(28)
-  , forOf       = __webpack_require__(73)
-  , $iterDefine = __webpack_require__(218)
-  , step        = __webpack_require__(217)
-  , setSpecies  = __webpack_require__(71)
+  , create      = __webpack_require__(59)
+  , redefineAll = __webpack_require__(40)
+  , ctx         = __webpack_require__(25)
+  , anInstance  = __webpack_require__(41)
+  , defined     = __webpack_require__(29)
+  , forOf       = __webpack_require__(74)
+  , $iterDefine = __webpack_require__(211)
+  , step        = __webpack_require__(210)
+  , setSpecies  = __webpack_require__(72)
   , DESCRIPTORS = __webpack_require__(17)
-  , fastKey     = __webpack_require__(61).fastKey
+  , fastKey     = __webpack_require__(63).fastKey
   , SIZE        = DESCRIPTORS ? '_s' : 'size';
 
 var getEntry = function(that, key){
@@ -25996,7 +23295,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 221 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -26013,21 +23312,21 @@ module.exports = function(iterator, fn, value, entries){
 };
 
 /***/ }),
-/* 222 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys  = __webpack_require__(46)
-  , gOPS     = __webpack_require__(75)
-  , pIE      = __webpack_require__(60)
-  , toObject = __webpack_require__(36)
-  , IObject  = __webpack_require__(172)
+var getKeys  = __webpack_require__(47)
+  , gOPS     = __webpack_require__(76)
+  , pIE      = __webpack_require__(62)
+  , toObject = __webpack_require__(38)
+  , IObject  = __webpack_require__(165)
   , $assign  = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(10)(function(){
+module.exports = !$assign || __webpack_require__(11)(function(){
   var A = {}
     , B = {}
     , S = Symbol()
@@ -26052,18 +23351,18 @@ module.exports = !$assign || __webpack_require__(10)(function(){
 } : $assign;
 
 /***/ }),
-/* 223 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var redefineAll       = __webpack_require__(39)
-  , getWeak           = __webpack_require__(61).getWeak
+var redefineAll       = __webpack_require__(40)
+  , getWeak           = __webpack_require__(63).getWeak
   , anObject          = __webpack_require__(7)
   , isObject          = __webpack_require__(8)
-  , anInstance        = __webpack_require__(40)
-  , forOf             = __webpack_require__(73)
-  , createArrayMethod = __webpack_require__(59)
+  , anInstance        = __webpack_require__(41)
+  , forOf             = __webpack_require__(74)
+  , createArrayMethod = __webpack_require__(61)
   , $has              = __webpack_require__(15)
   , arrayFind         = createArrayMethod(5)
   , arrayFindIndex    = createArrayMethod(6)
@@ -26141,12 +23440,12 @@ module.exports = {
 };
 
 /***/ }),
-/* 224 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all object keys, includes non-enumerable and symbols
-var gOPN     = __webpack_require__(56)
-  , gOPS     = __webpack_require__(75)
+var gOPN     = __webpack_require__(58)
+  , gOPS     = __webpack_require__(76)
   , anObject = __webpack_require__(7)
   , Reflect  = __webpack_require__(5).Reflect;
 module.exports = Reflect && Reflect.ownKeys || function ownKeys(it){
@@ -26156,19 +23455,19 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it){
 };
 
 /***/ }),
-/* 225 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports.f = __webpack_require__(9);
 
 /***/ }),
-/* 226 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var toInteger = __webpack_require__(41)
-  , defined   = __webpack_require__(28);
+var toInteger = __webpack_require__(42)
+  , defined   = __webpack_require__(29);
 
 module.exports = function repeat(count){
   var str = String(defined(this))
@@ -26180,12 +23479,12 @@ module.exports = function repeat(count){
 };
 
 /***/ }),
-/* 227 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.8 IsRegExp(argument)
 var isObject = __webpack_require__(8)
-  , cof      = __webpack_require__(42)
+  , cof      = __webpack_require__(43)
   , MATCH    = __webpack_require__(9)('match');
 module.exports = function(it){
   var isRegExp;
@@ -26193,7 +23492,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 228 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
@@ -26204,7 +23503,7 @@ module.exports = function isInteger(it){
 };
 
 /***/ }),
-/* 229 */
+/* 222 */
 /***/ (function(module, exports) {
 
 // 20.2.2.20 Math.log1p(x)
@@ -26213,12 +23512,12 @@ module.exports = Math.log1p || function log1p(x){
 };
 
 /***/ }),
-/* 230 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getKeys   = __webpack_require__(46)
-  , toIObject = __webpack_require__(21)
-  , isEnum    = __webpack_require__(60).f;
+var getKeys   = __webpack_require__(47)
+  , toIObject = __webpack_require__(22)
+  , isEnum    = __webpack_require__(62).f;
 module.exports = function(isEntries){
   return function(it){
     var O      = toIObject(it)
@@ -26234,13 +23533,13 @@ module.exports = function(isEntries){
 };
 
 /***/ }),
-/* 231 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var toLength = __webpack_require__(16)
-  , repeat   = __webpack_require__(226)
-  , defined  = __webpack_require__(28);
+  , repeat   = __webpack_require__(219)
+  , defined  = __webpack_require__(29);
 
 module.exports = function(that, maxLength, fillString, left){
   var S            = String(defined(that))
@@ -26256,7 +23555,7 @@ module.exports = function(that, maxLength, fillString, left){
 
 
 /***/ }),
-/* 232 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26271,12 +23570,12 @@ module.exports = function(that, maxLength, fillString, left){
 
 
 
-var emptyFunction = __webpack_require__(62);
-var invariant = __webpack_require__(63);
-var warning = __webpack_require__(83);
+var emptyFunction = __webpack_require__(64);
+var invariant = __webpack_require__(65);
+var warning = __webpack_require__(84);
 
-var ReactPropTypesSecret = __webpack_require__(64);
-var checkPropTypes = __webpack_require__(233);
+var ReactPropTypesSecret = __webpack_require__(66);
+var checkPropTypes = __webpack_require__(226);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -26776,7 +24075,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 233 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26792,9 +24091,9 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 
 if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__(63);
-  var warning = __webpack_require__(83);
-  var ReactPropTypesSecret = __webpack_require__(64);
+  var invariant = __webpack_require__(65);
+  var warning = __webpack_require__(84);
+  var ReactPropTypesSecret = __webpack_require__(66);
   var loggedTypeFailures = {};
 }
 
@@ -26845,7 +24144,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 234 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26860,9 +24159,9 @@ module.exports = checkPropTypes;
 
 
 
-var emptyFunction = __webpack_require__(62);
-var invariant = __webpack_require__(63);
-var ReactPropTypesSecret = __webpack_require__(64);
+var emptyFunction = __webpack_require__(64);
+var invariant = __webpack_require__(65);
+var ReactPropTypesSecret = __webpack_require__(66);
 
 module.exports = function() {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -26911,19 +24210,19 @@ module.exports = function() {
 
 
 /***/ }),
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
 /* 235 */,
 /* 236 */,
 /* 237 */,
 /* 238 */,
 /* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26934,7 +24233,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.initTranslation = exports._polyglot = undefined;
 
-var _nodePolyglot = __webpack_require__(248);
+var _nodePolyglot = __webpack_require__(241);
 
 var _nodePolyglot2 = _interopRequireDefault(_nodePolyglot);
 
@@ -26973,7 +24272,7 @@ var initTranslation = exports.initTranslation = function initTranslation(lang, d
 };
 
 /***/ }),
-/* 248 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26996,10 +24295,10 @@ var initTranslation = exports.initTranslation = function initTranslation(lang, d
 
 
 
-var forEach = __webpack_require__(249);
+var forEach = __webpack_require__(242);
 var warning = __webpack_require__(19);
-var has = __webpack_require__(251);
-var trim = __webpack_require__(253);
+var has = __webpack_require__(244);
+var trim = __webpack_require__(246);
 
 var warn = function warn(message) {
   warning(false, message);
@@ -27315,10 +24614,10 @@ module.exports = Polyglot;
 
 
 /***/ }),
-/* 249 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(250)
+var isFunction = __webpack_require__(243)
 
 module.exports = forEach
 
@@ -27367,7 +24666,7 @@ function forEachObject(object, iterator, context) {
 
 
 /***/ }),
-/* 250 */
+/* 243 */
 /***/ (function(module, exports) {
 
 module.exports = isFunction
@@ -27388,16 +24687,16 @@ function isFunction (fn) {
 
 
 /***/ }),
-/* 251 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var bind = __webpack_require__(66);
+var bind = __webpack_require__(68);
 
 module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
 
 
 /***/ }),
-/* 252 */
+/* 245 */
 /***/ (function(module, exports) {
 
 var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
@@ -27451,18 +24750,18 @@ module.exports = function bind(that) {
 
 
 /***/ }),
-/* 253 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bind = __webpack_require__(66);
-var define = __webpack_require__(85);
+var bind = __webpack_require__(68);
+var define = __webpack_require__(86);
 
-var implementation = __webpack_require__(86);
-var getPolyfill = __webpack_require__(88);
-var shim = __webpack_require__(264);
+var implementation = __webpack_require__(87);
+var getPolyfill = __webpack_require__(89);
+var shim = __webpack_require__(257);
 
 var boundTrim = bind.call(Function.call, getPolyfill());
 
@@ -27476,7 +24775,7 @@ module.exports = boundTrim;
 
 
 /***/ }),
-/* 254 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27486,7 +24785,7 @@ module.exports = boundTrim;
 var has = Object.prototype.hasOwnProperty;
 var toStr = Object.prototype.toString;
 var slice = Array.prototype.slice;
-var isArgs = __webpack_require__(255);
+var isArgs = __webpack_require__(248);
 var isEnumerable = Object.prototype.propertyIsEnumerable;
 var hasDontEnumBug = !isEnumerable.call({ toString: null }, 'toString');
 var hasProtoEnumBug = isEnumerable.call(function () {}, 'prototype');
@@ -27623,7 +24922,7 @@ module.exports = keysShim;
 
 
 /***/ }),
-/* 255 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27647,7 +24946,7 @@ module.exports = function isArguments(value) {
 
 
 /***/ }),
-/* 256 */
+/* 249 */
 /***/ (function(module, exports) {
 
 
@@ -27675,20 +24974,20 @@ module.exports = function forEach (obj, fn, ctx) {
 
 
 /***/ }),
-/* 257 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var $isNaN = __webpack_require__(258);
-var $isFinite = __webpack_require__(259);
+var $isNaN = __webpack_require__(251);
+var $isFinite = __webpack_require__(252);
 
-var sign = __webpack_require__(260);
-var mod = __webpack_require__(261);
+var sign = __webpack_require__(253);
+var mod = __webpack_require__(254);
 
-var IsCallable = __webpack_require__(87);
-var toPrimitive = __webpack_require__(262);
+var IsCallable = __webpack_require__(88);
+var toPrimitive = __webpack_require__(255);
 
 // https://es5.github.io/#x9
 var ES5 = {
@@ -27768,7 +25067,7 @@ module.exports = ES5;
 
 
 /***/ }),
-/* 258 */
+/* 251 */
 /***/ (function(module, exports) {
 
 module.exports = Number.isNaN || function isNaN(a) {
@@ -27777,7 +25076,7 @@ module.exports = Number.isNaN || function isNaN(a) {
 
 
 /***/ }),
-/* 259 */
+/* 252 */
 /***/ (function(module, exports) {
 
 var $isNaN = Number.isNaN || function (a) { return a !== a; };
@@ -27786,7 +25085,7 @@ module.exports = Number.isFinite || function (x) { return typeof x === 'number' 
 
 
 /***/ }),
-/* 260 */
+/* 253 */
 /***/ (function(module, exports) {
 
 module.exports = function sign(number) {
@@ -27795,7 +25094,7 @@ module.exports = function sign(number) {
 
 
 /***/ }),
-/* 261 */
+/* 254 */
 /***/ (function(module, exports) {
 
 module.exports = function mod(number, modulo) {
@@ -27805,7 +25104,7 @@ module.exports = function mod(number, modulo) {
 
 
 /***/ }),
-/* 262 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27813,9 +25112,9 @@ module.exports = function mod(number, modulo) {
 
 var toStr = Object.prototype.toString;
 
-var isPrimitive = __webpack_require__(263);
+var isPrimitive = __webpack_require__(256);
 
-var isCallable = __webpack_require__(87);
+var isCallable = __webpack_require__(88);
 
 // https://es5.github.io/#x8.12
 var ES5internalSlots = {
@@ -27849,7 +25148,7 @@ module.exports = function ToPrimitive(input, PreferredType) {
 
 
 /***/ }),
-/* 263 */
+/* 256 */
 /***/ (function(module, exports) {
 
 module.exports = function isPrimitive(value) {
@@ -27858,14 +25157,14 @@ module.exports = function isPrimitive(value) {
 
 
 /***/ }),
-/* 264 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var define = __webpack_require__(85);
-var getPolyfill = __webpack_require__(88);
+var define = __webpack_require__(86);
+var getPolyfill = __webpack_require__(89);
 
 module.exports = function shimStringTrim() {
 	var polyfill = getPolyfill();
@@ -27875,7 +25174,7 @@ module.exports = function shimStringTrim() {
 
 
 /***/ }),
-/* 265 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27886,7 +25185,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.initFormat = undefined;
 
-var _format = __webpack_require__(266);
+var _format = __webpack_require__(259);
 
 var _format2 = _interopRequireDefault(_format);
 
@@ -27899,10 +25198,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var initFormat = exports.initFormat = function initFormat(lang) {
   var defaultLang = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _.DEFAULT_LANG;
 
-  var locales = _defineProperty({}, defaultLang, __webpack_require__(94)("./" + defaultLang + '/index'));
+  var locales = _defineProperty({}, defaultLang, __webpack_require__(95)("./" + defaultLang + '/index'));
   if (lang && lang !== defaultLang) {
     try {
-      locales[lang] = __webpack_require__(94)("./" + lang + '/index');
+      locales[lang] = __webpack_require__(95)("./" + lang + '/index');
     } catch (e) {
       console.warn('The "' + lang + '" locale isn\'t supported by date-fns');
     }
@@ -27913,15 +25212,15 @@ var initFormat = exports.initFormat = function initFormat(lang) {
 };
 
 /***/ }),
-/* 266 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getDayOfYear = __webpack_require__(267)
-var getISOWeek = __webpack_require__(271)
-var getISOYear = __webpack_require__(90)
+var getDayOfYear = __webpack_require__(260)
+var getISOWeek = __webpack_require__(264)
+var getISOYear = __webpack_require__(91)
 var parse = __webpack_require__(20)
-var isValid = __webpack_require__(274)
-var enLocale = __webpack_require__(91)
+var isValid = __webpack_require__(267)
+var enLocale = __webpack_require__(92)
 
 /**
  * @category Common Helpers
@@ -28247,12 +25546,12 @@ module.exports = format
 
 
 /***/ }),
-/* 267 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(20)
-var startOfYear = __webpack_require__(268)
-var differenceInCalendarDays = __webpack_require__(269)
+var startOfYear = __webpack_require__(261)
+var differenceInCalendarDays = __webpack_require__(262)
 
 /**
  * @category Day Helpers
@@ -28280,7 +25579,7 @@ module.exports = getDayOfYear
 
 
 /***/ }),
-/* 268 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(20)
@@ -28313,10 +25612,10 @@ module.exports = startOfYear
 
 
 /***/ }),
-/* 269 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var startOfDay = __webpack_require__(270)
+var startOfDay = __webpack_require__(263)
 
 var MILLISECONDS_IN_MINUTE = 60000
 var MILLISECONDS_IN_DAY = 86400000
@@ -28360,7 +25659,7 @@ module.exports = differenceInCalendarDays
 
 
 /***/ }),
-/* 270 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(20)
@@ -28391,12 +25690,12 @@ module.exports = startOfDay
 
 
 /***/ }),
-/* 271 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(20)
-var startOfISOWeek = __webpack_require__(67)
-var startOfISOYear = __webpack_require__(273)
+var startOfISOWeek = __webpack_require__(69)
+var startOfISOYear = __webpack_require__(266)
 
 var MILLISECONDS_IN_WEEK = 604800000
 
@@ -28431,7 +25730,7 @@ module.exports = getISOWeek
 
 
 /***/ }),
-/* 272 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(20)
@@ -28475,11 +25774,11 @@ module.exports = startOfWeek
 
 
 /***/ }),
-/* 273 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getISOYear = __webpack_require__(90)
-var startOfISOWeek = __webpack_require__(67)
+var getISOYear = __webpack_require__(91)
+var startOfISOWeek = __webpack_require__(69)
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -28513,10 +25812,10 @@ module.exports = startOfISOYear
 
 
 /***/ }),
-/* 274 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isDate = __webpack_require__(89)
+var isDate = __webpack_require__(90)
 
 /**
  * @category Common Helpers
@@ -28554,11 +25853,11 @@ module.exports = isValid
 
 
 /***/ }),
-/* 275 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(95)
-var buildFormatLocale = __webpack_require__(96)
+var buildDistanceInWordsLocale = __webpack_require__(96)
+var buildFormatLocale = __webpack_require__(97)
 
 /**
  * @category Locales
@@ -28572,11 +25871,11 @@ module.exports = {
 
 
 /***/ }),
-/* 276 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(97)
-var buildFormatLocale = __webpack_require__(98)
+var buildDistanceInWordsLocale = __webpack_require__(98)
+var buildFormatLocale = __webpack_require__(99)
 
 /**
  * @category Locales
@@ -28590,11 +25889,11 @@ module.exports = {
 
 
 /***/ }),
-/* 277 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(99)
-var buildFormatLocale = __webpack_require__(100)
+var buildDistanceInWordsLocale = __webpack_require__(100)
+var buildFormatLocale = __webpack_require__(101)
 
 /**
  * @category Locales
@@ -28608,11 +25907,11 @@ module.exports = {
 
 
 /***/ }),
-/* 278 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(101)
-var buildFormatLocale = __webpack_require__(102)
+var buildDistanceInWordsLocale = __webpack_require__(102)
+var buildFormatLocale = __webpack_require__(103)
 
 /**
  * @category Locales
@@ -28626,11 +25925,11 @@ module.exports = {
 
 
 /***/ }),
-/* 279 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(103)
-var buildFormatLocale = __webpack_require__(104)
+var buildDistanceInWordsLocale = __webpack_require__(104)
+var buildFormatLocale = __webpack_require__(105)
 
 /**
  * @category Locales
@@ -28645,11 +25944,11 @@ module.exports = {
 
 
 /***/ }),
-/* 280 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(105)
-var buildFormatLocale = __webpack_require__(106)
+var buildDistanceInWordsLocale = __webpack_require__(106)
+var buildFormatLocale = __webpack_require__(107)
 
 /**
  * @category Locales
@@ -28664,11 +25963,11 @@ module.exports = {
 
 
 /***/ }),
-/* 281 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(107)
-var buildFormatLocale = __webpack_require__(108)
+var buildDistanceInWordsLocale = __webpack_require__(108)
+var buildFormatLocale = __webpack_require__(109)
 
 /**
  * @category Locales
@@ -28682,11 +25981,11 @@ module.exports = {
 
 
 /***/ }),
-/* 282 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(109)
-var buildFormatLocale = __webpack_require__(110)
+var buildDistanceInWordsLocale = __webpack_require__(110)
+var buildFormatLocale = __webpack_require__(111)
 
 /**
  * @category Locales
@@ -28699,11 +25998,11 @@ module.exports = {
 
 
 /***/ }),
-/* 283 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(111)
-var buildFormatLocale = __webpack_require__(112)
+var buildDistanceInWordsLocale = __webpack_require__(112)
+var buildFormatLocale = __webpack_require__(113)
 
 /**
  * @category Locales
@@ -28719,11 +26018,11 @@ module.exports = {
 
 
 /***/ }),
-/* 284 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(113)
-var buildFormatLocale = __webpack_require__(114)
+var buildDistanceInWordsLocale = __webpack_require__(114)
+var buildFormatLocale = __webpack_require__(115)
 
 /**
  * @category Locales
@@ -28737,11 +26036,11 @@ module.exports = {
 
 
 /***/ }),
-/* 285 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(115)
-var buildFormatLocale = __webpack_require__(116)
+var buildDistanceInWordsLocale = __webpack_require__(116)
+var buildFormatLocale = __webpack_require__(117)
 
 /**
  * @category Locales
@@ -28755,11 +26054,11 @@ module.exports = {
 
 
 /***/ }),
-/* 286 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(117)
-var buildFormatLocale = __webpack_require__(118)
+var buildDistanceInWordsLocale = __webpack_require__(118)
+var buildFormatLocale = __webpack_require__(119)
 
 /**
  * @category Locales
@@ -28774,11 +26073,11 @@ module.exports = {
 
 
 /***/ }),
-/* 287 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(119)
-var buildFormatLocale = __webpack_require__(120)
+var buildDistanceInWordsLocale = __webpack_require__(120)
+var buildFormatLocale = __webpack_require__(121)
 
 /**
  * @category Locales
@@ -28792,11 +26091,11 @@ module.exports = {
 
 
 /***/ }),
-/* 288 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(121)
-var buildFormatLocale = __webpack_require__(122)
+var buildDistanceInWordsLocale = __webpack_require__(122)
+var buildFormatLocale = __webpack_require__(123)
 
 /**
  * @category Locales
@@ -28811,11 +26110,11 @@ module.exports = {
 
 
 /***/ }),
-/* 289 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(123)
-var buildFormatLocale = __webpack_require__(124)
+var buildDistanceInWordsLocale = __webpack_require__(124)
+var buildFormatLocale = __webpack_require__(125)
 
 /**
  * @category Locales
@@ -28829,11 +26128,11 @@ module.exports = {
 
 
 /***/ }),
-/* 290 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(125)
-var buildFormatLocale = __webpack_require__(126)
+var buildDistanceInWordsLocale = __webpack_require__(126)
+var buildFormatLocale = __webpack_require__(127)
 
 /**
  * @category Locales
@@ -28847,11 +26146,11 @@ module.exports = {
 
 
 /***/ }),
-/* 291 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(127)
-var buildFormatLocale = __webpack_require__(128)
+var buildDistanceInWordsLocale = __webpack_require__(128)
+var buildFormatLocale = __webpack_require__(129)
 
 /**
  * @category Locales
@@ -28866,11 +26165,11 @@ module.exports = {
 
 
 /***/ }),
-/* 292 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(129)
-var buildFormatLocale = __webpack_require__(130)
+var buildDistanceInWordsLocale = __webpack_require__(130)
+var buildFormatLocale = __webpack_require__(131)
 
 /**
  * @category Locales
@@ -28884,11 +26183,11 @@ module.exports = {
 
 
 /***/ }),
-/* 293 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(131)
-var buildFormatLocale = __webpack_require__(132)
+var buildDistanceInWordsLocale = __webpack_require__(132)
+var buildFormatLocale = __webpack_require__(133)
 
 /**
  * @category Locales
@@ -28902,11 +26201,11 @@ module.exports = {
 
 
 /***/ }),
-/* 294 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(133)
-var buildFormatLocale = __webpack_require__(134)
+var buildDistanceInWordsLocale = __webpack_require__(134)
+var buildFormatLocale = __webpack_require__(135)
 
 /**
  * @category Locales
@@ -28920,11 +26219,11 @@ module.exports = {
 
 
 /***/ }),
-/* 295 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(135)
-var buildFormatLocale = __webpack_require__(136)
+var buildDistanceInWordsLocale = __webpack_require__(136)
+var buildFormatLocale = __webpack_require__(137)
 
 /**
  * @category Locales
@@ -28939,11 +26238,11 @@ module.exports = {
 
 
 /***/ }),
-/* 296 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(137)
-var buildFormatLocale = __webpack_require__(138)
+var buildDistanceInWordsLocale = __webpack_require__(138)
+var buildFormatLocale = __webpack_require__(139)
 
 /**
  * @category Locales
@@ -28958,11 +26257,11 @@ module.exports = {
 
 
 /***/ }),
-/* 297 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(139)
-var buildFormatLocale = __webpack_require__(140)
+var buildDistanceInWordsLocale = __webpack_require__(140)
+var buildFormatLocale = __webpack_require__(141)
 
 /**
  * @category Locales
@@ -28976,11 +26275,11 @@ module.exports = {
 
 
 /***/ }),
-/* 298 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(141)
-var buildFormatLocale = __webpack_require__(142)
+var buildDistanceInWordsLocale = __webpack_require__(142)
+var buildFormatLocale = __webpack_require__(143)
 
 /**
  * @category Locales
@@ -28994,11 +26293,11 @@ module.exports = {
 
 
 /***/ }),
-/* 299 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(143)
-var buildFormatLocale = __webpack_require__(144)
+var buildDistanceInWordsLocale = __webpack_require__(144)
+var buildFormatLocale = __webpack_require__(145)
 
 /**
  * @category Locales
@@ -29011,11 +26310,11 @@ module.exports = {
 
 
 /***/ }),
-/* 300 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(145)
-var buildFormatLocale = __webpack_require__(146)
+var buildDistanceInWordsLocale = __webpack_require__(146)
+var buildFormatLocale = __webpack_require__(147)
 
 /**
  * @category Locales
@@ -29029,11 +26328,11 @@ module.exports = {
 
 
 /***/ }),
-/* 301 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(147)
-var buildFormatLocale = __webpack_require__(148)
+var buildDistanceInWordsLocale = __webpack_require__(148)
+var buildFormatLocale = __webpack_require__(149)
 
 /**
  * @category Locales
@@ -29047,11 +26346,11 @@ module.exports = {
 
 
 /***/ }),
-/* 302 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(149)
-var buildFormatLocale = __webpack_require__(150)
+var buildDistanceInWordsLocale = __webpack_require__(150)
+var buildFormatLocale = __webpack_require__(151)
 
 /**
  * @category Locales
@@ -29065,11 +26364,11 @@ module.exports = {
 
 
 /***/ }),
-/* 303 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(151)
-var buildFormatLocale = __webpack_require__(152)
+var buildDistanceInWordsLocale = __webpack_require__(152)
+var buildFormatLocale = __webpack_require__(153)
 
 /**
  * @category Locales
@@ -29083,11 +26382,11 @@ module.exports = {
 
 
 /***/ }),
-/* 304 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(153)
-var buildFormatLocale = __webpack_require__(154)
+var buildDistanceInWordsLocale = __webpack_require__(154)
+var buildFormatLocale = __webpack_require__(155)
 
 /**
  * @category Locales
@@ -29102,11 +26401,11 @@ module.exports = {
 
 
 /***/ }),
-/* 305 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(155)
-var buildFormatLocale = __webpack_require__(156)
+var buildDistanceInWordsLocale = __webpack_require__(156)
+var buildFormatLocale = __webpack_require__(157)
 
 /**
  * @category Locales
@@ -29120,26 +26419,26 @@ module.exports = {
 
 
 /***/ }),
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
 /* 306 */,
 /* 307 */,
 /* 308 */,
 /* 309 */,
 /* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */,
-/* 318 */
+/* 311 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 module.exports = {"coz-spinner":"coz-spinner--2XrW6","coz-spinner--blue":"coz-spinner--blue--28EMk","coz-spinner--grey":"coz-spinner--grey--2VnDf","coz-spinner--white":"coz-spinner--white--3mvRb","coz-spinner--red":"coz-spinner--red--OvIRW","coz-spinner--tiny":"coz-spinner--tiny--3-DFI","coz-spinner--small":"coz-spinner--small--1IRkp","coz-spinner--medium":"coz-spinner--medium--2U1hl","coz-spinner--large":"coz-spinner--large--13LKx","coz-spinner--xlarge":"coz-spinner--xlarge--7noCH","coz-spinner--xxlarge":"coz-spinner--xxlarge--1qvT-","spin":"spin--1ywvo","coz-spinner--middle":"coz-spinner--middle--1myrG","coz-spinner--nomargin":"coz-spinner--nomargin--2cFDy"};
 
 /***/ }),
-/* 319 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29150,7 +26449,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.openOfflineFile = exports.saveAndOpenWithCordova = exports.temporarySave = exports.saveFileWithCordova = exports.deleteOfflineFile = exports.writeFile = exports.getDirectory = exports.createCozyPath = exports.getCozyEntry = exports.getEntry = exports.getCozyPath = exports.getTemporaryRootPath = exports.getRootPath = undefined;
 
-var _device = __webpack_require__(159);
+var _device = __webpack_require__(160);
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
@@ -29336,7 +26635,7 @@ var openOfflineFile = exports.openOfflineFile = function openOfflineFile(file) {
 };
 
 /***/ }),
-/* 320 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29347,7 +26646,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.openWithNoAppError = exports.openWithOfflineError = exports.createError = exports.OPEN_WITH_NO_APP_ERROR = exports.OPEN_WITH_OFFLINE_ERROR = undefined;
 
-var _actions = __webpack_require__(23);
+var _actions = __webpack_require__(24);
 
 var OPEN_WITH_OFFLINE_ERROR = exports.OPEN_WITH_OFFLINE_ERROR = 'mobile.error.open_with.offline';
 var OPEN_WITH_NO_APP_ERROR = exports.OPEN_WITH_NO_APP_ERROR = 'mobile.error.open_with.noapp';
@@ -29367,18 +26666,19 @@ var openWithNoAppError = exports.openWithNoAppError = function openWithNoAppErro
 };
 
 /***/ }),
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
 /* 321 */,
-/* 322 */,
-/* 323 */,
-/* 324 */,
-/* 325 */,
-/* 326 */,
-/* 327 */,
-/* 328 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
-   true ? factory(__webpack_require__(84)) :
+   true ? factory(__webpack_require__(85)) :
   typeof define === 'function' && define.amd ? define(['preact'], factory) :
   (factory(global.preact));
 }(this, (function (preact) { 'use strict';
@@ -29881,8 +27181,9 @@ initDevTools();
 
 
 /***/ }),
-/* 329 */,
-/* 330 */
+/* 323 */,
+/* 324 */,
+/* 325 */
 /***/ (function(module, exports) {
 
 exports.remove = removeDiacritics;
@@ -30204,6 +27505,11 @@ exports.diacriticsMap = diacriticsMap;
 
 
 /***/ }),
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
 /* 331 */,
 /* 332 */,
 /* 333 */,
@@ -30216,25 +27522,20 @@ exports.diacriticsMap = diacriticsMap;
 /* 340 */,
 /* 341 */,
 /* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */,
-/* 347 */,
-/* 348 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export      = __webpack_require__(1)
-  , $typed       = __webpack_require__(171)
-  , buffer       = __webpack_require__(212)
+  , $typed       = __webpack_require__(164)
+  , buffer       = __webpack_require__(205)
   , anObject     = __webpack_require__(7)
-  , toIndex      = __webpack_require__(43)
+  , toIndex      = __webpack_require__(44)
   , toLength     = __webpack_require__(16)
   , isObject     = __webpack_require__(8)
   , ArrayBuffer  = __webpack_require__(5).ArrayBuffer
-  , speciesConstructor = __webpack_require__(178)
+  , speciesConstructor = __webpack_require__(171)
   , $ArrayBuffer = buffer.ArrayBuffer
   , $DataView    = buffer.DataView
   , $isView      = $typed.ABV && ArrayBuffer.isView
@@ -30251,7 +27552,7 @@ $export($export.S + $export.F * !$typed.CONSTR, ARRAY_BUFFER, {
   }
 });
 
-$export($export.P + $export.U + $export.F * __webpack_require__(10)(function(){
+$export($export.P + $export.U + $export.F * __webpack_require__(11)(function(){
   return !new $ArrayBuffer(2).slice(1, undefined).byteLength;
 }), ARRAY_BUFFER, {
   // 24.1.4.3 ArrayBuffer.prototype.slice(start, end)
@@ -30270,25 +27571,25 @@ $export($export.P + $export.U + $export.F * __webpack_require__(10)(function(){
   }
 });
 
-__webpack_require__(71)(ARRAY_BUFFER);
+__webpack_require__(72)(ARRAY_BUFFER);
 
 /***/ }),
-/* 349 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(25)('Int8', 1, function(init){
+__webpack_require__(26)('Int8', 1, function(init){
   return function Int8Array(data, byteOffset, length){
     return init(this, data, byteOffset, length);
   };
 });
 
 /***/ }),
-/* 350 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP       = __webpack_require__(12)
   , anObject = __webpack_require__(7)
-  , getKeys  = __webpack_require__(46);
+  , getKeys  = __webpack_require__(47);
 
 module.exports = __webpack_require__(17) ? Object.defineProperties : function defineProperties(O, Properties){
   anObject(O);
@@ -30301,22 +27602,22 @@ module.exports = __webpack_require__(17) ? Object.defineProperties : function de
 };
 
 /***/ }),
-/* 351 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-var speciesConstructor = __webpack_require__(352);
+var speciesConstructor = __webpack_require__(347);
 
 module.exports = function(original, length){
   return new (speciesConstructor(original))(length);
 };
 
 /***/ }),
-/* 352 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(8)
-  , isArray  = __webpack_require__(216)
+  , isArray  = __webpack_require__(209)
   , SPECIES  = __webpack_require__(9)('species');
 
 module.exports = function(original){
@@ -30333,14 +27634,14 @@ module.exports = function(original){
 };
 
 /***/ }),
-/* 353 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var create         = __webpack_require__(57)
-  , descriptor     = __webpack_require__(26)
-  , setToStringTag = __webpack_require__(44)
+var create         = __webpack_require__(59)
+  , descriptor     = __webpack_require__(27)
+  , setToStringTag = __webpack_require__(45)
   , IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
@@ -30352,11 +27653,61 @@ module.exports = function(Constructor, NAME, next){
 };
 
 /***/ }),
+/* 349 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(26)('Uint8', 1, function(init){
+  return function Uint8Array(data, byteOffset, length){
+    return init(this, data, byteOffset, length);
+  };
+});
+
+/***/ }),
+/* 350 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(26)('Uint8', 1, function(init){
+  return function Uint8ClampedArray(data, byteOffset, length){
+    return init(this, data, byteOffset, length);
+  };
+}, true);
+
+/***/ }),
+/* 351 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(26)('Int16', 2, function(init){
+  return function Int16Array(data, byteOffset, length){
+    return init(this, data, byteOffset, length);
+  };
+});
+
+/***/ }),
+/* 352 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(26)('Uint16', 2, function(init){
+  return function Uint16Array(data, byteOffset, length){
+    return init(this, data, byteOffset, length);
+  };
+});
+
+/***/ }),
+/* 353 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(26)('Int32', 4, function(init){
+  return function Int32Array(data, byteOffset, length){
+    return init(this, data, byteOffset, length);
+  };
+});
+
+/***/ }),
 /* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(25)('Uint8', 1, function(init){
-  return function Uint8Array(data, byteOffset, length){
+__webpack_require__(26)('Uint32', 4, function(init){
+  return function Uint32Array(data, byteOffset, length){
     return init(this, data, byteOffset, length);
   };
 });
@@ -30365,18 +27716,18 @@ __webpack_require__(25)('Uint8', 1, function(init){
 /* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(25)('Uint8', 1, function(init){
-  return function Uint8ClampedArray(data, byteOffset, length){
+__webpack_require__(26)('Float32', 4, function(init){
+  return function Float32Array(data, byteOffset, length){
     return init(this, data, byteOffset, length);
   };
-}, true);
+});
 
 /***/ }),
 /* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(25)('Int16', 2, function(init){
-  return function Int16Array(data, byteOffset, length){
+__webpack_require__(26)('Float64', 8, function(init){
+  return function Float64Array(data, byteOffset, length){
     return init(this, data, byteOffset, length);
   };
 });
@@ -30385,62 +27736,12 @@ __webpack_require__(25)('Int16', 2, function(init){
 /* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(25)('Uint16', 2, function(init){
-  return function Uint16Array(data, byteOffset, length){
-    return init(this, data, byteOffset, length);
-  };
-});
-
-/***/ }),
-/* 358 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(25)('Int32', 4, function(init){
-  return function Int32Array(data, byteOffset, length){
-    return init(this, data, byteOffset, length);
-  };
-});
-
-/***/ }),
-/* 359 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(25)('Uint32', 4, function(init){
-  return function Uint32Array(data, byteOffset, length){
-    return init(this, data, byteOffset, length);
-  };
-});
-
-/***/ }),
-/* 360 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(25)('Float32', 4, function(init){
-  return function Float32Array(data, byteOffset, length){
-    return init(this, data, byteOffset, length);
-  };
-});
-
-/***/ }),
-/* 361 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(25)('Float64', 8, function(init){
-  return function Float64Array(data, byteOffset, length){
-    return init(this, data, byteOffset, length);
-  };
-});
-
-/***/ }),
-/* 362 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
-var strong = __webpack_require__(220);
+var strong = __webpack_require__(213);
 
 // 23.1 Map Objects
-module.exports = __webpack_require__(74)('Map', function(get){
+module.exports = __webpack_require__(75)('Map', function(get){
   return function Map(){ return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.1.3.6 Map.prototype.get(key)
@@ -30455,11 +27756,11 @@ module.exports = __webpack_require__(74)('Map', function(get){
 }, strong, true);
 
 /***/ }),
-/* 363 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject       = __webpack_require__(8)
-  , setPrototypeOf = __webpack_require__(183).set;
+  , setPrototypeOf = __webpack_require__(176).set;
 module.exports = function(that, target, C){
   var P, S = target.constructor;
   if(S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && isObject(P) && setPrototypeOf){
@@ -30468,15 +27769,15 @@ module.exports = function(that, target, C){
 };
 
 /***/ }),
-/* 364 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(220);
+var strong = __webpack_require__(213);
 
 // 23.2 Set Objects
-module.exports = __webpack_require__(74)('Set', function(get){
+module.exports = __webpack_require__(75)('Set', function(get){
   return function Set(){ return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.2.3.1 Set.prototype.add(value)
@@ -30486,16 +27787,16 @@ module.exports = __webpack_require__(74)('Set', function(get){
 }, strong);
 
 /***/ }),
-/* 365 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var each         = __webpack_require__(59)(0)
-  , redefine     = __webpack_require__(27)
-  , meta         = __webpack_require__(61)
-  , assign       = __webpack_require__(222)
-  , weak         = __webpack_require__(223)
+var each         = __webpack_require__(61)(0)
+  , redefine     = __webpack_require__(28)
+  , meta         = __webpack_require__(63)
+  , assign       = __webpack_require__(215)
+  , weak         = __webpack_require__(216)
   , isObject     = __webpack_require__(8)
   , getWeak      = meta.getWeak
   , isExtensible = Object.isExtensible
@@ -30525,7 +27826,7 @@ var methods = {
 };
 
 // 23.3 WeakMap Objects
-var $WeakMap = module.exports = __webpack_require__(74)('WeakMap', wrapper, methods, weak, true, true);
+var $WeakMap = module.exports = __webpack_require__(75)('WeakMap', wrapper, methods, weak, true, true);
 
 // IE11 WeakMap frozen keys fix
 if(new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7){
@@ -30548,15 +27849,15 @@ if(new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7){
 }
 
 /***/ }),
-/* 366 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var weak = __webpack_require__(223);
+var weak = __webpack_require__(216);
 
 // 23.4 WeakSet Objects
-__webpack_require__(74)('WeakSet', function(get){
+__webpack_require__(75)('WeakSet', function(get){
   return function WeakSet(){ return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.4.3.1 WeakSet.prototype.add(value)
@@ -30566,17 +27867,17 @@ __webpack_require__(74)('WeakSet', function(get){
 }, weak, false, true);
 
 /***/ }),
-/* 367 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
 var $export   = __webpack_require__(1)
-  , aFunction = __webpack_require__(35)
+  , aFunction = __webpack_require__(37)
   , anObject  = __webpack_require__(7)
   , rApply    = (__webpack_require__(5).Reflect || {}).apply
   , fApply    = Function.apply;
 // MS Edge argumentsList argument is optional
-$export($export.S + $export.F * !__webpack_require__(10)(function(){
+$export($export.S + $export.F * !__webpack_require__(11)(function(){
   rApply(function(){});
 }), 'Reflect', {
   apply: function apply(target, thisArgument, argumentsList){
@@ -30587,17 +27888,17 @@ $export($export.S + $export.F * !__webpack_require__(10)(function(){
 });
 
 /***/ }),
-/* 368 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
 var $export    = __webpack_require__(1)
-  , create     = __webpack_require__(57)
-  , aFunction  = __webpack_require__(35)
+  , create     = __webpack_require__(59)
+  , aFunction  = __webpack_require__(37)
   , anObject   = __webpack_require__(7)
   , isObject   = __webpack_require__(8)
-  , fails      = __webpack_require__(10)
-  , bind       = __webpack_require__(369)
+  , fails      = __webpack_require__(11)
+  , bind       = __webpack_require__(364)
   , rConstruct = (__webpack_require__(5).Reflect || {}).construct;
 
 // MS Edge supports only 2 arguments and argumentsList argument is optional
@@ -30639,14 +27940,14 @@ $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
 });
 
 /***/ }),
-/* 369 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var aFunction  = __webpack_require__(35)
+var aFunction  = __webpack_require__(37)
   , isObject   = __webpack_require__(8)
-  , invoke     = __webpack_require__(76)
+  , invoke     = __webpack_require__(77)
   , arraySlice = [].slice
   , factories  = {};
 
@@ -30669,17 +27970,17 @@ module.exports = Function.bind || function bind(that /*, args... */){
 };
 
 /***/ }),
-/* 370 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
 var dP          = __webpack_require__(12)
   , $export     = __webpack_require__(1)
   , anObject    = __webpack_require__(7)
-  , toPrimitive = __webpack_require__(55);
+  , toPrimitive = __webpack_require__(57);
 
 // MS Edge has broken Reflect.defineProperty - throwing instead of returning false
-$export($export.S + $export.F * __webpack_require__(10)(function(){
+$export($export.S + $export.F * __webpack_require__(11)(function(){
   Reflect.defineProperty(dP.f({}, 1, {value: 1}), 1, {value: 2});
 }), 'Reflect', {
   defineProperty: function defineProperty(target, propertyKey, attributes){
@@ -30696,12 +27997,12 @@ $export($export.S + $export.F * __webpack_require__(10)(function(){
 });
 
 /***/ }),
-/* 371 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
 var $export  = __webpack_require__(1)
-  , gOPD     = __webpack_require__(29).f
+  , gOPD     = __webpack_require__(30).f
   , anObject = __webpack_require__(7);
 
 $export($export.S, 'Reflect', {
@@ -30712,12 +28013,12 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 372 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
-var gOPD           = __webpack_require__(29)
-  , getPrototypeOf = __webpack_require__(58)
+var gOPD           = __webpack_require__(30)
+  , getPrototypeOf = __webpack_require__(60)
   , has            = __webpack_require__(15)
   , $export        = __webpack_require__(1)
   , isObject       = __webpack_require__(8)
@@ -30738,11 +28039,11 @@ function get(target, propertyKey/*, receiver*/){
 $export($export.S, 'Reflect', {get: get});
 
 /***/ }),
-/* 373 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
-var gOPD     = __webpack_require__(29)
+var gOPD     = __webpack_require__(30)
   , $export  = __webpack_require__(1)
   , anObject = __webpack_require__(7);
 
@@ -30753,12 +28054,12 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 374 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.8 Reflect.getPrototypeOf(target)
 var $export  = __webpack_require__(1)
-  , getProto = __webpack_require__(58)
+  , getProto = __webpack_require__(60)
   , anObject = __webpack_require__(7);
 
 $export($export.S, 'Reflect', {
@@ -30768,7 +28069,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 375 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.9 Reflect.has(target, propertyKey)
@@ -30781,7 +28082,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 376 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.10 Reflect.isExtensible(target)
@@ -30797,16 +28098,16 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 377 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.11 Reflect.ownKeys(target)
 var $export = __webpack_require__(1);
 
-$export($export.S, 'Reflect', {ownKeys: __webpack_require__(224)});
+$export($export.S, 'Reflect', {ownKeys: __webpack_require__(217)});
 
 /***/ }),
-/* 378 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.12 Reflect.preventExtensions(target)
@@ -30827,16 +28128,16 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 379 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
 var dP             = __webpack_require__(12)
-  , gOPD           = __webpack_require__(29)
-  , getPrototypeOf = __webpack_require__(58)
+  , gOPD           = __webpack_require__(30)
+  , getPrototypeOf = __webpack_require__(60)
   , has            = __webpack_require__(15)
   , $export        = __webpack_require__(1)
-  , createDesc     = __webpack_require__(26)
+  , createDesc     = __webpack_require__(27)
   , anObject       = __webpack_require__(7)
   , isObject       = __webpack_require__(8);
 
@@ -30863,12 +28164,12 @@ function set(target, propertyKey, V/*, receiver*/){
 $export($export.S, 'Reflect', {set: set});
 
 /***/ }),
-/* 380 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
 var $export  = __webpack_require__(1)
-  , setProto = __webpack_require__(183);
+  , setProto = __webpack_require__(176);
 
 if(setProto)$export($export.S, 'Reflect', {
   setPrototypeOf: function setPrototypeOf(target, proto){
@@ -30883,23 +28184,23 @@ if(setProto)$export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 381 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY            = __webpack_require__(38)
+var LIBRARY            = __webpack_require__(39)
   , global             = __webpack_require__(5)
-  , ctx                = __webpack_require__(24)
-  , classof            = __webpack_require__(179)
+  , ctx                = __webpack_require__(25)
+  , classof            = __webpack_require__(172)
   , $export            = __webpack_require__(1)
   , isObject           = __webpack_require__(8)
-  , aFunction          = __webpack_require__(35)
-  , anInstance         = __webpack_require__(40)
-  , forOf              = __webpack_require__(73)
-  , speciesConstructor = __webpack_require__(178)
-  , task               = __webpack_require__(184).set
-  , microtask          = __webpack_require__(382)()
+  , aFunction          = __webpack_require__(37)
+  , anInstance         = __webpack_require__(41)
+  , forOf              = __webpack_require__(74)
+  , speciesConstructor = __webpack_require__(171)
+  , task               = __webpack_require__(177).set
+  , microtask          = __webpack_require__(377)()
   , PROMISE            = 'Promise'
   , TypeError          = global.TypeError
   , process            = global.process
@@ -31091,7 +28392,7 @@ if(!USE_NATIVE){
     this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
     this._n = false;          // <- notify
   };
-  Internal.prototype = __webpack_require__(39)($Promise.prototype, {
+  Internal.prototype = __webpack_require__(40)($Promise.prototype, {
     // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
     then: function then(onFulfilled, onRejected){
       var reaction    = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -31117,9 +28418,9 @@ if(!USE_NATIVE){
 }
 
 $export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: $Promise});
-__webpack_require__(44)($Promise, PROMISE);
-__webpack_require__(71)(PROMISE);
-Wrapper = __webpack_require__(54)[PROMISE];
+__webpack_require__(45)($Promise, PROMISE);
+__webpack_require__(72)(PROMISE);
+Wrapper = __webpack_require__(56)[PROMISE];
 
 // statics
 $export($export.S + $export.F * !USE_NATIVE, PROMISE, {
@@ -31142,7 +28443,7 @@ $export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
     return capability.promise;
   }
 });
-$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(72)(function(iter){
+$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(73)(function(iter){
   $Promise.all(iter)['catch'](empty);
 })), PROMISE, {
   // 25.4.4.1 Promise.all(iterable)
@@ -31188,15 +28489,15 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(72)(function
 });
 
 /***/ }),
-/* 382 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global    = __webpack_require__(5)
-  , macrotask = __webpack_require__(184).set
+  , macrotask = __webpack_require__(177).set
   , Observer  = global.MutationObserver || global.WebKitMutationObserver
   , process   = global.process
   , Promise   = global.Promise
-  , isNode    = __webpack_require__(42)(process) == 'process';
+  , isNode    = __webpack_require__(43)(process) == 'process';
 
 module.exports = function(){
   var head, last, notify;
@@ -31261,7 +28562,7 @@ module.exports = function(){
 };
 
 /***/ }),
-/* 383 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31271,27 +28572,27 @@ var global         = __webpack_require__(5)
   , has            = __webpack_require__(15)
   , DESCRIPTORS    = __webpack_require__(17)
   , $export        = __webpack_require__(1)
-  , redefine       = __webpack_require__(27)
-  , META           = __webpack_require__(61).KEY
-  , $fails         = __webpack_require__(10)
-  , shared         = __webpack_require__(175)
-  , setToStringTag = __webpack_require__(44)
-  , uid            = __webpack_require__(34)
+  , redefine       = __webpack_require__(28)
+  , META           = __webpack_require__(63).KEY
+  , $fails         = __webpack_require__(11)
+  , shared         = __webpack_require__(168)
+  , setToStringTag = __webpack_require__(45)
+  , uid            = __webpack_require__(36)
   , wks            = __webpack_require__(9)
-  , wksExt         = __webpack_require__(225)
-  , wksDefine      = __webpack_require__(384)
-  , keyOf          = __webpack_require__(385)
-  , enumKeys       = __webpack_require__(386)
-  , isArray        = __webpack_require__(216)
+  , wksExt         = __webpack_require__(218)
+  , wksDefine      = __webpack_require__(379)
+  , keyOf          = __webpack_require__(380)
+  , enumKeys       = __webpack_require__(381)
+  , isArray        = __webpack_require__(209)
   , anObject       = __webpack_require__(7)
-  , toIObject      = __webpack_require__(21)
-  , toPrimitive    = __webpack_require__(55)
-  , createDesc     = __webpack_require__(26)
-  , _create        = __webpack_require__(57)
-  , gOPNExt        = __webpack_require__(387)
-  , $GOPD          = __webpack_require__(29)
+  , toIObject      = __webpack_require__(22)
+  , toPrimitive    = __webpack_require__(57)
+  , createDesc     = __webpack_require__(27)
+  , _create        = __webpack_require__(59)
+  , gOPNExt        = __webpack_require__(382)
+  , $GOPD          = __webpack_require__(30)
   , $DP            = __webpack_require__(12)
-  , $keys          = __webpack_require__(46)
+  , $keys          = __webpack_require__(47)
   , gOPD           = $GOPD.f
   , dP             = $DP.f
   , gOPN           = gOPNExt.f
@@ -31414,11 +28715,11 @@ if(!USE_NATIVE){
 
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f   = $defineProperty;
-  __webpack_require__(56).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(60).f  = $propertyIsEnumerable;
-  __webpack_require__(75).f = $getOwnPropertySymbols;
+  __webpack_require__(58).f = gOPNExt.f = $getOwnPropertyNames;
+  __webpack_require__(62).f  = $propertyIsEnumerable;
+  __webpack_require__(76).f = $getOwnPropertySymbols;
 
-  if(DESCRIPTORS && !__webpack_require__(38)){
+  if(DESCRIPTORS && !__webpack_require__(39)){
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
   }
 
@@ -31502,13 +28803,13 @@ setToStringTag(Math, 'Math', true);
 setToStringTag(global.JSON, 'JSON', true);
 
 /***/ }),
-/* 384 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global         = __webpack_require__(5)
-  , core           = __webpack_require__(54)
-  , LIBRARY        = __webpack_require__(38)
-  , wksExt         = __webpack_require__(225)
+  , core           = __webpack_require__(56)
+  , LIBRARY        = __webpack_require__(39)
+  , wksExt         = __webpack_require__(218)
   , defineProperty = __webpack_require__(12).f;
 module.exports = function(name){
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -31516,11 +28817,11 @@ module.exports = function(name){
 };
 
 /***/ }),
-/* 385 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getKeys   = __webpack_require__(46)
-  , toIObject = __webpack_require__(21);
+var getKeys   = __webpack_require__(47)
+  , toIObject = __webpack_require__(22);
 module.exports = function(object, el){
   var O      = toIObject(object)
     , keys   = getKeys(O)
@@ -31531,13 +28832,13 @@ module.exports = function(object, el){
 };
 
 /***/ }),
-/* 386 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
-var getKeys = __webpack_require__(46)
-  , gOPS    = __webpack_require__(75)
-  , pIE     = __webpack_require__(60);
+var getKeys = __webpack_require__(47)
+  , gOPS    = __webpack_require__(76)
+  , pIE     = __webpack_require__(62);
 module.exports = function(it){
   var result     = getKeys(it)
     , getSymbols = gOPS.f;
@@ -31551,12 +28852,12 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 387 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = __webpack_require__(21)
-  , gOPN      = __webpack_require__(56).f
+var toIObject = __webpack_require__(22)
+  , gOPN      = __webpack_require__(58).f
   , toString  = {}.toString;
 
 var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -31576,36 +28877,36 @@ module.exports.f = function getOwnPropertyNames(it){
 
 
 /***/ }),
-/* 388 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(1);
 
-$export($export.S + $export.F, 'Object', {assign: __webpack_require__(222)});
+$export($export.S + $export.F, 'Object', {assign: __webpack_require__(215)});
 
 /***/ }),
-/* 389 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.10 Object.is(value1, value2)
 var $export = __webpack_require__(1);
-$export($export.S, 'Object', {is: __webpack_require__(214)});
+$export($export.S, 'Object', {is: __webpack_require__(207)});
 
 /***/ }),
-/* 390 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
 var $export = __webpack_require__(1);
-$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(183).set});
+$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(176).set});
 
 /***/ }),
-/* 391 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP         = __webpack_require__(12).f
-  , createDesc = __webpack_require__(26)
+  , createDesc = __webpack_require__(27)
   , has        = __webpack_require__(15)
   , FProto     = Function.prototype
   , nameRE     = /^\s*function ([^ (]*)/
@@ -31631,11 +28932,11 @@ NAME in FProto || __webpack_require__(17) && dP(FProto, NAME, {
 });
 
 /***/ }),
-/* 392 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(1)
-  , toIObject = __webpack_require__(21)
+  , toIObject = __webpack_require__(22)
   , toLength  = __webpack_require__(16);
 
 $export($export.S, 'String', {
@@ -31654,11 +28955,11 @@ $export($export.S, 'String', {
 });
 
 /***/ }),
-/* 393 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export        = __webpack_require__(1)
-  , toIndex        = __webpack_require__(43)
+  , toIndex        = __webpack_require__(44)
   , fromCharCode   = String.fromCharCode
   , $fromCodePoint = String.fromCodePoint;
 
@@ -31682,13 +28983,13 @@ $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1)
 });
 
 /***/ }),
-/* 394 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(1)
-  , $at     = __webpack_require__(395)(false);
+  , $at     = __webpack_require__(390)(false);
 $export($export.P, 'String', {
   // 21.1.3.3 String.prototype.codePointAt(pos)
   codePointAt: function codePointAt(pos){
@@ -31697,11 +28998,11 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 395 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(41)
-  , defined   = __webpack_require__(28);
+var toInteger = __webpack_require__(42)
+  , defined   = __webpack_require__(29);
 // true  -> String#at
 // false -> String#codePointAt
 module.exports = function(TO_STRING){
@@ -31719,18 +29020,18 @@ module.exports = function(TO_STRING){
 };
 
 /***/ }),
-/* 396 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(1);
 
 $export($export.P, 'String', {
   // 21.1.3.13 String.prototype.repeat(count)
-  repeat: __webpack_require__(226)
+  repeat: __webpack_require__(219)
 });
 
 /***/ }),
-/* 397 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31738,11 +29039,11 @@ $export($export.P, 'String', {
 
 var $export     = __webpack_require__(1)
   , toLength    = __webpack_require__(16)
-  , context     = __webpack_require__(185)
+  , context     = __webpack_require__(178)
   , STARTS_WITH = 'startsWith'
   , $startsWith = ''[STARTS_WITH];
 
-$export($export.P + $export.F * __webpack_require__(186)(STARTS_WITH), 'String', {
+$export($export.P + $export.F * __webpack_require__(179)(STARTS_WITH), 'String', {
   startsWith: function startsWith(searchString /*, position = 0 */){
     var that   = context(this, searchString, STARTS_WITH)
       , index  = toLength(Math.min(arguments.length > 1 ? arguments[1] : undefined, that.length))
@@ -31754,7 +29055,7 @@ $export($export.P + $export.F * __webpack_require__(186)(STARTS_WITH), 'String',
 });
 
 /***/ }),
-/* 398 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31762,11 +29063,11 @@ $export($export.P + $export.F * __webpack_require__(186)(STARTS_WITH), 'String',
 
 var $export   = __webpack_require__(1)
   , toLength  = __webpack_require__(16)
-  , context   = __webpack_require__(185)
+  , context   = __webpack_require__(178)
   , ENDS_WITH = 'endsWith'
   , $endsWith = ''[ENDS_WITH];
 
-$export($export.P + $export.F * __webpack_require__(186)(ENDS_WITH), 'String', {
+$export($export.P + $export.F * __webpack_require__(179)(ENDS_WITH), 'String', {
   endsWith: function endsWith(searchString /*, endPosition = @length */){
     var that = context(this, searchString, ENDS_WITH)
       , endPosition = arguments.length > 1 ? arguments[1] : undefined
@@ -31780,17 +29081,17 @@ $export($export.P + $export.F * __webpack_require__(186)(ENDS_WITH), 'String', {
 });
 
 /***/ }),
-/* 399 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 // 21.1.3.7 String.prototype.includes(searchString, position = 0)
 
 var $export  = __webpack_require__(1)
-  , context  = __webpack_require__(185)
+  , context  = __webpack_require__(178)
   , INCLUDES = 'includes';
 
-$export($export.P + $export.F * __webpack_require__(186)(INCLUDES), 'String', {
+$export($export.P + $export.F * __webpack_require__(179)(INCLUDES), 'String', {
   includes: function includes(searchString /*, position = 0 */){
     return !!~context(this, searchString, INCLUDES)
       .indexOf(searchString, arguments.length > 1 ? arguments[1] : undefined);
@@ -31798,17 +29099,17 @@ $export($export.P + $export.F * __webpack_require__(186)(INCLUDES), 'String', {
 });
 
 /***/ }),
-/* 400 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 21.2.5.3 get RegExp.prototype.flags()
 if(__webpack_require__(17) && /./g.flags != 'g')__webpack_require__(12).f(RegExp.prototype, 'flags', {
   configurable: true,
-  get: __webpack_require__(401)
+  get: __webpack_require__(396)
 });
 
 /***/ }),
-/* 401 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31827,11 +29128,11 @@ module.exports = function(){
 };
 
 /***/ }),
-/* 402 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@match logic
-__webpack_require__(77)('match', 1, function(defined, MATCH, $match){
+__webpack_require__(78)('match', 1, function(defined, MATCH, $match){
   // 21.1.3.11 String.prototype.match(regexp)
   return [function match(regexp){
     'use strict';
@@ -31842,11 +29143,11 @@ __webpack_require__(77)('match', 1, function(defined, MATCH, $match){
 });
 
 /***/ }),
-/* 403 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@replace logic
-__webpack_require__(77)('replace', 2, function(defined, REPLACE, $replace){
+__webpack_require__(78)('replace', 2, function(defined, REPLACE, $replace){
   // 21.1.3.14 String.prototype.replace(searchValue, replaceValue)
   return [function replace(searchValue, replaceValue){
     'use strict';
@@ -31859,13 +29160,13 @@ __webpack_require__(77)('replace', 2, function(defined, REPLACE, $replace){
 });
 
 /***/ }),
-/* 404 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@split logic
-__webpack_require__(77)('split', 2, function(defined, SPLIT, $split){
+__webpack_require__(78)('split', 2, function(defined, SPLIT, $split){
   'use strict';
-  var isRegExp   = __webpack_require__(227)
+  var isRegExp   = __webpack_require__(220)
     , _split     = $split
     , $push      = [].push
     , $SPLIT     = 'split'
@@ -31934,11 +29235,11 @@ __webpack_require__(77)('split', 2, function(defined, SPLIT, $split){
 });
 
 /***/ }),
-/* 405 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@search logic
-__webpack_require__(77)('search', 1, function(defined, SEARCH, $search){
+__webpack_require__(78)('search', 1, function(defined, SEARCH, $search){
   // 21.1.3.15 String.prototype.search(regexp)
   return [function search(regexp){
     'use strict';
@@ -31949,21 +29250,21 @@ __webpack_require__(77)('search', 1, function(defined, SEARCH, $search){
 });
 
 /***/ }),
-/* 406 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ctx            = __webpack_require__(24)
+var ctx            = __webpack_require__(25)
   , $export        = __webpack_require__(1)
-  , toObject       = __webpack_require__(36)
-  , call           = __webpack_require__(221)
-  , isArrayIter    = __webpack_require__(180)
+  , toObject       = __webpack_require__(38)
+  , call           = __webpack_require__(214)
+  , isArrayIter    = __webpack_require__(173)
   , toLength       = __webpack_require__(16)
-  , createProperty = __webpack_require__(187)
-  , getIterFn      = __webpack_require__(181);
+  , createProperty = __webpack_require__(180)
+  , getIterFn      = __webpack_require__(174);
 
-$export($export.S + $export.F * !__webpack_require__(72)(function(iter){ Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(73)(function(iter){ Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
     var O       = toObject(arrayLike)
@@ -31993,16 +29294,16 @@ $export($export.S + $export.F * !__webpack_require__(72)(function(iter){ Array.f
 
 
 /***/ }),
-/* 407 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export        = __webpack_require__(1)
-  , createProperty = __webpack_require__(187);
+  , createProperty = __webpack_require__(180);
 
 // WebKit Array.of isn't generic
-$export($export.S + $export.F * __webpack_require__(10)(function(){
+$export($export.S + $export.F * __webpack_require__(11)(function(){
   function F(){}
   return !(Array.of.call(F) instanceof F);
 }), 'Array', {
@@ -32018,25 +29319,25 @@ $export($export.S + $export.F * __webpack_require__(10)(function(){
 });
 
 /***/ }),
-/* 408 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 var $export = __webpack_require__(1);
 
-$export($export.P, 'Array', {copyWithin: __webpack_require__(219)});
+$export($export.P, 'Array', {copyWithin: __webpack_require__(212)});
 
-__webpack_require__(47)('copyWithin');
+__webpack_require__(48)('copyWithin');
 
 /***/ }),
-/* 409 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 22.1.3.8 Array.prototype.find(predicate, thisArg = undefined)
 var $export = __webpack_require__(1)
-  , $find   = __webpack_require__(59)(5)
+  , $find   = __webpack_require__(61)(5)
   , KEY     = 'find'
   , forced  = true;
 // Shouldn't skip holes
@@ -32046,17 +29347,17 @@ $export($export.P + $export.F * forced, 'Array', {
     return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
-__webpack_require__(47)(KEY);
+__webpack_require__(48)(KEY);
 
 /***/ }),
-/* 410 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 22.1.3.9 Array.prototype.findIndex(predicate, thisArg = undefined)
 var $export = __webpack_require__(1)
-  , $find   = __webpack_require__(59)(6)
+  , $find   = __webpack_require__(61)(6)
   , KEY     = 'findIndex'
   , forced  = true;
 // Shouldn't skip holes
@@ -32066,21 +29367,21 @@ $export($export.P + $export.F * forced, 'Array', {
     return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
-__webpack_require__(47)(KEY);
+__webpack_require__(48)(KEY);
 
 /***/ }),
-/* 411 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 var $export = __webpack_require__(1);
 
-$export($export.P, 'Array', {fill: __webpack_require__(177)});
+$export($export.P, 'Array', {fill: __webpack_require__(170)});
 
-__webpack_require__(47)('fill');
+__webpack_require__(48)('fill');
 
 /***/ }),
-/* 412 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.2 Number.isFinite(number)
@@ -32094,21 +29395,21 @@ $export($export.S, 'Number', {
 });
 
 /***/ }),
-/* 413 */
+/* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
 var $export = __webpack_require__(1);
 
-$export($export.S, 'Number', {isInteger: __webpack_require__(228)});
+$export($export.S, 'Number', {isInteger: __webpack_require__(221)});
 
 /***/ }),
-/* 414 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.5 Number.isSafeInteger(number)
 var $export   = __webpack_require__(1)
-  , isInteger = __webpack_require__(228)
+  , isInteger = __webpack_require__(221)
   , abs       = Math.abs;
 
 $export($export.S, 'Number', {
@@ -32118,7 +29419,7 @@ $export($export.S, 'Number', {
 });
 
 /***/ }),
-/* 415 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.4 Number.isNaN(number)
@@ -32131,7 +29432,7 @@ $export($export.S, 'Number', {
 });
 
 /***/ }),
-/* 416 */
+/* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.1 Number.EPSILON
@@ -32140,7 +29441,7 @@ var $export = __webpack_require__(1);
 $export($export.S, 'Number', {EPSILON: Math.pow(2, -52)});
 
 /***/ }),
-/* 417 */
+/* 412 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.10 Number.MIN_SAFE_INTEGER
@@ -32149,7 +29450,7 @@ var $export = __webpack_require__(1);
 $export($export.S, 'Number', {MIN_SAFE_INTEGER: -0x1fffffffffffff});
 
 /***/ }),
-/* 418 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.6 Number.MAX_SAFE_INTEGER
@@ -32158,12 +29459,12 @@ var $export = __webpack_require__(1);
 $export($export.S, 'Number', {MAX_SAFE_INTEGER: 0x1fffffffffffff});
 
 /***/ }),
-/* 419 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.3 Math.acosh(x)
 var $export = __webpack_require__(1)
-  , log1p   = __webpack_require__(229)
+  , log1p   = __webpack_require__(222)
   , sqrt    = Math.sqrt
   , $acosh  = Math.acosh;
 
@@ -32181,7 +29482,7 @@ $export($export.S + $export.F * !($acosh
 });
 
 /***/ }),
-/* 420 */
+/* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.5 Math.asinh(x)
@@ -32196,7 +29497,7 @@ function asinh(x){
 $export($export.S + $export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', {asinh: asinh});
 
 /***/ }),
-/* 421 */
+/* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.7 Math.atanh(x)
@@ -32211,12 +29512,12 @@ $export($export.S + $export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
 });
 
 /***/ }),
-/* 422 */
+/* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.9 Math.cbrt(x)
 var $export = __webpack_require__(1)
-  , sign    = __webpack_require__(188);
+  , sign    = __webpack_require__(181);
 
 $export($export.S, 'Math', {
   cbrt: function cbrt(x){
@@ -32225,7 +29526,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 423 */
+/* 418 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.11 Math.clz32(x)
@@ -32238,7 +29539,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 424 */
+/* 419 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.12 Math.cosh(x)
@@ -32252,22 +29553,22 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 425 */
+/* 420 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.14 Math.expm1(x)
 var $export = __webpack_require__(1)
-  , $expm1  = __webpack_require__(189);
+  , $expm1  = __webpack_require__(182);
 
 $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', {expm1: $expm1});
 
 /***/ }),
-/* 426 */
+/* 421 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.16 Math.fround(x)
 var $export   = __webpack_require__(1)
-  , sign      = __webpack_require__(188)
+  , sign      = __webpack_require__(181)
   , pow       = Math.pow
   , EPSILON   = pow(2, -52)
   , EPSILON32 = pow(2, -23)
@@ -32293,7 +29594,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 427 */
+/* 422 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
@@ -32323,7 +29624,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 428 */
+/* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.18 Math.imul(x, y)
@@ -32331,7 +29632,7 @@ var $export = __webpack_require__(1)
   , $imul   = Math.imul;
 
 // some WebKit versions fails with big numbers, some has wrong arity
-$export($export.S + $export.F * __webpack_require__(10)(function(){
+$export($export.S + $export.F * __webpack_require__(11)(function(){
   return $imul(0xffffffff, 5) != -5 || $imul.length != 2;
 }), 'Math', {
   imul: function imul(x, y){
@@ -32345,16 +29646,16 @@ $export($export.S + $export.F * __webpack_require__(10)(function(){
 });
 
 /***/ }),
-/* 429 */
+/* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.20 Math.log1p(x)
 var $export = __webpack_require__(1);
 
-$export($export.S, 'Math', {log1p: __webpack_require__(229)});
+$export($export.S, 'Math', {log1p: __webpack_require__(222)});
 
 /***/ }),
-/* 430 */
+/* 425 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.21 Math.log10(x)
@@ -32367,7 +29668,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 431 */
+/* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.22 Math.log2(x)
@@ -32380,25 +29681,25 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 432 */
+/* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.28 Math.sign(x)
 var $export = __webpack_require__(1);
 
-$export($export.S, 'Math', {sign: __webpack_require__(188)});
+$export($export.S, 'Math', {sign: __webpack_require__(181)});
 
 /***/ }),
-/* 433 */
+/* 428 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.30 Math.sinh(x)
 var $export = __webpack_require__(1)
-  , expm1   = __webpack_require__(189)
+  , expm1   = __webpack_require__(182)
   , exp     = Math.exp;
 
 // V8 near Chromium 38 has a problem with very small numbers
-$export($export.S + $export.F * __webpack_require__(10)(function(){
+$export($export.S + $export.F * __webpack_require__(11)(function(){
   return !Math.sinh(-2e-17) != -2e-17;
 }), 'Math', {
   sinh: function sinh(x){
@@ -32409,12 +29710,12 @@ $export($export.S + $export.F * __webpack_require__(10)(function(){
 });
 
 /***/ }),
-/* 434 */
+/* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.33 Math.tanh(x)
 var $export = __webpack_require__(1)
-  , expm1   = __webpack_require__(189)
+  , expm1   = __webpack_require__(182)
   , exp     = Math.exp;
 
 $export($export.S, 'Math', {
@@ -32426,7 +29727,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 435 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.34 Math.trunc(x)
@@ -32439,14 +29740,14 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 436 */
+/* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/Array.prototype.includes
 var $export   = __webpack_require__(1)
-  , $includes = __webpack_require__(173)(true);
+  , $includes = __webpack_require__(166)(true);
 
 $export($export.P, 'Array', {
   includes: function includes(el /*, fromIndex = 0 */){
@@ -32454,15 +29755,15 @@ $export($export.P, 'Array', {
   }
 });
 
-__webpack_require__(47)('includes');
+__webpack_require__(48)('includes');
 
 /***/ }),
-/* 437 */
+/* 432 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(1)
-  , $values = __webpack_require__(230)(false);
+  , $values = __webpack_require__(223)(false);
 
 $export($export.S, 'Object', {
   values: function values(it){
@@ -32471,12 +29772,12 @@ $export($export.S, 'Object', {
 });
 
 /***/ }),
-/* 438 */
+/* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export  = __webpack_require__(1)
-  , $entries = __webpack_require__(230)(true);
+  , $entries = __webpack_require__(223)(true);
 
 $export($export.S, 'Object', {
   entries: function entries(it){
@@ -32485,15 +29786,15 @@ $export($export.S, 'Object', {
 });
 
 /***/ }),
-/* 439 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-getownpropertydescriptors
 var $export        = __webpack_require__(1)
-  , ownKeys        = __webpack_require__(224)
-  , toIObject      = __webpack_require__(21)
-  , gOPD           = __webpack_require__(29)
-  , createProperty = __webpack_require__(187);
+  , ownKeys        = __webpack_require__(217)
+  , toIObject      = __webpack_require__(22)
+  , gOPD           = __webpack_require__(30)
+  , createProperty = __webpack_require__(180);
 
 $export($export.S, 'Object', {
   getOwnPropertyDescriptors: function getOwnPropertyDescriptors(object){
@@ -32509,14 +29810,14 @@ $export($export.S, 'Object', {
 });
 
 /***/ }),
-/* 440 */
+/* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(1)
-  , $pad    = __webpack_require__(231);
+  , $pad    = __webpack_require__(224);
 
 $export($export.P, 'String', {
   padStart: function padStart(maxLength /*, fillString = ' ' */){
@@ -32525,14 +29826,14 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 441 */
+/* 436 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(1)
-  , $pad    = __webpack_require__(231);
+  , $pad    = __webpack_require__(224);
 
 $export($export.P, 'String', {
   padEnd: function padEnd(maxLength /*, fillString = ' ' */){
@@ -32541,14 +29842,14 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 442 */
+/* 437 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // ie9- setTimeout & setInterval additional parameters fix
 var global     = __webpack_require__(5)
   , $export    = __webpack_require__(1)
-  , invoke     = __webpack_require__(76)
-  , partial    = __webpack_require__(443)
+  , invoke     = __webpack_require__(77)
+  , partial    = __webpack_require__(438)
   , navigator  = global.navigator
   , MSIE       = !!navigator && /MSIE .\./.test(navigator.userAgent); // <- dirty ie9- check
 var wrap = function(set){
@@ -32566,14 +29867,14 @@ $export($export.G + $export.B + $export.F * MSIE, {
 });
 
 /***/ }),
-/* 443 */
+/* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var path      = __webpack_require__(444)
-  , invoke    = __webpack_require__(76)
-  , aFunction = __webpack_require__(35);
+var path      = __webpack_require__(439)
+  , invoke    = __webpack_require__(77)
+  , aFunction = __webpack_require__(37);
 module.exports = function(/* ...pargs */){
   var fn     = aFunction(this)
     , length = arguments.length
@@ -32595,31 +29896,31 @@ module.exports = function(/* ...pargs */){
 };
 
 /***/ }),
-/* 444 */
+/* 439 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(5);
 
 /***/ }),
-/* 445 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(1)
-  , $task   = __webpack_require__(184);
+  , $task   = __webpack_require__(177);
 $export($export.G + $export.B, {
   setImmediate:   $task.set,
   clearImmediate: $task.clear
 });
 
 /***/ }),
-/* 446 */
+/* 441 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var $iterators    = __webpack_require__(182)
-  , redefine      = __webpack_require__(27)
+var $iterators    = __webpack_require__(175)
+  , redefine      = __webpack_require__(28)
   , global        = __webpack_require__(5)
   , hide          = __webpack_require__(18)
-  , Iterators     = __webpack_require__(45)
+  , Iterators     = __webpack_require__(46)
   , wks           = __webpack_require__(9)
   , ITERATOR      = wks('iterator')
   , TO_STRING_TAG = wks('toStringTag')
@@ -32639,7 +29940,7 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
 }
 
 /***/ }),
-/* 447 */
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -33379,9 +30680,14 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
   typeof self === "object" ? self : this
 );
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(37)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)))
 
 /***/ }),
+/* 443 */,
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */,
 /* 448 */,
 /* 449 */,
 /* 450 */,
@@ -33576,15 +30882,52 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
 /* 639 */,
 /* 640 */,
 /* 641 */,
-/* 642 */
+/* 642 */,
+/* 643 */,
+/* 644 */,
+/* 645 */,
+/* 646 */,
+/* 647 */,
+/* 648 */,
+/* 649 */,
+/* 650 */,
+/* 651 */,
+/* 652 */,
+/* 653 */,
+/* 654 */,
+/* 655 */,
+/* 656 */,
+/* 657 */,
+/* 658 */,
+/* 659 */,
+/* 660 */,
+/* 661 */,
+/* 662 */,
+/* 663 */,
+/* 664 */,
+/* 665 */,
+/* 666 */,
+/* 667 */,
+/* 668 */,
+/* 669 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_cozy_dot_client) {
 
-__webpack_require__(348);
+__webpack_require__(343);
+
+__webpack_require__(344);
 
 __webpack_require__(349);
+
+__webpack_require__(350);
+
+__webpack_require__(351);
+
+__webpack_require__(352);
+
+__webpack_require__(353);
 
 __webpack_require__(354);
 
@@ -33594,8 +30937,6 @@ __webpack_require__(356);
 
 __webpack_require__(357);
 
-__webpack_require__(358);
-
 __webpack_require__(359);
 
 __webpack_require__(360);
@@ -33604,7 +30945,7 @@ __webpack_require__(361);
 
 __webpack_require__(362);
 
-__webpack_require__(364);
+__webpack_require__(363);
 
 __webpack_require__(365);
 
@@ -33613,6 +30954,8 @@ __webpack_require__(366);
 __webpack_require__(367);
 
 __webpack_require__(368);
+
+__webpack_require__(369);
 
 __webpack_require__(370);
 
@@ -33628,23 +30971,21 @@ __webpack_require__(375);
 
 __webpack_require__(376);
 
-__webpack_require__(377);
-
 __webpack_require__(378);
 
-__webpack_require__(379);
-
-__webpack_require__(380);
-
-__webpack_require__(381);
-
 __webpack_require__(383);
+
+__webpack_require__(384);
+
+__webpack_require__(385);
+
+__webpack_require__(386);
+
+__webpack_require__(387);
 
 __webpack_require__(388);
 
 __webpack_require__(389);
-
-__webpack_require__(390);
 
 __webpack_require__(391);
 
@@ -33654,7 +30995,7 @@ __webpack_require__(393);
 
 __webpack_require__(394);
 
-__webpack_require__(396);
+__webpack_require__(395);
 
 __webpack_require__(397);
 
@@ -33663,6 +31004,8 @@ __webpack_require__(398);
 __webpack_require__(399);
 
 __webpack_require__(400);
+
+__webpack_require__(401);
 
 __webpack_require__(402);
 
@@ -33674,6 +31017,8 @@ __webpack_require__(405);
 
 __webpack_require__(406);
 
+__webpack_require__(175);
+
 __webpack_require__(407);
 
 __webpack_require__(408);
@@ -33683,8 +31028,6 @@ __webpack_require__(409);
 __webpack_require__(410);
 
 __webpack_require__(411);
-
-__webpack_require__(182);
 
 __webpack_require__(412);
 
@@ -33738,21 +31081,11 @@ __webpack_require__(436);
 
 __webpack_require__(437);
 
-__webpack_require__(438);
-
-__webpack_require__(439);
-
 __webpack_require__(440);
 
 __webpack_require__(441);
 
 __webpack_require__(442);
-
-__webpack_require__(445);
-
-__webpack_require__(446);
-
-__webpack_require__(447);
 
 var _react = __webpack_require__(0);
 
@@ -33760,7 +31093,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(0);
 
-var _services = __webpack_require__(643);
+var _services = __webpack_require__(670);
 
 var _services2 = _interopRequireDefault(_services);
 
@@ -33774,7 +31107,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 if (true) {
   // Enables React dev tools for Preact
   // Cannot use import as we are in a condition
-  __webpack_require__(328
+  __webpack_require__(322
 
   // Export React to window for the devtools
   );window.React = _react2.default;
@@ -33809,7 +31142,7 @@ document.addEventListener('DOMContentLoaded', function () {
   (0, _reactDom.render)(_react2.default.createElement(
     _I18n.I18n,
     { lang: data.cozyLocale, dictRequire: function dictRequire(lang) {
-        return __webpack_require__(210)("./" + lang);
+        return __webpack_require__(203)("./" + lang);
       } },
     _react2.default.createElement(_services2.default, { intentId: intent })
   ), root);
@@ -33817,7 +31150,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ }),
-/* 643 */
+/* 670 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33827,7 +31160,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _IntentHandler = __webpack_require__(644);
+var _IntentHandler = __webpack_require__(671);
 
 var _IntentHandler2 = _interopRequireDefault(_IntentHandler);
 
@@ -33836,7 +31169,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _IntentHandler2.default;
 
 /***/ }),
-/* 644 */
+/* 671 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33852,15 +31185,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Embeder = __webpack_require__(645);
+var _Embeder = __webpack_require__(672);
 
 var _Embeder2 = _interopRequireDefault(_Embeder);
 
-var _URLGetter = __webpack_require__(647);
+var _URLGetter = __webpack_require__(674);
 
 var _URLGetter2 = _interopRequireDefault(_URLGetter);
 
-var _SuggestionProvider = __webpack_require__(648);
+var _SuggestionProvider = __webpack_require__(675);
 
 var _SuggestionProvider2 = _interopRequireDefault(_SuggestionProvider);
 
@@ -33974,7 +31307,7 @@ exports.default = IntentHandler;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ }),
-/* 645 */
+/* 672 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33990,7 +31323,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _services = __webpack_require__(646);
+var _services = __webpack_require__(673);
 
 var _services2 = _interopRequireDefault(_services);
 
@@ -33998,7 +31331,7 @@ var _Spinner = __webpack_require__(33);
 
 var _Spinner2 = _interopRequireDefault(_Spinner);
 
-var _actions = __webpack_require__(23);
+var _actions = __webpack_require__(24);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34095,14 +31428,14 @@ var Embeder = function (_React$Component) {
 exports.default = Embeder;
 
 /***/ }),
-/* 646 */
+/* 673 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 module.exports = {"fullscreen":"fullscreen--3gsbb"};
 
 /***/ }),
-/* 647 */
+/* 674 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34118,7 +31451,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _actions = __webpack_require__(23);
+var _actions = __webpack_require__(24);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34195,7 +31528,7 @@ var URLGetter = function (_React$Component) {
 exports.default = URLGetter;
 
 /***/ }),
-/* 648 */
+/* 675 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34211,7 +31544,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _FuzzyPathSearch = __webpack_require__(649);
+var _FuzzyPathSearch = __webpack_require__(676);
 
 var _FuzzyPathSearch2 = _interopRequireDefault(_FuzzyPathSearch);
 
@@ -34376,7 +31709,7 @@ var SuggestionProvider = function (_React$Component) {
                                 id: file._id,
                                 name: file.name,
                                 path: path,
-                                url: window.location.origin + '/#/files/' + dirId
+                                url: window.location.origin + '/#/folder/' + dirId
                               };
                             });
 
@@ -34421,7 +31754,7 @@ exports.default = SuggestionProvider;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ }),
-/* 649 */
+/* 676 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34433,7 +31766,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _diacritics = __webpack_require__(330);
+var _diacritics = __webpack_require__(325);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
