@@ -69080,16 +69080,23 @@ LaunchBarCtrler.init = function (newCozyClient) {
     }
   }]).on('autocomplete:selected', function (event, suggestion, dataset) {
     // a suggestion has been clicked by the user : change the displayed directory
-    var path = suggestion.path;
-    if (suggestion.type === 'directory') {
-      path += '/' + suggestion.name;
-    }
-    cozyClient.files.statByPath(path).then(function (data) {
-      window.location.href = '#/files/' + data._id;
-      launchInput.value = '';
-    }).catch(function () {
-      launchInput.value = '';
-    }
+    var route = suggestion.type === 'directory' ? 'folder' : 'file';
+    window.location.href = '#/' + route + '/' + suggestion._id;
+
+    //    let path = suggestion.path
+    //    if (suggestion.type === 'directory') {
+    //      path += '/' + suggestion.name
+    //    }
+    //    console.log(suggestion)
+    //    cozyClient.files
+    //      .statByPath(path)
+    //      .then(data => {
+    //
+    //        launchInput.value = ''
+    //      })
+    //      .catch(() => {
+    //        launchInput.value = ''
+    //      })
     // }).on('autocomplete:open', function () {
     //   console.log("autocomplete:open");
     // }).on('autocomplete:shown', function () {
@@ -69100,7 +69107,6 @@ LaunchBarCtrler.init = function (newCozyClient) {
     //   console.log("autocomplete:closed");
     // }).on('autocomplete:updated', function () {
     //   console.log("autocomplete:updated");
-    );
   }).autocomplete;
 
   // ------------------------------------------------------------------
@@ -73808,12 +73814,12 @@ var AppRoute = _react2.default.createElement(
   _react2.default.createElement(
     _reactRouter.Route,
     { component: _FileExplorer2.default },
-    _react2.default.createElement(_reactRouter.Redirect, { from: '/', to: 'files' }),
+    _react2.default.createElement(_reactRouter.Redirect, { from: '/', to: 'folder' }),
     _react2.default.createElement(_reactRouter.Route, { path: 'folder(/:folderId)', component: _files.FolderContainer }),
     _react2.default.createElement(_reactRouter.Route, { path: 'recent', component: _files.RecentContainer }),
     _react2.default.createElement(_reactRouter.Route, { path: 'trash(/:folderId)', component: _trash.Container })
   ),
-  _react2.default.createElement(_reactRouter.Route, { path: 'file(/:fileId)', component: _files.FileOpener })
+  _react2.default.createElement(_reactRouter.Route, { path: 'file/:fileId', component: _files.FileOpener })
 );
 
 exports.default = AppRoute;
