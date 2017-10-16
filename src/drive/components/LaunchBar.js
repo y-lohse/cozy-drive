@@ -107,19 +107,9 @@ LaunchBarCtrler.init = function(newCozyClient) {
     ]
   ).on('autocomplete:selected', function(event, suggestion, dataset) {
     // a suggestion has been clicked by the user : change the displayed directory
-    let path = suggestion.path
-    if (suggestion.type === 'directory') {
-      path += '/' + suggestion.name
-    }
-    cozyClient.files
-      .statByPath(path)
-      .then(data => {
-        window.location.href = '#/files/' + data._id
-        launchInput.value = ''
-      })
-      .catch(() => {
-        launchInput.value = ''
-      })
+    let route = suggestion.type === 'directory' ? 'folder' : 'file'
+    window.location.href = '#/' + route + '/' + suggestion._id
+
     // }).on('autocomplete:open', function () {
     //   console.log("autocomplete:open");
     // }).on('autocomplete:shown', function () {
