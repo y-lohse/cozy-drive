@@ -1,0 +1,90 @@
+#launch-bar
+  display:flex
+  align-items: center
+  flex-grow: 10000
+  margin-left: 1.25em
+  margin-top: 0.2em
+  margin-bottom: 0.2em
+  padding-left: 1em
+  padding-right: 2px
+  border:1px solid transparent
+  border-radius: 3px
+
+#launch-bar.focus-in
+  border-color: #3782e9
+
+.algolia-autocomplete
+    width: 100%
+    #launch-bar-input
+        padding-left: 1.5em
+        height:2.1em
+        border: 0
+        background-color: #e9e9e9
+        cursor:pointer
+        width: 100%
+        transition: width .2s ease
+        box-sizing: border-box
+        background: embedurl('../assets/icons/icon-magnifier-16.svg') no-repeat left center
+        background-size: 1.5em
+        outline: none
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint
+  width: 100%
+
+.algolia-autocomplete .aa-hint
+  color: #999
+
+.algolia-autocomplete .aa-dropdown-menu
+  background-color: #fff
+  // border: 1px solid #c5c7c8
+  border-bottom-left-radius: 6px
+  border-bottom-right-radius: 6px
+  margin-top: 0.5em
+  left: -1em!important
+  right: 0!important
+  box-shadow: 2px 3px 23px -3px rgba(0,0,0,0.7)
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion
+  height: 3.2em
+  cursor: pointer
+  color: #373737
+  white-space: normal
+  overflow: hidden
+  padding-left: 2.8em
+  display: flex
+  flex-direction: column
+  justify-content: center
+  border-bottom-style: solid
+  border-bottom-width: 1px
+  border-bottom-color: #d6d8da
+  border-left-style: solid
+  border-left-color: white
+
+  b
+    color: #297ef1
+
+.ac-suggestion-img
+  position: absolute
+  background-size: contain!important
+  width:2em
+  height:2em
+  left: 0.3em
+
+.ac-suggestion-name
+  text-overflow: ellipsis
+
+.ac-suggestion-path
+  font-size:0.7em
+  text-overflow: ellipsis
+  color: #141414
+  opacity: 0.8
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor
+  background-color: #f0f0f0
+  color: black
+  border-left-color: #297ef2
+
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em
+  font-weight: bold
+  font-style: normal
