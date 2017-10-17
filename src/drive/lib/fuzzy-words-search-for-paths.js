@@ -207,7 +207,6 @@ const forDebugPackage = function() {
       } else {
         return score
       }
-      return
     })
     return suggestions
   }

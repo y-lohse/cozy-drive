@@ -21,15 +21,13 @@ import debounce from '../lib/debounce'
 
 const LaunchBarCtrler = {}
 const MAX_RESULTS = 15
-let cozyClient
 // let T0
 // let T1
 // let T2
 // let T3
 // let T4
 
-LaunchBarCtrler.init = function(newCozyClient) {
-  cozyClient = newCozyClient
+LaunchBarCtrler.init = function() {
   // ------------------------------------------------------------------
   // 1/ HTML insertion in the bar
   const launchInput = document.createElement('input')

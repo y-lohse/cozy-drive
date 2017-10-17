@@ -21,7 +21,6 @@ module.exports = (function() {
     this._length = 0
     // counter for nodes' ids
     this._counter = 0
-    return
   }
 
   // Wraps data in a node object.

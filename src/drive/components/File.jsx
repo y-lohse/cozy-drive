@@ -119,7 +119,7 @@ class File extends Component {
       })
     } else {
       if (this.props.isAvailableOffline) {
-        openOfflineFile(file).catch(error => {
+        openOfflineFile(attributes).catch(error => {
           this.setState({ opening: false })
           console.error('openFileInNewTab', error)
         })

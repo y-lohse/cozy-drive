@@ -50,11 +50,9 @@ module.exports = class RangeList {
       // b is in r2 => extend r1 to r2 and remove r2
       r1.data.b = r2.data.b
       this._list.removeNode(r2)
-      return
     } else {
       // otherwise b is before r2 => extend r1 to b
       r1.data.b = b
-      return
     }
   }
 
