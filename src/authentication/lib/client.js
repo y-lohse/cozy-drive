@@ -29,24 +29,39 @@ export function resetClient (clientInfo) {
   }
 }
 
-export const initClient = (url) => {
+const defaultClientOptions = {
+  redirectURI: 'http://localhost',
+  softwareID: 'io.cozy.app',
+  softwareVersion: '1.0.0',
+  clientName: `${SOFTWARE_NAME}`,
+  clientKind: 'mobile',
+  clientURI: 'https://cozy.io',
+  logoURI: 'https://raw.githubusercontent.com/cozy/cozy-drive/master/vendor/assets/apple-touch-icon-120x120.png',
+  policyURI: 'https://files.cozycloud.cc/cgu.pdf',
+  scopes: [],
+  offline: {}
+}
+
+export const initClient = (url, options = defaultClientOptions) => {
+  options = {...defaultClientOptions ...options}
+
   return new CozyClient({
     cozyURL: url,
     oauth: {
       storage: new Storage(),
       clientParams: {
-        redirectURI: 'http://localhost',
-        softwareID: SOFTWARE_ID,
+        redirectURI: options.redirectURI,
+        softwareID: options.softwareID,
+        softwareVersion: options.softwareVersion,
         clientName: `${SOFTWARE_NAME} (${getDeviceName()})`,
-        softwareVersion: __APP_VERSION__,
-        clientKind: 'mobile',
-        clientURI: 'https://github.com/cozy/cozy-drive/',
-        logoURI: 'https://raw.githubusercontent.com/cozy/cozy-drive/master/vendor/assets/apple-touch-icon-120x120.png',
-        policyURI: 'https://files.cozycloud.cc/cgu.pdf',
-        scopes: ['io.cozy.files', 'io.cozy.contacts', 'io.cozy.jobs:POST:sendmail:worker', 'io.cozy.settings:PUT:passphrase']
+        clientKind: options.clientKind,
+        clientURI: options.clientURI,
+        logoURI: options.logoURI,
+        policyURI: options.policyURI,
+        scopes: options.scopes
       }
     },
-    offline: {doctypes: ['io.cozy.files']}
+    offline: options.offline
   })
 }
 

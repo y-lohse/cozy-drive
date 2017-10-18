@@ -1,4 +1,4 @@
-/* global __DEVELOPMENT__ */
+/* global __DEVELOPMENT__ __APP_VERSION__ */
 import 'babel-polyfill'
 
 import 'drive/styles/main'
@@ -26,6 +26,7 @@ import { backupContacts } from 'drive/mobile/actions/contactsBackup'
 import { setUrl, saveCredentials, startReplication } from 'drive/mobile/actions/settings'
 import { revokeClient } from 'drive/mobile//actions/authorization'
 import { configure as configureReporter } from 'drive/mobile/lib/reporter'
+import { SOFTWARE_ID } from 'drive/constants'
 
 if (__DEVELOPMENT__) {
   // Enables React dev tools for Preact
@@ -38,7 +39,14 @@ if (__DEVELOPMENT__) {
 
 const renderAppWithPersistedState = persistedState => {
   const hasPersistedMobileStore = persistedState && persistedState.mobile
-  const client = initClient(hasPersistedMobileStore ? persistedState.mobile.settings.serverUrl : '')
+  const client = initClient(hasPersistedMobileStore ? persistedState.mobile.settings.serverUrl : '', {
+    softwareID: SOFTWARE_ID,
+    softwareVersion: __APP_VERSION__,
+    clientURI: 'https://github.com/cozy/cozy-drive/',
+    logoURI: 'https://raw.githubusercontent.com/cozy/cozy-drive/master/vendor/assets/apple-touch-icon-120x120.png',
+    scopes: ['io.cozy.files', 'io.cozy.contacts', 'io.cozy.jobs:POST:sendmail:worker', 'io.cozy.settings:PUT:passphrase'],
+    offline: {doctypes: ['io.cozy.files']}
+  })
 
   const store = configureStore(persistedState)
 
