@@ -33,7 +33,7 @@ LaunchBarCtrler.init = function() {
   const launchInput = document.createElement('input')
   launchInput.setAttribute('id', `launch-bar-input`)
   launchInput.setAttribute('placeholder', 'Search')
-  let target = document.querySelector('.coz-sep-flex')
+  let target = document.querySelector('.coz-nav')
   const launchBar = document.createElement('div')
   launchBar.setAttribute('id', 'launch-bar')
   launchBar.appendChild(launchInput)
