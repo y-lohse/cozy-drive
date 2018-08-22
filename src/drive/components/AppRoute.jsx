@@ -15,6 +15,7 @@ import {
   SharingsContainer as Sharings
 } from '../ducks/files'
 import { Container as Trash } from '../ducks/trash'
+import TrashContainer from '../containers/TrashContainer'
 
 const AppRoute = (
   <Route>
@@ -38,12 +39,12 @@ const AppRoute = (
           </Route>
           <Route path="file/:fileId" component={FilesViewer} />
         </Route>
-        <Route path="trash" component={Trash}>
-          <Route path=":folderId">
-            <Route path="file/:fileId" component={FilesViewer} />
-          </Route>
+      </Route>
+      <Route path="trash" component={TrashContainer}>
+        <Route path=":folderId">
           <Route path="file/:fileId" component={FilesViewer} />
         </Route>
+        <Route path="file/:fileId" component={FilesViewer} />
       </Route>
       {__TARGET__ === 'mobile' && (
         <Route path="settings" component={Settings} />
