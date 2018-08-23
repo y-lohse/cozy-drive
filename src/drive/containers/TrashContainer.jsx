@@ -10,7 +10,10 @@ import Breadcrumb from './Breadcrumb'
 import styles from '../styles/folderview'
 
 const query = client =>
-  client.find('io.cozy.files').where({ dir_id: 'io.cozy.files.trash-dir' }) //.sortBy({ name: 'desc' })
+  client
+    .find('io.cozy.files')
+    .where({ dir_id: 'io.cozy.files.trash-dir' })
+    .sortBy({ name: 'asc', type: 'asc' })
 
 // <Toolbar
 //   folderId={folderId}
