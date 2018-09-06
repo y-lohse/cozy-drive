@@ -155,7 +155,7 @@ export default class SharingProvider extends Component {
     if (sharing) return this.addRecipients(sharing, recipients, sharingType)
     const resp = await this.context.client
       .collection('io.cozy.sharings')
-      .share(document, recipients, sharingType, description)
+      .share(document, recipients, sharingType, description, '/preview')
     this.dispatch(
       addSharing(
         resp.data,
@@ -231,7 +231,7 @@ export default class SharingProvider extends Component {
 
 export const SharedDocuments = ({ children }) => (
   <SharingContext.Consumer>
-    {({ sharings }) =>
+    {({ sharings } = { sharings: [] }) =>
       children({
         sharedDocuments: sharings.map(
           sharing => sharing.attributes.rules[0].values[0]

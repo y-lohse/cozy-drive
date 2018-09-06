@@ -301,15 +301,9 @@ const getPermissionById = (state, id) =>
 
 const getApps = state => state.apps
 
-export const hasSharedParent = (state, document) =>
-  state.sharedPaths.some(path => document.path.indexOf(`${path}/`) === 0)
+export const hasSharedParent = (state, document) => false
 
-export const hasSharedChild = (state, document) => {
-  const ret = state.sharedPaths.some(
-    path => path.indexOf(`${document.path}/`) === 0
-  )
-  return ret
-}
+export const hasSharedChild = (state, document) => false
 
 // helpers
 const getSharedDocIds = doc =>
